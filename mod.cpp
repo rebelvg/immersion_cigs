@@ -1,4 +1,4 @@
-name = "Murshun Cigs 1.12";
+name = "Murshun Cigs 1.13";
 picture = "murshun_cigs.paa";
 actionName = "Website";
 action = "http://podkolpakom.net/";
@@ -7,8 +7,8 @@ logo = "murshun_cigs.paa";
 logoOver = "murshun_cigs.paa";
 tooltip = "Murshun Cigs";
 tooltipOwned = "";
-overview = "Cigarette script turned into a mod";
-author = "rebel";
+overview = "Cigarette script turned into a mod.";
+author = "rebel / facel";
 overviewPicture = "murshun_cigs.paa";
 overviewText = "Murshun Cigs";
 overviewFootnote = "";
