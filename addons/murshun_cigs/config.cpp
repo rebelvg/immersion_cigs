@@ -21,7 +21,7 @@ class CfgVehicles
 				class murshun_cigs_start_cig
 				{
 					displayName = "Light Up a Cig";
-					condition = "((goggles _player) in murshun_cigs_cigsArray) and (!(_player getVariable ['murshun_cigs_cigLitUp', false])) and ((_player getVariable ['murshun_cigs_cigTime', 0]) <= 330)";
+					condition = "((goggles _player) in murshun_cigs_cigsArray) and (!(_player getVariable ['murshun_cigs_cigLitUp', false])) and ((_player getVariable ['murshun_cigs_cigTime', 0]) <= 330) and (alive _player)";
 					statement = "[_player, _player] spawn murshun_cigs_fnc_start_cig";
 					showDisabled = 0;
 					exceptions[] = {"isNotInside", "isNotSitting"};
@@ -30,7 +30,7 @@ class CfgVehicles
 				class murshun_cigs_stop_cig
 				{
 					displayName = "Put Out a Cig";
-					condition = "((goggles _player) in murshun_cigs_cigsArray) and ((_player getVariable ['murshun_cigs_cigLitUp', false]))";
+					condition = "((goggles _player) in murshun_cigs_cigsArray) and ((_player getVariable ['murshun_cigs_cigLitUp', false])) and (alive _player)";
 					statement = "[_player] spawn murshun_cigs_fnc_stop_cig";
 					showDisabled = 0;
 					exceptions[] = {"isNotInside", "isNotSitting"};
@@ -44,7 +44,7 @@ class CfgVehicles
 			class ACE_Head {
 				class murshun_cigs_start_someones_cig
 				{
-					displayName = "Light His Cig Up";
+					displayName = "Light Up a Cig";
 					condition = "((goggles _target) in murshun_cigs_cigsArray) and (!(_target getVariable ['murshun_cigs_cigLitUp', false])) and (alive _target)";
 					statement = "[_target, _player] spawn murshun_cigs_fnc_start_cig_MP";
 					showDisabled = 0;

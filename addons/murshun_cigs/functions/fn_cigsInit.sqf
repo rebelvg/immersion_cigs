@@ -88,16 +88,16 @@ _goggles_current = _goggles;
 
 switch (_goggles) do {
 	case "EWK_Cig1": {
-	_unit setVariable ["murshun_cigs_cigTime", 6, true];
+	_unit setVariable ["murshun_cigs_cigTime", 6];
 	};
 	case "EWK_Cig4": {
-	_unit setVariable ["murshun_cigs_cigTime", 66, true];
+	_unit setVariable ["murshun_cigs_cigTime", 66];
 	};
 	case "EWK_Cig6": {
-	_unit setVariable ["murshun_cigs_cigTime", 126, true];
+	_unit setVariable ["murshun_cigs_cigTime", 126];
 	};
 	case "EWK_Cig3": {
-	_unit setVariable ["murshun_cigs_cigTime", 306, true];
+	_unit setVariable ["murshun_cigs_cigTime", 306];
 	};
 };
 
@@ -110,10 +110,10 @@ playSound3D ["murshun_cigs\lighter_01.ogg", _unit, false, ATLtoASL (_unit modelT
 [[_unit, "murshun_cigs_lighter_01"], "say3d"] call BIS_fnc_MP;
 };
 } else {
-_player setVariable ["murshun_cigs_usedMatches", (_player getVariable ["murshun_cigs_usedMatches", 0]) + 1, true];
+_player setVariable ["murshun_cigs_usedMatches", (_player getVariable ["murshun_cigs_usedMatches", 0]) + 1];
 if (_player getVariable ["murshun_cigs_usedMatches", 0] >= 10) then {
 _player removeItem "murshun_cigs_matches";
-_player setVariable ["murshun_cigs_usedMatches", 0, true];
+_player setVariable ["murshun_cigs_usedMatches", 0];
 ["Matches box is now empty.", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
 };
 if (vehicle _unit == _unit) then {
@@ -152,7 +152,7 @@ _unit addGoggles "EWK_Cig3";
 _goggles_current = "EWK_Cig3";
 };
 
-_unit setVariable ["murshun_cigs_cigTime", (_unit getVariable ["murshun_cigs_cigTime", 0]) + 6, true];
+_unit setVariable ["murshun_cigs_cigTime", (_unit getVariable ["murshun_cigs_cigTime", 0]) + 6];
 
 [[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
 _fatigue = getFatigue _unit;
@@ -161,7 +161,6 @@ _unit setFatigue _fatigue + 0.01;
 _time = time;
 _futureTime = _time + (5.5+ random 2);
 waitUntil {
-sleep 1;
 time >= _futureTime or !(_unit getVariable ["murshun_cigs_cigLitUp", false])
 };
 
@@ -171,7 +170,7 @@ if (_goggles_current != _goggles) exitWith {};
 _unit setVariable ["murshun_cigs_cigLitUp", false, true];
 if ((_unit getVariable ["murshun_cigs_cigTime", 0]) >= 330) then {
 removeGoggles _unit;
-_unit setVariable ["murshun_cigs_cigTime", 0, true];
+_unit setVariable ["murshun_cigs_cigTime", 0];
 };
 };
 };
