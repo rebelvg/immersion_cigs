@@ -25,4 +25,14 @@
 			<French>Briquet</French>
 		</Key>
 	</Package>
+	<Package name="Notification">
+		<Key ID="STR_murshun_cigs_no_matches_or_lighter_his">
+			<English>You don't have matches or lighter to light his cig up.</English>
+			<French>Vous ne disposez pas d'allumettes ou d'un briquet pour allumer sa cigarette.</French>
+		</Key>
+		<Key ID="STR_murshun_cigs_no_matches_or_lighter_your">
+			<English>You don't have matches or lighter to light your cig up.</English>
+			<French>Vous ne disposez pas d'allumettes ou d'un briquet pour allumer votre cigarette.</French>
+		</Key>
+	</Package>
 </Project>

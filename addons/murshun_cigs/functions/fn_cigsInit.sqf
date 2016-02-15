@@ -63,7 +63,7 @@ _unit = _this select 0;
 _player = _this select 1;
 
 if (!("murshun_cigs_matches" in (items _player)) && !("murshun_cigs_lighter" in (items _player))) exitWith {
-["You don't have matches or lighter to light his cig up.", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
+[localize "STR_murshun_cigs_no_matches_or_lighter_his", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
 };
 
 _player playActionNow "PutDown";
@@ -78,7 +78,7 @@ _player = _this select 1;
 if (!(local _unit)) exitWith {};
 
 if (!("murshun_cigs_matches" in (items _player)) && !("murshun_cigs_lighter" in (items _player))) exitWith {
-["You don't have matches or lighter to light your cig up.", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
+[localize "STR_murshun_cigs_no_matches_or_lighter_your", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
 };
 
 _goggles = goggles _unit;
