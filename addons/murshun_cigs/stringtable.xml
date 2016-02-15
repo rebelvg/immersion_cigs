@@ -1,0 +1,28 @@
+<!-- Translations by Luigi Myrini (Luigium) -->
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="murshun_cigs">
+	<Package name="Interactions">
+		<Key ID="STR_murshun_cigs_start_cig">
+			<English>Light Up a Cig</English>
+			<French>Allumer Cigarette</French>
+		</Key>
+		<Key ID="STR_murshun_cigs_stop_cig">
+			<English>Put Out a Cig</English>
+			<French>Eteindre Cigarette</French>
+		</Key>
+		<Key ID="STR_cigs_start_someones_cig">
+			<English>Light Up a Cig</English>
+			<French>Allumer Cigarette</French>
+		</Key>
+	</Package>
+	<Package name="Items">
+		<Key ID="STR_murshun_cigs_matches">
+			<English>Matches</English>
+			<French>Allumettes</French>
+		</Key>
+		<Key ID="STR_murshun_cigs_lighter">
+			<English>Lighter</English>
+			<French>Briquet</French>
+		</Key>
+	</Package>
+</Project>
