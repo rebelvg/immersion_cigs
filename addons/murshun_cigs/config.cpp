@@ -6,7 +6,7 @@ class CfgPatches
 		weapons[] = {"murshun_cigs_matches", "murshun_cigs_lighter"};
 		requiredVersion = 1;
 		requiredAddons[] = {"ace_main", "ace_common", "ace_interaction", "ace_interact_menu", "ewk_cigs"};
-		version = "1.13";
+		version = "1.14";
 	};
 };
 
