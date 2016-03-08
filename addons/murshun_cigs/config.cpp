@@ -60,7 +60,7 @@ class CfgVehicles
 		scope = 2;
 		scopeCurator = 2;
 		displayName = "$STR_murshun_cigs_matches";
-		author = "rebel / facel";
+		author = "$STR_murshun_cigs_author";
 		vehicleClass = "Items";
 		
 		class TransportItems {
@@ -75,7 +75,7 @@ class CfgVehicles
 		scope = 2;
 		scopeCurator = 2;
 		displayName = "$STR_murshun_cigs_lighter";
-		author = "rebel / facel";
+		author = "$STR_murshun_cigs_author";
 		vehicleClass = "Items";
 		
 		class TransportItems {
@@ -92,7 +92,7 @@ class CfgWeapons {
 	class InventoryItem_Base_F;
 	
 	class murshun_cigs_matches: ACE_ItemCore {
-		author = "rebel / facel";
+		author = "$STR_murshun_cigs_author";
 		scope = 2;
 		scopeCurator = 2;
 		displayName = "$STR_murshun_cigs_matches";
@@ -107,7 +107,7 @@ class CfgWeapons {
 	};
 	
 	class murshun_cigs_lighter: ACE_ItemCore {
-		author = "rebel / facel";
+		author = "$STR_murshun_cigs_author";
 		scope = 2;
 		scopeCurator = 2;
 		displayName = "$STR_murshun_cigs_lighter";
