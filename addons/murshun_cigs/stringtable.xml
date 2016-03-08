@@ -1,7 +1,7 @@
 <!-- French Translations by Luigi Myrini (Luigium) -->
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="murshun_cigs">
-	<Package name="Murshun_Cigs">
+	<Package name="Main">
 		<Key ID="STR_murshun_cigs_author">
 			<English>Rebel / Facel</English>
 		</Key>
