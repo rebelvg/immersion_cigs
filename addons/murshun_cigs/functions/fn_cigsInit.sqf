@@ -159,7 +159,7 @@ murshun_cigs_fnc_start_cig = {
 			_unit setFatigue _fatigue + 0.01;
 
 			_time = time;
-			_futureTime = _time + (5.5+ random 2);
+			_futureTime = _time + (5.5 + random 2);
 			waitUntil {
 				time >= _futureTime
 			};
