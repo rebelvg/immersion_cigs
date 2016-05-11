@@ -161,7 +161,7 @@ murshun_cigs_fnc_start_cig = {
 			_time = time;
 			_futureTime = _time + (5.5 + random 2);
 			waitUntil {
-				time >= _futureTime
+				time > _futureTime
 			};
 
 			_goggles = goggles _unit;
