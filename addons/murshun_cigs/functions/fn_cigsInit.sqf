@@ -26,7 +26,7 @@ murshun_cigs_fnc_smoke = {
 	_fog setParticleRandom [2, [0, 0, 0], [0.25, 0.25, 0.25], 0, 0.5, [0, 0, 0, 0.1], 0, 0, 10];
 	_fog setDropInterval 0.005;
 
-	_source attachTo [_unit,[0,0.06,0], "head"];
+	_source attachTo [_unit, [0,0.06,0], "head"];
 	sleep 0.4;
 	deleteVehicle _source;
 };
@@ -43,7 +43,11 @@ murshun_cigs_fnc_anim = {
 	if (animationState _unit in murshun_cigs_standingAnimationsArray && isClass (configFile >> "CfgPatches" >> "ewk_cigs")) then {
 		[[_unit, "EWK_CIGS_SMOKING_ERC_CTS"], "switchMove"] call BIS_fnc_MP;
 		
-		sleep 3;
+		_time = time;
+		while {time < _time + 3} do {
+			if (!alive _unit) exitWith {[[_unit, ""], "switchMove"] call BIS_fnc_MP;};
+			sleep (1/60);
+		};
 	} else {
 		_time = time;
 		while {time < _time + 3} do {
