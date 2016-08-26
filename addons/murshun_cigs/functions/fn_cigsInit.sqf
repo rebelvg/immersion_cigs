@@ -1,4 +1,4 @@
-murshun_cigs_cigsArray = ["EWK_Cigar1", "EWK_Cigar2", "EWK_Cig1", "EWK_Cig2", "EWK_Cig3", "EWK_Cig4", "EWK_Glasses_Cig1", "EWK_Glasses_Cig2", "EWK_Glasses_Cig3", "EWK_Glasses_Cig4", "EWK_Glasses_Shemag_GRE_Cig6", "EWK_Glasses_Shemag_NB_Cig6", "EWK_Glasses_Shemag_tan_Cig6", "EWK_Cig5", "EWK_Glasses_Cig5", "EWK_Cig6", "EWK_Glasses_Cig6", "EWK_Shemag_GRE_Cig6", "EWK_Shemag_NB_Cig6", "EWK_Shemag_tan_Cig6"];
+murshun_cigs_cigsArray = ["EWK_Cigar1", "EWK_Cigar2", "EWK_Cig1", "EWK_Cig2", "EWK_Cig3", "EWK_Cig4", "EWK_Glasses_Cig1", "EWK_Glasses_Cig2", "EWK_Glasses_Cig3", "EWK_Glasses_Cig4", "EWK_Glasses_Shemag_GRE_Cig6", "EWK_Glasses_Shemag_NB_Cig6", "EWK_Glasses_Shemag_tan_Cig6", "EWK_Cig5", "EWK_Glasses_Cig5", "EWK_Cig6", "EWK_Glasses_Cig6", "EWK_Shemag_GRE_Cig6", "EWK_Shemag_NB_Cig6", "EWK_Shemag_tan_Cig6", "murshun_cigs_cig0", "murshun_cigs_cig1", "murshun_cigs_cig2", "murshun_cigs_cig3", "murshun_cigs_cig4"];
 
 murshun_standingAnimationsArray = ["amovpercmstpsraswrfldnon", "amovpercmstpslowwrfldnon", "amovpercmstpsraswpstdnon", "amovpercmstpslowwpstdnon", "amovpercmstpsnonwnondnon", "amovpercmstpsraswlnrdnon", "amovpercmstpsoptwbindnon"];
 
@@ -26,9 +26,9 @@ murshun_cigs_fnc_smoke = {
 	_fog setParticleRandom [2, [0, 0, 0], [0.25, 0.25, 0.25], 0, 0.5, [0, 0, 0, 0.1], 0, 0, 10];
 	_fog setDropInterval 0.005;
 
-	_source attachto [_target,[0,0.06,0], "head"];
+	_source attachTo [_target,[0,0.06,0], "head"];
 	sleep 0.4;
-	deletevehicle _source;
+	deleteVehicle _source;
 };
 
 murshun_cigs_anim_fnc = {
@@ -40,13 +40,14 @@ murshun_cigs_anim_fnc = {
 
 	_animation = animationState _unit;
 
-	if (animationState _unit in murshun_standingAnimationsArray) then {
+	if (animationState _unit in murshun_standingAnimationsArray && isClass (configFile >> "CfgPatches" >> "ewk_cigs")) then {
 		[[_unit, "EWK_CIGS_SMOKING_ERC_CTS"], "switchMove"] call BIS_fnc_MP;
 		_time = time;
 		while {true} do {
 			if ((_unit getVariable ["ACE_isUnconscious", false])) exitWith {[[_unit, "unconscious"], "switchMove"] call BIS_fnc_MP;};
 			if (!alive _unit) exitWith {[[_unit, ""], "switchMove"] call BIS_fnc_MP;};
 			if (time >= _time + 3) exitWith {[[_unit, _animation], "switchMove"] call BIS_fnc_MP;};
+			sleep (1/60);
 		};
 	} else {
 		_unit playActionNow "Gear";
@@ -54,6 +55,7 @@ murshun_cigs_anim_fnc = {
 		while {true} do {
 			_unit playActionNow "Gear";
 			if (time >= _time + 3) exitWith {};
+			sleep (1/60);
 		};
 	};
 };
@@ -62,7 +64,7 @@ murshun_cigs_fnc_start_cig_MP = {
 	_unit = _this select 0;
 	_player = _this select 1;
 
-	if (!("murshun_cigs_matches" in (items _player)) && !("murshun_cigs_lighter" in (items _player))) exitWith {
+	if (!("murshun_cigs_matches" in (magazines _player)) && !("murshun_cigs_lighter" in (magazines _player))) exitWith {
 		[localize "STR_murshun_cigs_no_matches_or_lighter_his", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
 	};
 
@@ -77,10 +79,11 @@ murshun_cigs_fnc_start_cig = {
 
 	if (!(local _unit)) exitWith {};
 
-	if (!("murshun_cigs_matches" in (items _player)) && !("murshun_cigs_lighter" in (items _player))) exitWith {
+	if (!("murshun_cigs_matches" in (magazines _player)) && !("murshun_cigs_lighter" in (magazines _player))) exitWith {
 		[localize "STR_murshun_cigs_no_matches_or_lighter_your", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
 	};
 
+	_cigTime = 0;
 	_goggles = goggles _unit;
 
 	if (_goggles in murshun_cigs_cigsArray) then {
@@ -88,34 +91,69 @@ murshun_cigs_fnc_start_cig = {
 
 		switch (_goggles) do {
 		case "EWK_Cig1": {
-				_unit setVariable ["murshun_cigs_cigTime", 6];
+				_cigTime = 6;
 			};
 		case "EWK_Cig4": {
-				_unit setVariable ["murshun_cigs_cigTime", 66];
+				_cigTime = 66;
 			};
 		case "EWK_Cig6": {
-				_unit setVariable ["murshun_cigs_cigTime", 126];
+				_cigTime = 126;
 			};
 		case "EWK_Cig3": {
-				_unit setVariable ["murshun_cigs_cigTime", 306];
+				_cigTime = 306;
+			};
+		case "murshun_cigs_cig0": {
+				_cigTime = 6;
+			};
+		case "murshun_cigs_cig1": {
+				_cigTime = 12;
+			};
+		case "murshun_cigs_cig2": {
+				_cigTime = 66;
+			};
+		case "murshun_cigs_cig3": {
+				_cigTime = 126;
+			};
+		case "murshun_cigs_cig4": {
+				_cigTime = 306;
 			};
 		};
 
-		if ((_unit getVariable ["murshun_cigs_cigTime", 0]) <= 330) then {
-			[_unit] spawn murshun_cigs_anim_fnc;
-			if (("murshun_cigs_lighter" in (items _player))) then {
+		[_unit] spawn murshun_cigs_anim_fnc;
+		
+		switch (true) do {
+		case ("murshun_cigs_lighter" in (magazines _player)): {
+				_matchesMags = magazinesAmmo player select {_x select 0 == "murshun_cigs_lighter"};
+				
+				player removeMagazineGlobal "murshun_cigs_lighter";
+				
+				_oldMag = _matchesMags select 0;
+				
+				if ((_oldMag select 1) > 1) then {
+					player addMagazine ["murshun_cigs_lighter", (_oldMag select 1) - 1];
+				} else {
+					["Lighter is now empty.", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
+				};
+				
 				if (vehicle _unit == _unit) then {
 					playSound3D ["murshun_cigs\lighter_01.ogg", _unit, false, ATLtoASL (_unit modelToWorldVisual (_unit selectionPosition "head")), 2, 1, 15];
 				} else {
 					[[_unit, "murshun_cigs_lighter_01"], "say3d"] call BIS_fnc_MP;
 				};
-			} else {
-				_player setVariable ["murshun_cigs_usedMatches", (_player getVariable ["murshun_cigs_usedMatches", 0]) + 1];
-				if (_player getVariable ["murshun_cigs_usedMatches", 0] >= 10) then {
-					_player removeItem "murshun_cigs_matches";
-					_player setVariable ["murshun_cigs_usedMatches", 0];
+			};
+		case ("murshun_cigs_matches" in (magazines _player)): {
+				_matchesMags = magazinesAmmo player select {_x select 0 == "murshun_cigs_matches"};
+				
+				player removeMagazineGlobal "murshun_cigs_matches";
+				
+				_oldMag = _matchesMags select 0;
+				
+				if ((_oldMag select 1) > 1) then {
+					player addMagazine ["murshun_cigs_matches", (_oldMag select 1) - 1];
+				} else {
 					["Matches box is now empty.", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
 				};
+				
 				if (vehicle _unit == _unit) then {
 					playSound3D ["murshun_cigs\matches_01.ogg", _unit, false, ATLtoASL (_unit modelToWorldVisual (_unit selectionPosition "head")), 2, 1, 15];
 					sleep 1.5;
@@ -126,53 +164,78 @@ murshun_cigs_fnc_start_cig = {
 					[[_unit, "murshun_cigs_matches_02"], "say3d"] call BIS_fnc_MP;
 				};
 			};
-
-			_unit setVariable ["murshun_cigs_cigLitUp", true, true];
-			sleep (3.5 + random 2);
-			[[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
-			sleep (1 + random 1);
-			[[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
 		};
 
-		while ({alive _unit and _goggles_current in murshun_cigs_cigsArray and (_unit getVariable ["murshun_cigs_cigLitUp", false]) and (_unit getVariable ["murshun_cigs_cigTime", 0]) <= 330}) do {
-			_goggles_current = goggles _unit;
-			if (_goggles_current == "EWK_Cig1" && (_unit getVariable ["murshun_cigs_cigTime", 0]) >= 60) then {
-				removeGoggles _unit;
-				_unit addGoggles "EWK_Cig4";
-				_goggles_current = "EWK_Cig4";
-			};
-			if (_goggles_current == "EWK_Cig4" && (_unit getVariable ["murshun_cigs_cigTime", 0]) >= 120) then {
-				removeGoggles _unit;
-				_unit addGoggles "EWK_Cig6";
-				_goggles_current = "EWK_Cig6";
-			};
-			if (_goggles_current == "EWK_Cig6" && (_unit getVariable ["murshun_cigs_cigTime", 0]) >= 300) then {
-				removeGoggles _unit;
-				_unit addGoggles "EWK_Cig3";
-				_goggles_current = "EWK_Cig3";
-			};
+		_unit setVariable ["murshun_cigs_cigLitUp", true, true];
+		sleep (3.5 + random 2);
+		[[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
+		sleep (1 + random 1);
+		[[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
 
-			_unit setVariable ["murshun_cigs_cigTime", (_unit getVariable ["murshun_cigs_cigTime", 0]) + 6];
+		while ({alive _unit and _goggles_current in murshun_cigs_cigsArray and (_unit getVariable ["murshun_cigs_cigLitUp", false]) and _cigTime <= 330}) do {
+			_goggles_current = goggles _unit;
+			_newGoggles = "";
+			
+			if (_goggles_current == "EWK_Cig1" && _cigTime >= 60) then {
+				_newGoggles = "EWK_Cig4";
+			};
+			if (_goggles_current == "EWK_Cig4" && _cigTime >= 120) then {
+				_newGoggles = "EWK_Cig6";
+			};
+			if (_goggles_current == "EWK_Cig6" && _cigTime >= 300) then {
+				_newGoggles = "EWK_Cig3";
+			};
+			if (_goggles_current == "murshun_cigs_cig0" && _cigTime >= 6) then {
+				_newGoggles = "murshun_cigs_cig1";
+			};
+			if (_goggles_current == "murshun_cigs_cig1" && _cigTime >= 60) then {
+				_newGoggles = "murshun_cigs_cig2";
+			};
+			if (_goggles_current == "murshun_cigs_cig2" && _cigTime >= 120) then {
+				_newGoggles = "murshun_cigs_cig3";
+			};
+			if (_goggles_current == "murshun_cigs_cig3" && _cigTime >= 300) then {
+				_newGoggles = "murshun_cigs_cig4";
+			};
+			
+			if (_newGoggles != "") then {
+				removeGoggles _unit;
+				_unit addGoggles _newGoggles;
+				_goggles_current = _newGoggles;
+			};
+			
+			_cigTime = _cigTime + 6;
 
 			[[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
 			_fatigue = getFatigue _unit;
 			_unit setFatigue _fatigue + 0.01;
-
-			_time = time;
-			_futureTime = _time + (5.5 + random 2);
-			waitUntil {
-				time > _futureTime
-			};
+			
+			sleep (5.5 + random 2);
 
 			_goggles = goggles _unit;
 			if (_goggles_current != _goggles) exitWith {};
 		};
 		
 		_unit setVariable ["murshun_cigs_cigLitUp", false, true];
-		if ((_unit getVariable ["murshun_cigs_cigTime", 0]) >= 330) then {
+		if (_cigTime >= 330) then {
 			removeGoggles _unit;
-			_unit setVariable ["murshun_cigs_cigTime", 0];
 		};
+	};
+};
+
+murshun_cigs_take_cig_from_pack_fnc = {
+	_matchesMags = magazinesAmmo player select {_x select 0 == "murshun_cigs_cigpack"};
+	
+	player removeMagazineGlobal "murshun_cigs_cigpack";
+	
+	_oldMag = _matchesMags select 0;
+	
+	if ((_oldMag select 1) > 1) then {
+		player addMagazine ["murshun_cigs_cigpack", (_oldMag select 1) - 1];
+		player addItem "murshun_cigs_cig0";
+	} else {
+		player addItem "murshun_cigs_cig0";
+		["Cig pack is now empty.", 2.5, player] spawn ace_common_fnc_displayTextStructured;
 	};
 };
 
