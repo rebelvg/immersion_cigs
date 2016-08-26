@@ -42,21 +42,18 @@ murshun_cigs_fnc_anim = {
 
 	if (animationState _unit in murshun_cigs_standingAnimationsArray && isClass (configFile >> "CfgPatches" >> "ewk_cigs")) then {
 		[[_unit, "EWK_CIGS_SMOKING_ERC_CTS"], "switchMove"] call BIS_fnc_MP;
-		_time = time;
-		while {true} do {
-			if ((_unit getVariable ["ACE_isUnconscious", false])) exitWith {[[_unit, "unconscious"], "switchMove"] call BIS_fnc_MP;};
-			if (!alive _unit) exitWith {[[_unit, ""], "switchMove"] call BIS_fnc_MP;};
-			if (time >= _time + 3) exitWith {[[_unit, _animation], "switchMove"] call BIS_fnc_MP;};
-			sleep (1/60);
-		};
+		
+		sleep 3;
 	} else {
-		_unit playActionNow "Gear";
 		_time = time;
-		while {true} do {
+		while {time < _time + 3} do {
 			_unit playActionNow "Gear";
-			if (time >= _time + 3) exitWith {};
 			sleep (1/60);
 		};
+	};
+	
+	if (alive _unit && !(_unit getVariable ["ACE_isUnconscious", false])) then {
+		[[_unit, _animation], "switchMove"] call BIS_fnc_MP;
 	};
 };
 
