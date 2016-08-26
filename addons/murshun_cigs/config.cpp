@@ -1034,24 +1034,28 @@ class CfgGlasses {
 	};
 	
 	class murshun_cigs_cig1: murshun_cigs_cig0 {
+		author="$STR_murshun_cigs_author";
 		displayname = "Cigarette Lit-Up (Stage 1)";
 		model = "\murshun_cigs\cig1.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig1_x_ca";
 	};
 	
 	class murshun_cigs_cig2: murshun_cigs_cig0 {
+		author="$STR_murshun_cigs_author";
 		displayname = "Cigarette Lit-Up (Stage 2)";
 		model = "\murshun_cigs\cig2.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig2_x_ca";
 	};
 	
 	class murshun_cigs_cig3: murshun_cigs_cig0 {
+		author="$STR_murshun_cigs_author";
 		displayname = "Cigarette Lit-Up (Stage 3)";
 		model = "\murshun_cigs\cig3.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig3_x_ca";
 	};
 	
 	class murshun_cigs_cig4: murshun_cigs_cig0 {
+		author="$STR_murshun_cigs_author";
 		displayname = "Cigarette Lit-Up (Stage 4)";
 		model = "\murshun_cigs\cig4.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig4_x_ca";
