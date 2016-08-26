@@ -879,7 +879,7 @@ class CfgVehicles
 				{
 					displayName = "$STR_murshun_cigs_start_cig";
 					condition = "((goggles _player) in murshun_cigs_cigsArray) and (!(_player getVariable ['murshun_cigs_cigLitUp', false]))";
-					statement = "[_player, _player] spawn murshun_cigs_fnc_start_cig";
+					statement = "[_player, _player] spawn murshun_cigs_fnc_start_cig_your";
 					showDisabled = 0;
 					exceptions[] = {"isNotInside", "isNotSitting"};
 					icon = "murshun_cigs\UI\light_cig.paa";
@@ -897,7 +897,7 @@ class CfgVehicles
 				{
 					displayName = "Take Cig from Pack";
 					condition = "'murshun_cigs_cigpack' in (magazines _player)";
-					statement = "[] spawn murshun_cigs_take_cig_from_pack_fnc";
+					statement = "[_player] spawn murshun_cigs_fnc_take_cig_from_pack";
 					showDisabled = 0;
 					exceptions[] = {"isNotInside", "isNotSitting"};
 					icon = "murshun_cigs\UI\take_cig.paa";
@@ -912,7 +912,7 @@ class CfgVehicles
 				{
 					displayName = "$STR_cigs_start_someones_cig";
 					condition = "((goggles _target) in murshun_cigs_cigsArray) and (!(_target getVariable ['murshun_cigs_cigLitUp', false])) and (alive _target)";
-					statement = "[_target, _player] spawn murshun_cigs_fnc_start_cig_MP";
+					statement = "[_target, _player] spawn murshun_cigs_fnc_start_cig_his";
 					showDisabled = 0;
 					icon = "murshun_cigs\UI\light_cig.paa";
 				};
