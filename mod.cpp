@@ -1,5 +1,5 @@
 name = "Murshun Cigs";
-picture = "murshun_cigs.paa";
+picture = "mod.paa";
 actionName = "Website";
 action = "https://github.com/rebelvg";
 overview = "Cigarette script turned into a mod.";
