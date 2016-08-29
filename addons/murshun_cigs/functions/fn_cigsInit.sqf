@@ -1,7 +1,5 @@
 murshun_cigs_cigsArray = ["EWK_Cigar1", "EWK_Cigar2", "EWK_Cig1", "EWK_Cig2", "EWK_Cig3", "EWK_Cig4", "EWK_Glasses_Cig1", "EWK_Glasses_Cig2", "EWK_Glasses_Cig3", "EWK_Glasses_Cig4", "EWK_Glasses_Shemag_GRE_Cig6", "EWK_Glasses_Shemag_NB_Cig6", "EWK_Glasses_Shemag_tan_Cig6", "EWK_Cig5", "EWK_Glasses_Cig5", "EWK_Cig6", "EWK_Glasses_Cig6", "EWK_Shemag_GRE_Cig6", "EWK_Shemag_NB_Cig6", "EWK_Shemag_tan_Cig6", "murshun_cigs_cig0", "murshun_cigs_cig1", "murshun_cigs_cig2", "murshun_cigs_cig3", "murshun_cigs_cig4"];
 
-murshun_cigs_standingAnimationsArray = ["amovpercmstpsraswrfldnon", "amovpercmstpslowwrfldnon", "amovpercmstpsraswpstdnon", "amovpercmstpslowwpstdnon", "amovpercmstpsnonwnondnon", "amovpercmstpsraswlnrdnon", "amovpercmstpsoptwbindnon"];
-
 murshun_cigs_fnc_smoke = {
 	_unit = _this select 0;
 
@@ -40,7 +38,7 @@ murshun_cigs_fnc_anim = {
 
 	_animation = animationState _unit;
 
-	if (animationState _unit in murshun_cigs_standingAnimationsArray && isClass (configFile >> "CfgPatches" >> "ewk_cigs")) then {
+	if (stance _unit == "STAND" && isClass (configFile >> "CfgPatches" >> "ewk_cigs")) then {
 		[[_unit, "EWK_CIGS_SMOKING_ERC_CTS"], "switchMove"] call BIS_fnc_MP;
 		
 		_time = time;
