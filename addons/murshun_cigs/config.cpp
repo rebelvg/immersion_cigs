@@ -37,7 +37,7 @@ class CfgVehicles
 				};
 			};
 		};
-		
+
 		class ACE_Actions
 		{
 			class ACE_Head {
@@ -60,7 +60,7 @@ class CfgVehicles
 		displayName = "$STR_murshun_cigs_matches";
 		author = "$STR_murshun_cigs_author";
 		vehicleClass = "Magazines";
-		
+
 		class TransportMagazines {
 			class murshun_cigs_matches {
 				magazine = "murshun_cigs_matches";
@@ -75,7 +75,7 @@ class CfgVehicles
 		displayName = "$STR_murshun_cigs_lighter";
 		author = "$STR_murshun_cigs_author";
 		vehicleClass = "Magazines";
-		
+
 		class TransportMagazines {
 			class murshun_cigs_lighter {
 				magazine = "murshun_cigs_lighter";
@@ -83,14 +83,14 @@ class CfgVehicles
 			};
 		};
 	};
-	
+
 	class murshun_cigs_cigpackItem: WeaponHolder_Single_limited_item_F {
 		scope = 2;
 		scopeCurator = 2;
 		displayName = "Cig Pack";
 		author = "$STR_murshun_cigs_author";
 		vehicleClass = "Magazines";
-		
+
 		class TransportMagazines {
 			class murshun_cigs_cigpack {
 				magazine = "murshun_cigs_cigpack";
@@ -105,12 +105,12 @@ class CfgMagazines {
 	class murshun_cigs_matches: CA_Magazine {
 		author = "$STR_murshun_cigs_author";
 		scope = 2;
-		
+
 		displayName = "$STR_murshun_cigs_matches";
 		descriptionShort = "Contains 10 matches.";
 		model = "\murshun_cigs\matches.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_matches_x_ca";
-		
+
 		ammo = "";
 		count = 10;
 		initSpeed = 0;
@@ -118,16 +118,16 @@ class CfgMagazines {
 		lastRoundsTracer = 0;
 		mass = 1;
 	};
-	
+
 	class murshun_cigs_lighter: CA_Magazine {
 		author = "$STR_murshun_cigs_author";
 		scope = 2;
-		
+
 		displayName = "$STR_murshun_cigs_lighter";
 		descriptionShort = "Can light up 100 cigarettes.";
 		model = "\murshun_cigs\lighter.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_lighter_x_ca";
-		
+
 		ammo = "";
 		count = 100;
 		initSpeed = 0;
@@ -135,16 +135,16 @@ class CfgMagazines {
 		lastRoundsTracer = 0;
 		mass = 2;
 	};
-	
+
 	class murshun_cigs_cigpack: CA_Magazine {
 		author = "$STR_murshun_cigs_author";
 		scope = 2;
-		
+
 		displayName = "Cig Pack";
 		descriptionShort = "Contains 20 cigarettes.<br />Warning: Smoking is hazardous to your health.";
 		model = "\murshun_cigs\cigpack.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cigpack_x_ca";
-		
+
 		ammo = "";
 		count = 20;
 		initSpeed = 0;
@@ -156,7 +156,7 @@ class CfgMagazines {
 
 class CfgGlasses {
 	class None;
-	
+
 	class murshun_cigs_cig0: None {
 		author = "$STR_murshun_cigs_author";
 		mass = 0.02;
@@ -165,28 +165,28 @@ class CfgGlasses {
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig0_x_ca";
 		identityTypes[]={};
 	};
-	
+
 	class murshun_cigs_cig1: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
 		displayName = "Cigarette Lit-Up (Stage 1)";
 		model = "\murshun_cigs\cig1.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig1_x_ca";
 	};
-	
+
 	class murshun_cigs_cig2: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
 		displayName = "Cigarette Lit-Up (Stage 2)";
 		model = "\murshun_cigs\cig2.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig2_x_ca";
 	};
-	
+
 	class murshun_cigs_cig3: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
 		displayName = "Cigarette Lit-Up (Stage 3)";
 		model = "\murshun_cigs\cig3.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig3_x_ca";
 	};
-	
+
 	class murshun_cigs_cig4: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
 		displayName = "Cigarette Lit-Up (Stage 4)";
@@ -198,21 +198,21 @@ class CfgGlasses {
 class CfgSounds
 {
 	sounds[] = {};
-	
+
 	class murshun_cigs_matches_01
 	{
 		name = "murshun_cigs_matches_01";
 		sound[] = {"\murshun_cigs\matches_01.ogg", 2, 1, 15};
 		titles[] = {};
 	};
-	
+
 	class murshun_cigs_matches_02
 	{
 		name = "murshun_cigs_matches_02";
 		sound[] = {"\murshun_cigs\matches_02.ogg", 2, 1, 15};
 		titles[] = {};
 	};
-	
+
 	class murshun_cigs_lighter_01
 	{
 		name = "murshun_cigs_lighter_01";
