@@ -26,6 +26,7 @@ murshun_cigs_fnc_smoke = {
 
 	_source attachTo [_unit, [0,0.06,0], "head"];
 	sleep 0.4;
+
 	deleteVehicle _source;
 };
 
@@ -145,7 +146,7 @@ murshun_cigs_fnc_start_cig = {
 	_goggles = goggles _unit;
 
 	if (_goggles in murshun_cigs_cigsArray) then {
-		_goggles_current = _goggles;
+		_gogglesCurrent = _goggles;
 
 		switch (_goggles) do {
 		case "EWK_Cig1": {
@@ -177,44 +178,46 @@ murshun_cigs_fnc_start_cig = {
 			};
 		};
 
+        _unit setVariable ["murshun_cigs_cigLitUp", true, true];
+
 		[_unit] spawn murshun_cigs_fnc_anim;
 
-		_unit setVariable ["murshun_cigs_cigLitUp", true, true];
 		sleep (3.5 + random 2);
+
 		[[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
 		sleep (1 + random 1);
 		[[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
 
-		while ({alive _unit and _goggles_current in murshun_cigs_cigsArray and (_unit getVariable ["murshun_cigs_cigLitUp", false]) and _cigTime <= 330}) do {
-			_goggles_current = goggles _unit;
-			_newGoggles = "";
+		while ({alive _unit and _gogglesCurrent in murshun_cigs_cigsArray and (_unit getVariable ["murshun_cigs_cigLitUp", false]) and _cigTime <= 330}) do {
+			_gogglesCurrent = goggles _unit;
+			_gogglesNew = "";
 
-			if (_goggles_current == "EWK_Cig1" && _cigTime >= 60) then {
-				_newGoggles = "EWK_Cig4";
+			if (_gogglesCurrent == "EWK_Cig1" && _cigTime >= 60) then {
+				_gogglesNew = "EWK_Cig4";
 			};
-			if (_goggles_current == "EWK_Cig4" && _cigTime >= 120) then {
-				_newGoggles = "EWK_Cig6";
+			if (_gogglesCurrent == "EWK_Cig4" && _cigTime >= 120) then {
+				_gogglesNew = "EWK_Cig6";
 			};
-			if (_goggles_current == "EWK_Cig6" && _cigTime >= 300) then {
-				_newGoggles = "EWK_Cig3";
+			if (_gogglesCurrent == "EWK_Cig6" && _cigTime >= 300) then {
+				_gogglesNew = "EWK_Cig3";
 			};
-			if (_goggles_current == "murshun_cigs_cig0" && _cigTime >= 6) then {
-				_newGoggles = "murshun_cigs_cig1";
+			if (_gogglesCurrent == "murshun_cigs_cig0" && _cigTime >= 6) then {
+				_gogglesNew = "murshun_cigs_cig1";
 			};
-			if (_goggles_current == "murshun_cigs_cig1" && _cigTime >= 60) then {
-				_newGoggles = "murshun_cigs_cig2";
+			if (_gogglesCurrent == "murshun_cigs_cig1" && _cigTime >= 60) then {
+				_gogglesNew = "murshun_cigs_cig2";
 			};
-			if (_goggles_current == "murshun_cigs_cig2" && _cigTime >= 120) then {
-				_newGoggles = "murshun_cigs_cig3";
+			if (_gogglesCurrent == "murshun_cigs_cig2" && _cigTime >= 120) then {
+				_gogglesNew = "murshun_cigs_cig3";
 			};
-			if (_goggles_current == "murshun_cigs_cig3" && _cigTime >= 300) then {
-				_newGoggles = "murshun_cigs_cig4";
+			if (_gogglesCurrent == "murshun_cigs_cig3" && _cigTime >= 300) then {
+				_gogglesNew = "murshun_cigs_cig4";
 			};
 
-			if (_newGoggles != "") then {
+			if (_gogglesNew != "") then {
 				removeGoggles _unit;
-				_unit addGoggles _newGoggles;
-				_goggles_current = _newGoggles;
+				_unit addGoggles _gogglesNew;
+				_gogglesCurrent = _gogglesNew;
 			};
 
 			_cigTime = _cigTime + 6;
@@ -226,7 +229,7 @@ murshun_cigs_fnc_start_cig = {
 			sleep (5.5 + random 2);
 
 			_goggles = goggles _unit;
-			if (_goggles_current != _goggles) exitWith {};
+			if (_gogglesCurrent != _goggles) exitWith {};
 		};
 
 		_unit setVariable ["murshun_cigs_cigLitUp", false, true];
