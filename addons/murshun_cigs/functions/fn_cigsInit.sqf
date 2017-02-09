@@ -271,4 +271,7 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
 
         hintSilent _string;
     };
+} else {
+    _action = ["murshun_cigs_start_someones_cig", localize "STR_cigs_start_someones_cig", "murshun_cigs\UI\light_cig.paa", {[_target, _player] spawn murshun_cigs_fnc_start_cig_his}, {((goggles _target) in murshun_cigs_cigsArray) and (!(_target getVariable ['murshun_cigs_cigLitUp', false])) and (alive _target)}] call ace_interact_menu_fnc_createAction;
+    ["CAManBase", 0, ["ACE_Head"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 };

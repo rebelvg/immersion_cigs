@@ -37,20 +37,6 @@ class CfgVehicles
 				};
 			};
 		};
-
-		class ACE_Actions
-		{
-			class ACE_Head {
-				class murshun_cigs_start_someones_cig
-				{
-					displayName = "$STR_cigs_start_someones_cig";
-					condition = "((goggles _target) in murshun_cigs_cigsArray) and (!(_target getVariable ['murshun_cigs_cigLitUp', false])) and (alive _target)";
-					statement = "[_target, _player] spawn murshun_cigs_fnc_start_cig_his";
-					showDisabled = 0;
-					icon = "murshun_cigs\UI\light_cig.paa";
-				};
-			};
-		};
 	};
 
 	class WeaponHolder_Single_limited_item_F;
@@ -225,7 +211,7 @@ class CfgFunctions
 {
 	class murshun_cigs
 	{
-		class murshun_cigs
+		class functions
 		{
 			file = "murshun_cigs\functions";
 			class cigsInit
