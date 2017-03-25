@@ -214,7 +214,11 @@ class CfgFunctions
 		class functions
 		{
 			file = "murshun_cigs\functions";
-			class cigsInit
+            class preInit
+            {
+                preInit = 1;
+            };
+			class postInit
 			{
 				postInit = 1;
 			};
