@@ -104,6 +104,8 @@ murshun_cigs_fnc_useItem = {
     case ("murshun_cigs_matches" in (magazines _player)): {
             [_player, "murshun_cigs_matches"] call murshun_cigs_removeItemFromMag;
 
+            [_unit, "murshun_cigs\matches_01.ogg", "murshun_cigs_matches_01"] call murshun_cigs_playSound;
+            sleep 1.5;
             [_unit, "murshun_cigs\matches_02.ogg", "murshun_cigs_matches_02"] call murshun_cigs_playSound;
         };
     };
