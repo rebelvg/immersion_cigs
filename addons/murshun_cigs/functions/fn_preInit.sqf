@@ -91,7 +91,7 @@ murshun_cigs_fnc_useItem = {
     params ["_unit", "_player"];
 
     if (!("murshun_cigs_matches" in (magazines _player)) && !("murshun_cigs_lighter" in (magazines _player))) exitWith {
-        ["You don't have matches or lighter.", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
+        ["You don't have matches or a lighter.", 2.5, _player] spawn ace_common_fnc_displayTextStructured;
         false
     };
 
