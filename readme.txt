@@ -7,7 +7,7 @@ Facel - 3d models, textures.
 Panimala - icons, sounds.
 
 Threads
-https://forums.bistudio.com/forums/topic/181841-murshun-cigs/
+https://forums.bistudio.com/forums/topic/181841-immersion-cigs/
 
 Downloads
 https://github.com/rebelvg/immersion_cigs/releases
