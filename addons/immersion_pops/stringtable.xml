@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="immersion_pops">
+	<Package name="Main">
+		<Key ID="STR_immersion_pops_author">
+			<English>Rebel / Facel</English>
+		</Key>
+	</Package>
+	<Package name="Interactions">
+		<Key ID="STR_immersion_pops_start_cig">
+			<English>Start Sucking</English>
+		</Key>
+		<Key ID="STR_immersion_pops_stop_cig">
+			<English>Stop Sucking</English>
+		</Key>
+        <Key ID="STR_immersion_pops_take_cig_from_pack">
+			<English>Unpack Lollipop</English>
+		</Key>
+	</Package>
+	<Package name="Items">
+        <Key ID="STR_immersion_pops_cigpack">
+			<English>Lollipop (Packed)</English>
+		</Key>
+        <Key ID="STR_immersion_pops_cigpack_descr">
+			<English>One packed lollipop. Not hazardous to your health and sweet.</English>
+		</Key>
+        <Key ID="STR_immersion_pops_cigarette0">
+			<English>Lollipop</English>
+		</Key>
+	</Package>
+</Project>

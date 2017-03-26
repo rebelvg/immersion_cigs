@@ -95,7 +95,7 @@ class CfgMagazines {
 		displayName = "$STR_murshun_cigs_matches";
 		descriptionShort = "$STR_murshun_cigs_matches_descr";
 		model = "\murshun_cigs\matches.p3d";
-		picture = "\murshun_cigs\UI\gear_murshun_cigs_matches_x_ca";
+		picture = "\murshun_cigs\UI\gear_matches_x_ca";
 
 		ammo = "";
 		count = 10;
@@ -112,7 +112,7 @@ class CfgMagazines {
 		displayName = "$STR_murshun_cigs_lighter";
 		descriptionShort = "$STR_murshun_cigs_lighter_descr";
 		model = "\murshun_cigs\lighter.p3d";
-		picture = "\murshun_cigs\UI\gear_murshun_cigs_lighter_x_ca";
+		picture = "\murshun_cigs\UI\gear_lighter_x_ca";
 
 		ammo = "";
 		count = 100;
@@ -129,7 +129,7 @@ class CfgMagazines {
 		displayName = "$STR_murshun_cigs_cigpack";
 		descriptionShort = "$STR_murshun_cigs_cigpack_descr";
 		model = "\murshun_cigs\cigpack.p3d";
-		picture = "\murshun_cigs\UI\gear_murshun_cigs_cigpack_x_ca";
+		picture = "\murshun_cigs\UI\gear_cigpack_x_ca";
 
 		ammo = "";
 		count = 20;
@@ -148,7 +148,7 @@ class CfgGlasses {
 		mass = 0.02;
 		displayName = "$STR_murshun_cigs_cigarette0";
 		model = "\murshun_cigs\cig0.p3d";
-		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig0_x_ca";
+		picture = "\murshun_cigs\UI\gear_cig0_x_ca";
 		identityTypes[]={};
 	};
 
@@ -156,28 +156,28 @@ class CfgGlasses {
 		author = "$STR_murshun_cigs_author";
 		displayName = "Cigarette (Stage 1)";
 		model = "\murshun_cigs\cig1.p3d";
-		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig1_x_ca";
+		picture = "\murshun_cigs\UI\gear_cig1_x_ca";
 	};
 
 	class murshun_cigs_cig2: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
 		displayName = "Cigarette (Stage 2)";
 		model = "\murshun_cigs\cig2.p3d";
-		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig2_x_ca";
+		picture = "\murshun_cigs\UI\gear_cig2_x_ca";
 	};
 
 	class murshun_cigs_cig3: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
 		displayName = "Cigarette (Stage 3)";
 		model = "\murshun_cigs\cig3.p3d";
-		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig3_x_ca";
+		picture = "\murshun_cigs\UI\gear_cig3_x_ca";
 	};
 
 	class murshun_cigs_cig4: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
 		displayName = "Cigarette (Stage 4)";
 		model = "\murshun_cigs\cig4.p3d";
-		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig4_x_ca";
+		picture = "\murshun_cigs\UI\gear_cig4_x_ca";
 	};
 };
 
