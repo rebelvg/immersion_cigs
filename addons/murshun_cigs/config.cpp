@@ -28,7 +28,7 @@ class CfgVehicles
 				};
 				class murshun_cigs_take_cig_from_pack
 				{
-					displayName = "Take Cig from Pack";
+					displayName = "$STR_murshun_cigs_take_cig_from_pack";
 					condition = "'murshun_cigs_cigpack' in (magazines _player)";
 					statement = "[_player] spawn murshun_cigs_fnc_take_cig_from_pack";
 					showDisabled = 0;
@@ -73,7 +73,7 @@ class CfgVehicles
 	class murshun_cigs_cigpackItem: WeaponHolder_Single_limited_item_F {
 		scope = 2;
 		scopeCurator = 2;
-		displayName = "Cig Pack";
+		displayName = "$STR_murshun_cigs_cigpack";
 		author = "$STR_murshun_cigs_author";
 		vehicleClass = "Magazines";
 
@@ -93,7 +93,7 @@ class CfgMagazines {
 		scope = 2;
 
 		displayName = "$STR_murshun_cigs_matches";
-		descriptionShort = "Contains 10 matches.";
+		descriptionShort = "$STR_murshun_cigs_matches_descr";
 		model = "\murshun_cigs\matches.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_matches_x_ca";
 
@@ -110,7 +110,7 @@ class CfgMagazines {
 		scope = 2;
 
 		displayName = "$STR_murshun_cigs_lighter";
-		descriptionShort = "Can light up 100 cigarettes.";
+		descriptionShort = "$STR_murshun_cigs_lighter_descr";
 		model = "\murshun_cigs\lighter.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_lighter_x_ca";
 
@@ -126,8 +126,8 @@ class CfgMagazines {
 		author = "$STR_murshun_cigs_author";
 		scope = 2;
 
-		displayName = "Cig Pack";
-		descriptionShort = "Contains 20 cigarettes.<br />Warning: Smoking is hazardous to your health.";
+		displayName = "$STR_murshun_cigs_cigpack";
+		descriptionShort = "$STR_murshun_cigs_cigpack_descr";
 		model = "\murshun_cigs\cigpack.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cigpack_x_ca";
 
@@ -146,7 +146,7 @@ class CfgGlasses {
 	class murshun_cigs_cig0: None {
 		author = "$STR_murshun_cigs_author";
 		mass = 0.02;
-		displayName = "Cigarette";
+		displayName = "$STR_murshun_cigs_cigarette0";
 		model = "\murshun_cigs\cig0.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig0_x_ca";
 		identityTypes[]={};
@@ -154,28 +154,28 @@ class CfgGlasses {
 
 	class murshun_cigs_cig1: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
-		displayName = "Cigarette Lit-Up (Stage 1)";
+		displayName = "Cigarette (Stage 1)";
 		model = "\murshun_cigs\cig1.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig1_x_ca";
 	};
 
 	class murshun_cigs_cig2: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
-		displayName = "Cigarette Lit-Up (Stage 2)";
+		displayName = "Cigarette (Stage 2)";
 		model = "\murshun_cigs\cig2.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig2_x_ca";
 	};
 
 	class murshun_cigs_cig3: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
-		displayName = "Cigarette Lit-Up (Stage 3)";
+		displayName = "Cigarette (Stage 3)";
 		model = "\murshun_cigs\cig3.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig3_x_ca";
 	};
 
 	class murshun_cigs_cig4: murshun_cigs_cig0 {
 		author = "$STR_murshun_cigs_author";
-		displayName = "Cigarette Lit-Up (Stage 4)";
+		displayName = "Cigarette (Stage 4)";
 		model = "\murshun_cigs\cig4.p3d";
 		picture = "\murshun_cigs\UI\gear_murshun_cigs_cig4_x_ca";
 	};
