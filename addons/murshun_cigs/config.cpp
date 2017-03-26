@@ -192,13 +192,6 @@ class CfgSounds
 		titles[] = {};
 	};
 
-	class murshun_cigs_matches_02
-	{
-		name = "murshun_cigs_matches_02";
-		sound[] = {"\murshun_cigs\matches_02.ogg", 2, 1, 15};
-		titles[] = {};
-	};
-
 	class murshun_cigs_lighter_01
 	{
 		name = "murshun_cigs_lighter_01";

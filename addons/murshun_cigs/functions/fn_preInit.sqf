@@ -105,8 +105,6 @@ murshun_cigs_fnc_useItem = {
             [_player, "murshun_cigs_matches"] call murshun_cigs_removeItemFromMag;
 
             [_unit, "murshun_cigs\matches_01.ogg", "murshun_cigs_matches_01"] call murshun_cigs_playSound;
-            sleep 1.5;
-            [_unit, "murshun_cigs\matches_02.ogg", "murshun_cigs_matches_02"] call murshun_cigs_playSound;
         };
     };
 
@@ -150,6 +148,7 @@ murshun_cigs_fnc_start_cig = {
         _cigTime = _cigStateTime;
     } forEach _states;
 
+    if (_unit getVariable ["murshun_cigs_cigLitUp", false]) exitWith {};
     _unit setVariable ["murshun_cigs_cigLitUp", true, true];
 
     [_unit] spawn murshun_cigs_fnc_anim;
