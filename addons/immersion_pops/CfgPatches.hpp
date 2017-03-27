@@ -2,7 +2,7 @@ class CfgPatches
 {
 	class immersion_pops
 	{
-		units[] = {"murshun_cigs_cigpack", "murshun_cigs_cigpackItem"};
+		units[] = {"immersion_pops_poppack", "immersion_pops_poppackItem"};
 		weapons[] = {};
 		requiredVersion = 1;
 		requiredAddons[] = {

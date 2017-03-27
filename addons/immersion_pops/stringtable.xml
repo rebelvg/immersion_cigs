@@ -17,10 +17,10 @@
 		</Key>
 	</Package>
 	<Package name="Items">
-        <Key ID="STR_immersion_pops_cigpack">
+        <Key ID="STR_immersion_pops_poppack">
 			<English>Lollipop (Packed)</English>
 		</Key>
-        <Key ID="STR_immersion_pops_cigpack_descr">
+        <Key ID="STR_immersion_pops_poppack_descr">
 			<English>One packed lollipop. Not hazardous to your health and sweet.</English>
 		</Key>
         <Key ID="STR_immersion_pops_cigarette0">

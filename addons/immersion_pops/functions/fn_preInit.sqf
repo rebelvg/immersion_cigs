@@ -1,4 +1,4 @@
-immersion_pops_cigsArray = ["immersion_pops_cig0"];
+immersion_pops_cigsArray = ["immersion_pops_pop0"];
 immersion_pops_cigsStatesArray = [];
 
 immersion_pops_fnc_smoke = {};
@@ -144,7 +144,7 @@ immersion_pops_fnc_stop_cig = {
 immersion_pops_fnc_take_cig_from_pack = {
     params ["_player"];
 
-    [_player, "immersion_pops_cigpack"] call immersion_pops_removeItemFromMag;
+    [_player, "immersion_pops_poppack"] call immersion_pops_removeItemFromMag;
 
-    _player addItem "immersion_pops_cig0";
+    _player addItem "immersion_pops_pop0";
 };

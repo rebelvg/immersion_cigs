@@ -29,7 +29,7 @@ class CfgVehicles
 				class immersion_pops_take_cig_from_pack
 				{
 					displayName = "$STR_immersion_pops_take_cig_from_pack";
-					condition = "'immersion_pops_cigpack' in (magazines _player)";
+					condition = "'immersion_pops_poppack' in (magazines _player)";
 					statement = "[_player] spawn immersion_pops_fnc_take_cig_from_pack";
 					showDisabled = 0;
 					exceptions[] = {"isNotInside", "isNotSitting"};
@@ -40,16 +40,16 @@ class CfgVehicles
 	};
 
 	class WeaponHolder_Single_limited_item_F;
-	class immersion_pops_cigpackItem: WeaponHolder_Single_limited_item_F {
+	class immersion_pops_poppackItem: WeaponHolder_Single_limited_item_F {
 		scope = 2;
 		scopeCurator = 2;
-		displayName = "$STR_immersion_pops_cigpack";
+		displayName = "$STR_immersion_pops_poppack";
 		author = "$STR_immersion_pops_author";
 		vehicleClass = "Magazines";
 
 		class TransportMagazines {
-			class immersion_pops_cigpack {
-				magazine = "immersion_pops_cigpack";
+			class immersion_pops_poppack {
+				magazine = "immersion_pops_poppack";
 				count = 1;
 			};
 		};
@@ -58,12 +58,12 @@ class CfgVehicles
 
 class CfgMagazines {
 	class CA_Magazine;
-	class immersion_pops_cigpack: CA_Magazine {
+	class immersion_pops_poppack: CA_Magazine {
 		author = "$STR_immersion_pops_author";
 		scope = 2;
 
-		displayName = "$STR_immersion_pops_cigpack";
-		descriptionShort = "$STR_immersion_pops_cigpack_descr";
+		displayName = "$STR_immersion_pops_poppack";
+		descriptionShort = "$STR_immersion_pops_poppack_descr";
 		model = "\immersion_pops\cigpack.p3d";
 		picture = "\immersion_pops\UI\gear_cigpack_x_ca";
 
@@ -79,7 +79,7 @@ class CfgMagazines {
 class CfgGlasses {
 	class None;
 
-	class immersion_pops_cig0: None {
+	class immersion_pops_pop0: None {
 		author = "$STR_immersion_pops_author";
 		mass = 0.2;
 		displayName = "$STR_immersion_pops_cigarette0";
