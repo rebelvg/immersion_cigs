@@ -9,3 +9,9 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
         hintSilent _string;
     };
 };
+
+if (!isMultiplayer) then {
+    player addItem "immersion_pops_poppack";
+    player addItem "immersion_pops_poppack";
+    player addItem "immersion_pops_poppack";
+};

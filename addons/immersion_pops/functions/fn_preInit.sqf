@@ -1,7 +1,7 @@
 immersion_pops_cigsArray = ["immersion_pops_pop0"];
 immersion_pops_cigsStatesArray = [];
-
-immersion_pops_fnc_smoke = {};
+immersion_pops_eatSounds = ["immersion_pops_eat_01", "immersion_pops_eat_02", "immersion_pops_eat_03", "immersion_pops_eat_04", "immersion_pops_eat_05", "immersion_pops_eat_06", "immersion_pops_eat_07"];
+immersion_pops_flavours = ["banana", "cherry", "strawberry", "raspberry", "bacon", "nicotine", "tomato", "chocolate", "lemon", "cola"];
 
 immersion_pops_fnc_anim = {
     params ["_unit"];
@@ -40,25 +40,13 @@ immersion_pops_removeItemFromMag = {
 };
 
 immersion_pops_playSound = {
-    params ["_unit", "_path", "_class"];
+    params ["_unit", "_class"];
 
-    if (vehicle _unit == _unit) then {
-        playSound3D [_path, _unit, false, ATLtoASL (_unit modelToWorldVisual (_unit selectionPosition "head")), 2, 1, 15];
-    } else {
-        [[_unit, _class], "say3d"] call BIS_fnc_MP;
-    };
-};
-
-immersion_pops_fnc_useItem = {
-    params ["_unit", "_player"];
-
-    true
+    [[_unit, _class], "say3d"] call BIS_fnc_MP;
 };
 
 immersion_pops_fnc_start_cig_your = {
     params ["_player"];
-
-    if !([_player, _player] call immersion_pops_fnc_useItem) exitWith {};
 
     [_player] spawn immersion_pops_fnc_start_cig;
 };
@@ -87,12 +75,9 @@ immersion_pops_fnc_start_cig = {
     if (_unit getVariable ["immersion_pops_cigLitUp", false]) exitWith {};
     _unit setVariable ["immersion_pops_cigLitUp", true, true];
 
-    [_unit] spawn immersion_pops_fnc_anim;
+    [format ["It seems to have %1 flavour.", selectRandom immersion_pops_flavours], 2.5, _unit] spawn ace_common_fnc_displayTextStructured;
 
-    sleep (3.5 + random 2);
-    [[_unit], "immersion_pops_fnc_smoke"] call BIS_fnc_MP;
-    sleep (1 + random 1);
-    [[_unit], "immersion_pops_fnc_smoke"] call BIS_fnc_MP;
+    [_unit] spawn immersion_pops_fnc_anim;
 
     while ({alive _unit && _gogglesCurrent in immersion_pops_cigsArray && (_unit getVariable ["immersion_pops_cigLitUp", false]) && _cigTime <= 330}) do {
         _gogglesCurrent = goggles _unit;
@@ -118,13 +103,15 @@ immersion_pops_fnc_start_cig = {
             _gogglesCurrent = _gogglesNew;
         };
 
-        _cigTime = _cigTime + 6;
+        _time = (20 + random 10);
 
-        [[_unit], "immersion_pops_fnc_smoke"] call BIS_fnc_MP;
-        _fatigue = getFatigue _unit;
-        _unit setFatigue _fatigue + 0.01;
+        _cigTime = _cigTime + _time;
 
-        sleep (5.5 + random 2);
+        [_unit, selectRandom immersion_pops_eatSounds] call immersion_pops_playSound;
+        sleep (2 + random 2);
+        [_unit, selectRandom immersion_pops_eatSounds] call immersion_pops_playSound;
+
+        sleep _time;
 
         if (_gogglesCurrent != goggles _unit) exitWith {};
     };
@@ -145,6 +132,8 @@ immersion_pops_fnc_take_cig_from_pack = {
     params ["_player"];
 
     [_player, "immersion_pops_poppack"] call immersion_pops_removeItemFromMag;
+
+    [_player, "immersion_pops_unwrap"] call immersion_pops_playSound;
 
     _player addItem "immersion_pops_pop0";
 };

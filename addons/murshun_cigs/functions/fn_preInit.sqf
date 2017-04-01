@@ -78,13 +78,9 @@ murshun_cigs_removeItemFromMag = {
 };
 
 murshun_cigs_playSound = {
-    params ["_unit", "_path", "_class"];
+    params ["_unit", "_class"];
 
-    if (vehicle _unit == _unit) then {
-        playSound3D [_path, _unit, false, ATLtoASL (_unit modelToWorldVisual (_unit selectionPosition "head")), 2, 1, 15];
-    } else {
-        [[_unit, _class], "say3d"] call BIS_fnc_MP;
-    };
+    [[_unit, _class], "say3d"] call BIS_fnc_MP;
 };
 
 murshun_cigs_fnc_useItem = {
@@ -99,12 +95,12 @@ murshun_cigs_fnc_useItem = {
     case ("murshun_cigs_lighter" in (magazines _player)): {
             [_player, "murshun_cigs_lighter"] call murshun_cigs_removeItemFromMag;
 
-            [_unit, "murshun_cigs\lighter_01.ogg", "murshun_cigs_lighter_01"] call murshun_cigs_playSound;
+            [_unit, "murshun_cigs_lighter_01"] call murshun_cigs_playSound;
         };
     case ("murshun_cigs_matches" in (magazines _player)): {
             [_player, "murshun_cigs_matches"] call murshun_cigs_removeItemFromMag;
 
-            [_unit, "murshun_cigs\matches_01.ogg", "murshun_cigs_matches_01"] call murshun_cigs_playSound;
+            [_unit, "murshun_cigs_matches_01"] call murshun_cigs_playSound;
         };
     };
 
@@ -182,13 +178,15 @@ murshun_cigs_fnc_start_cig = {
             _gogglesCurrent = _gogglesNew;
         };
 
-        _cigTime = _cigTime + 6;
+        _time = (5.5 + random 2);
+
+        _cigTime = _cigTime + _time;
 
         [[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
         _fatigue = getFatigue _unit;
         _unit setFatigue _fatigue + 0.01;
 
-        sleep (5.5 + random 2);
+        sleep _time;
 
         if (_gogglesCurrent != goggles _unit) exitWith {};
     };
@@ -209,6 +207,8 @@ murshun_cigs_fnc_take_cig_from_pack = {
     params ["_player"];
 
     [_player, "murshun_cigs_cigpack"] call murshun_cigs_removeItemFromMag;
+
+    [_player, "murshun_cigs_unwrap"] call immersion_pops_playSound;
 
     _player addItem "murshun_cigs_cig0";
 };
