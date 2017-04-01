@@ -51,8 +51,6 @@ immersion_pops_fnc_start_cig_your = {
     [_player] spawn immersion_pops_fnc_start_cig;
 };
 
-immersion_pops_fnc_start_cig_his = {};
-
 immersion_pops_fnc_start_cig = {
     params ["_unit"];
 
