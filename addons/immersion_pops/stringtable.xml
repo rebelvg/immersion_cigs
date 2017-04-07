@@ -3,28 +3,35 @@
 	<Package name="Main">
 		<Key ID="STR_immersion_pops_author">
 			<English>Rebel / Facel</English>
+			<Japanese>Rebel / Facel</Japanese>
 		</Key>
 	</Package>
 	<Package name="Interactions">
 		<Key ID="STR_immersion_pops_start_cig">
 			<English>Start Sucking</English>
+			<Japanese>吸い始める</Japanese>
 		</Key>
 		<Key ID="STR_immersion_pops_stop_cig">
 			<English>Stop Sucking</English>
+			<Japanese>吸うのを止める</Japanese>
 		</Key>
         <Key ID="STR_immersion_pops_take_cig_from_pack">
 			<English>Unpack Lollipop</English>
+			<Japanese>ロリポップを開ける</Japanese>
 		</Key>
 	</Package>
 	<Package name="Items">
         <Key ID="STR_immersion_pops_poppack">
 			<English>Lollipop (Packed)</English>
+			<Japanese>ロリポップ (未開封)</Japanese>
 		</Key>
         <Key ID="STR_immersion_pops_poppack_descr">
 			<English>One packed lollipop. Not hazardous to your health and sweet.</English>
+			<Japanese>1つの未開封のロリポップ。健康に害を与えず甘い。</Japanese>
 		</Key>
         <Key ID="STR_immersion_pops_cigarette0">
 			<English>Lollipop</English>
+			<Japanese>ロリポップ</Japanese>
 		</Key>
 	</Package>
 </Project>
