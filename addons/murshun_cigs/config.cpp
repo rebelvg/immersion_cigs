@@ -195,7 +195,6 @@ class CfgSounds
         sound[] = {"\murshun_cigs\murshun_cigs_matches_01.ogg", 2, 1, 15};
         titles[] = {};
     };
-
     class murshun_cigs_lighter_01
     {
         sound[] = {"\murshun_cigs\murshun_cigs_lighter_01.ogg", 2, 1, 15};
