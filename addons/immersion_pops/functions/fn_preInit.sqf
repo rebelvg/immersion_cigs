@@ -19,7 +19,7 @@ immersion_pops_fnc_anim = {
     };
 
     if (alive _unit && !(_unit getVariable ["ACE_isUnconscious", false])) then {
-        [[_unit, _animation], "switchMove"] call BIS_fnc_MP;
+        [_unit, _animation] remoteExec ["switchMove"];
     };
 };
 
@@ -42,7 +42,7 @@ immersion_pops_removeItemFromMag = {
 immersion_pops_playSound = {
     params ["_unit", "_class"];
 
-    [[_unit, _class], "say3d"] call BIS_fnc_MP;
+    [_unit, _class] remoteExec ["say3D"];
 };
 
 immersion_pops_fnc_start_cig_your = {

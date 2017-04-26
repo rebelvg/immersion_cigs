@@ -41,11 +41,13 @@ murshun_cigs_fnc_anim = {
     _animation = animationState _unit;
 
     if (stance _unit == "STAND" && isClass (configFile >> "CfgPatches" >> "ewk_cigs")) then {
-        [[_unit, "EWK_CIGS_SMOKING_ERC_CTS"], "switchMove"] call BIS_fnc_MP;
+        [_unit, "EWK_CIGS_SMOKING_ERC_CTS"] remoteExec ["switchMove"];
 
         _time = time;
         while {time < _time + 3} do {
-            if (!alive _unit) exitWith {[[_unit, ""], "switchMove"] call BIS_fnc_MP;};
+            if (!alive _unit) exitWith {
+                [_unit, ""] remoteExec ["switchMove"];
+            };
             sleep (1/60);
         };
     } else {
@@ -57,7 +59,7 @@ murshun_cigs_fnc_anim = {
     };
 
     if (alive _unit && !(_unit getVariable ["ACE_isUnconscious", false])) then {
-        [[_unit, _animation], "switchMove"] call BIS_fnc_MP;
+        [_unit, _animation] remoteExec ["switchMove"];
     };
 };
 
@@ -80,7 +82,7 @@ murshun_cigs_removeItemFromMag = {
 murshun_cigs_playSound = {
     params ["_unit", "_class"];
 
-    [[_unit, _class], "say3d"] call BIS_fnc_MP;
+    [_unit, _class] remoteExec ["say3D"];
 };
 
 murshun_cigs_fnc_useItem = {
@@ -122,7 +124,7 @@ murshun_cigs_fnc_start_cig_his = {
 
     _player playActionNow "PutDown";
 
-    [[_unit], "murshun_cigs_fnc_start_cig", _unit] call BIS_fnc_MP;
+    [_unit] remoteExec ["murshun_cigs_fnc_start_cig", _unit];
 };
 
 murshun_cigs_fnc_start_cig = {
@@ -150,9 +152,9 @@ murshun_cigs_fnc_start_cig = {
     [_unit] spawn murshun_cigs_fnc_anim;
 
     sleep (3.5 + random 2);
-    [[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
+    [_unit] remoteExec ["murshun_cigs_fnc_smoke"];
     sleep (1 + random 1);
-    [[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
+    [_unit] remoteExec ["murshun_cigs_fnc_smoke"];
 
     while ({alive _unit && _gogglesCurrent in murshun_cigs_cigsArray && (_unit getVariable ["murshun_cigs_cigLitUp", false]) && _cigTime <= 330}) do {
         _gogglesCurrent = goggles _unit;
@@ -182,7 +184,7 @@ murshun_cigs_fnc_start_cig = {
 
         _cigTime = _cigTime + _time;
 
-        [[_unit], "murshun_cigs_fnc_smoke"] call BIS_fnc_MP;
+        [_unit] remoteExec ["murshun_cigs_fnc_smoke"];
         _fatigue = getFatigue _unit;
         _unit setFatigue _fatigue + 0.01;
 
