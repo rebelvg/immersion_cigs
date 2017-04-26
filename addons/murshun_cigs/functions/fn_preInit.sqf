@@ -4,8 +4,8 @@ murshun_cigs_cigsStatesArray = [["EWK_Cig1", 0, "EWK_Cig4"], ["EWK_Cig4", 66, "E
 murshun_cigs_fnc_smoke = {
     params ["_unit"];
 
-    _source = "logic" createVehicleLocal (getpos _unit);
-    _fog = "#particlesource" createVehicleLocal getpos _source;
+    _source = "logic" createVehicleLocal (getPos _unit);
+    _fog = "#particleSource" createVehicleLocal getPos _source;
     _fog setParticleParams ["\A3\data_f\cl_basic",
     "",
     "Billboard",
