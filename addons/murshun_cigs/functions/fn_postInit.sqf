@@ -10,10 +10,10 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
     };
 } else {
     private _action = ["murshun_cigs_start_someones_cig", localize "STR_murshun_cigs_start_someones_cig", "murshun_cigs\UI\light_cig.paa", {
-        private ["_target", "_player"];
+        params ["_target", "_player"];
         [_target, _player] spawn murshun_cigs_fnc_start_cig_his
     }, {
-        private ["_target", "_player"];
+        params ["_target", "_player"];
         ((goggles _target) in murshun_cigs_cigsArray) && (!(_target getVariable ['murshun_cigs_cigLitUp', false])) && (alive _target)
     }] call ace_interact_menu_fnc_createAction;
     ["CAManBase", 0, ["ACE_Head"], _action, true] call ace_interact_menu_fnc_addActionToClass;
