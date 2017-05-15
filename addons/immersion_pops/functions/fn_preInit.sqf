@@ -10,9 +10,9 @@ immersion_pops_fnc_anim = {
 
     if (_unit getVariable ["ACE_isUnconscious", false]) exitWith {};
 
-    _animation = animationState _unit;
+    private _animation = animationState _unit;
 
-    _time = time;
+    private _time = time;
     while {time < _time + 3} do {
         _unit playActionNow "Gear";
         sleep (1/60);
@@ -26,11 +26,11 @@ immersion_pops_fnc_anim = {
 immersion_pops_removeItemFromMag = {
     params ["_player", "_mag"];
 
-    _matchesMags = magazinesAmmo _player select {_x select 0 == _mag};
+    private _matchesMags = magazinesAmmo _player select {_x select 0 == _mag};
 
     _player removeMagazineGlobal _mag;
 
-    _oldMag = _matchesMags select 0;
+    private _oldMag = _matchesMags select 0;
 
     if ((_oldMag select 1) > 1) then {
         _player addMagazine [_mag, (_oldMag select 1) - 1];
@@ -56,14 +56,14 @@ immersion_pops_fnc_start_cig = {
 
     if (!(local _unit)) exitWith {};
 
-    _cigTime = 0;
-    _goggles = goggles _unit;
+    private _cigTime = 0;
+    private _goggles = goggles _unit;
 
     if !(_goggles in immersion_pops_cigsArray) exitWith {};
 
-    _gogglesCurrent = _goggles;
+    private _gogglesCurrent = _goggles;
 
-    _states = immersion_pops_cigsStatesArray select {_x select 0 == _goggles};
+    private _states = immersion_pops_cigsStatesArray select {_x select 0 == _goggles};
 
     {
         _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
@@ -79,13 +79,13 @@ immersion_pops_fnc_start_cig = {
 
     while ({alive _unit && _gogglesCurrent in immersion_pops_cigsArray && (_unit getVariable ["immersion_pops_cigLitUp", false]) && _cigTime <= 330}) do {
         _gogglesCurrent = goggles _unit;
-        _gogglesNew = "";
+        private _gogglesNew = "";
 
         _states = immersion_pops_cigsStatesArray select {_x select 0 == _gogglesCurrent};
 
         {
             _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
-            _statesNew = immersion_pops_cigsStatesArray select {_x select 0 == _cigStateNext};
+            private _statesNew = immersion_pops_cigsStatesArray select {_x select 0 == _cigStateNext};
 
             {
                 _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
@@ -101,7 +101,7 @@ immersion_pops_fnc_start_cig = {
             _gogglesCurrent = _gogglesNew;
         };
 
-        _time = (20 + random 10);
+        private _time = (20 + random 10);
 
         _cigTime = _cigTime + _time;
 

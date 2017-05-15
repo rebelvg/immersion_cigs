@@ -4,8 +4,8 @@ murshun_cigs_cigsStatesArray = [["EWK_Cig1", 0, "EWK_Cig4"], ["EWK_Cig4", 66, "E
 murshun_cigs_fnc_smoke = {
     params ["_unit"];
 
-    _source = "logic" createVehicleLocal (getPos _unit);
-    _fog = "#particleSource" createVehicleLocal getPos _source;
+    private _source = "logic" createVehicleLocal (getPos _unit);
+    private _fog = "#particleSource" createVehicleLocal getPos _source;
     _fog setParticleParams ["\A3\data_f\cl_basic",
     "",
     "Billboard",
@@ -38,12 +38,12 @@ murshun_cigs_fnc_anim = {
 
     if (_unit getVariable ["ACE_isUnconscious", false]) exitWith {};
 
-    _animation = animationState _unit;
+    private _animation = animationState _unit;
 
     if (stance _unit == "STAND" && isClass (configFile >> "CfgPatches" >> "ewk_cigs")) then {
         [_unit, "EWK_CIGS_SMOKING_ERC_CTS"] remoteExec ["switchMove"];
 
-        _time = time;
+        private _time = time;
         while {time < _time + 3} do {
             if (!alive _unit) exitWith {
                 [_unit, ""] remoteExec ["switchMove"];
@@ -51,7 +51,7 @@ murshun_cigs_fnc_anim = {
             sleep (1/60);
         };
     } else {
-        _time = time;
+        private _time = time;
         while {time < _time + 3} do {
             _unit playActionNow "Gear";
             sleep (1/60);
@@ -66,11 +66,11 @@ murshun_cigs_fnc_anim = {
 murshun_cigs_removeItemFromMag = {
     params ["_player", "_mag"];
 
-    _matchesMags = magazinesAmmo _player select {_x select 0 == _mag};
+    private _matchesMags = magazinesAmmo _player select {_x select 0 == _mag};
 
     _player removeMagazineGlobal _mag;
 
-    _oldMag = _matchesMags select 0;
+    private _oldMag = _matchesMags select 0;
 
     if ((_oldMag select 1) > 1) then {
         _player addMagazine [_mag, (_oldMag select 1) - 1];
@@ -132,14 +132,14 @@ murshun_cigs_fnc_start_cig = {
 
     if (!(local _unit)) exitWith {};
 
-    _cigTime = 0;
-    _goggles = goggles _unit;
+    private _cigTime = 0;
+    private _goggles = goggles _unit;
 
     if !(_goggles in murshun_cigs_cigsArray) exitWith {};
 
-    _gogglesCurrent = _goggles;
+    private _gogglesCurrent = _goggles;
 
-    _states = murshun_cigs_cigsStatesArray select {_x select 0 == _goggles};
+    private _states = murshun_cigs_cigsStatesArray select {_x select 0 == _goggles};
 
     {
         _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
@@ -158,13 +158,13 @@ murshun_cigs_fnc_start_cig = {
 
     while ({alive _unit && _gogglesCurrent in murshun_cigs_cigsArray && (_unit getVariable ["murshun_cigs_cigLitUp", false]) && _cigTime <= 330}) do {
         _gogglesCurrent = goggles _unit;
-        _gogglesNew = "";
+        private _gogglesNew = "";
 
         _states = murshun_cigs_cigsStatesArray select {_x select 0 == _gogglesCurrent};
 
         {
             _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
-            _statesNew = murshun_cigs_cigsStatesArray select {_x select 0 == _cigStateNext};
+            private _statesNew = murshun_cigs_cigsStatesArray select {_x select 0 == _cigStateNext};
 
             {
                 _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
@@ -180,13 +180,12 @@ murshun_cigs_fnc_start_cig = {
             _gogglesCurrent = _gogglesNew;
         };
 
-        _time = (5.5 + random 2);
+        private _time = (5.5 + random 2);
 
         _cigTime = _cigTime + _time;
 
         [_unit] remoteExec ["murshun_cigs_fnc_smoke"];
-        _fatigue = getFatigue _unit;
-        _unit setFatigue _fatigue + 0.01;
+        _unit setFatigue (getFatigue _unit + 0.01);
 
         sleep _time;
 
