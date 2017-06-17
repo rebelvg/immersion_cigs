@@ -209,7 +209,7 @@ murshun_cigs_fnc_take_cig_from_pack = {
 
     [_player, "murshun_cigs_cigpack"] call murshun_cigs_removeItemFromMag;
 
-    [_player, "murshun_cigs_unwrap"] call immersion_pops_playSound;
+    [_player, "murshun_cigs_unwrap"] call murshun_cigs_playSound;
 
     _player addItem "murshun_cigs_cig0";
 };
