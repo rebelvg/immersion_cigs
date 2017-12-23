@@ -11,7 +11,7 @@ class CfgVehicles
                 class immersion_pops_start_cig
                 {
                     displayName = "$STR_immersion_pops_start_cig";
-                    condition = "((goggles _player) in immersion_pops_cigsArray) and (!(_player getVariable ['immersion_pops_cigLitUp', false]))";
+                    condition = "((goggles _player) in immersion_pops_cigsArray) && !(_player getVariable ['immersion_pops_cigLitUp', false])";
                     statement = "[_player] spawn immersion_pops_fnc_start_cig_your";
                     showDisabled = 0;
                     exceptions[] = {"isNotInside", "isNotSitting"};
@@ -20,7 +20,7 @@ class CfgVehicles
                 class immersion_pops_stop_cig
                 {
                     displayName = "$STR_immersion_pops_stop_cig";
-                    condition = "((goggles _player) in immersion_pops_cigsArray) and ((_player getVariable ['immersion_pops_cigLitUp', false]))";
+                    condition = "((goggles _player) in immersion_pops_cigsArray) && (_player getVariable ['immersion_pops_cigLitUp', false])";
                     statement = "[_player] spawn immersion_pops_fnc_stop_cig";
                     showDisabled = 0;
                     exceptions[] = {"isNotInside", "isNotSitting"};
@@ -85,7 +85,7 @@ class CfgGlasses {
         displayName = "$STR_immersion_pops_cigarette0";
         model = "\immersion_pops\cig0.p3d";
         picture = "\immersion_pops\UI\gear_cig0_x_ca";
-        identityTypes[]={};
+        identityTypes[] = {};
     };
 };
 

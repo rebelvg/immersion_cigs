@@ -5,11 +5,11 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
         player addAction [localize "STR_immersion_pops_start_cig", {
             params ["_target", "_caller"];
             [_caller] spawn immersion_pops_fnc_start_cig_your
-        }, nil, 0, false, true, "", "if (_target != player) exitWith {false}; ((goggles _this) in immersion_pops_cigsArray) and (!(_this getVariable ['immersion_pops_cigLitUp', false]))", 5, false];
+        }, nil, 0, false, true, "", "if (_target != player) exitWith {false}; ((goggles _this) in immersion_pops_cigsArray) && !(_this getVariable ['immersion_pops_cigLitUp', false])", 5, false];
         player addAction [localize "STR_immersion_pops_stop_cig", {
             params ["_target", "_caller"];
             [_caller] spawn immersion_pops_fnc_stop_cig
-        }, nil, 0, false, true, "", "if (_target != player) exitWith {false}; ((goggles _this) in immersion_pops_cigsArray) and ((_this getVariable ['immersion_pops_cigLitUp', false]))", 5, false];
+        }, nil, 0, false, true, "", "if (_target != player) exitWith {false}; ((goggles _this) in immersion_pops_cigsArray) && (_this getVariable ['immersion_pops_cigLitUp', false])", 5, false];
         player addAction [localize "STR_immersion_pops_take_cig_from_pack", {
             params ["_target", "_caller"];
             [_caller] spawn immersion_pops_fnc_take_cig_from_pack
@@ -25,7 +25,7 @@ player addEventHandler ["Respawn", {
     player setVariable ["immersion_pops_cigLitUp", false];
 }];
 
-if (!isMultiplayer && !is3DEN) then {
+if (!isMultiplayer) then {
     player addItem "immersion_pops_poppack";
     player addItem "immersion_pops_poppack";
     player addItem "immersion_pops_poppack";

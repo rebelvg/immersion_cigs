@@ -136,12 +136,7 @@ murshun_cigs_fnc_start_cig = {
 
     private _gogglesCurrent = _goggles;
 
-    private _states = murshun_cigs_cigsStatesArray select {_x select 0 == _goggles};
-
-    {
-        _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
-        _cigTime = _cigStateTime;
-    } forEach _states;
+    _cigTime = getNumber (configFile >> "CfgGlasses" >> _goggles >> "immersion_cigs_initStateTime");
 
     if (_unit getVariable ["murshun_cigs_cigLitUp", false]) exitWith {};
     _unit setVariable ["murshun_cigs_cigLitUp", true, true];
@@ -153,23 +148,23 @@ murshun_cigs_fnc_start_cig = {
     sleep (1 + random 1);
     [_unit] remoteExec ["murshun_cigs_fnc_smoke"];
 
-    while ({alive _unit && _gogglesCurrent in murshun_cigs_cigsArray && (_unit getVariable ["murshun_cigs_cigLitUp", false]) && _cigTime <= 330}) do {
+    private _maxTime = getNumber (configFile >> "CfgGlasses" >> _goggles >> "immersion_cigs_maxTime");
+
+    if (_maxTime == 0) then {
+        _maxTime = 330;
+    };
+
+    while ({alive _unit && _gogglesCurrent in murshun_cigs_cigsArray && (_unit getVariable ["murshun_cigs_cigLitUp", false]) && _cigTime <= _maxTime}) do {
         _gogglesCurrent = goggles _unit;
         private _gogglesNew = "";
 
-        _states = murshun_cigs_cigsStatesArray select {_x select 0 == _gogglesCurrent};
+        _nextCigState = getText (configFile >> "CfgGlasses" >> _gogglesCurrent >> "immersion_cigs_nextState");
 
-        {
-            _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
-            private _statesNew = murshun_cigs_cigsStatesArray select {_x select 0 == _cigStateNext};
+        _nextCigStateTime = getNumber (configFile >> "CfgGlasses" >> _nextCigState >> "immersion_cigs_initStateTime");
 
-            {
-                _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
-                if (_cigTime >= _cigStateTime) then {
-                    _gogglesNew = _cigState;
-                };
-            } forEach _statesNew;
-        } forEach _states;
+        if (_nextCigState != "" && _cigTime >= _nextCigStateTime) then {
+            _gogglesNew = _nextCigState;
+        };
 
         if (_gogglesNew != "") then {
             removeGoggles _unit;
@@ -190,7 +185,7 @@ murshun_cigs_fnc_start_cig = {
     };
 
     _unit setVariable ["murshun_cigs_cigLitUp", false, true];
-    if (_cigTime >= 330) then {
+    if (_cigTime >= _maxTime) then {
         removeGoggles _unit;
     };
 };
@@ -220,4 +215,3 @@ if !(isClass (configFile >> "CfgPatches" >> "ace_common")) then {
 };
 
 murshun_cigs_cigsArray = ["EWK_Cigar1", "EWK_Cigar2", "EWK_Cig1", "EWK_Cig2", "EWK_Cig3", "EWK_Cig4", "EWK_Glasses_Cig1", "EWK_Glasses_Cig2", "EWK_Glasses_Cig3", "EWK_Glasses_Cig4", "EWK_Glasses_Shemag_GRE_Cig6", "EWK_Glasses_Shemag_NB_Cig6", "EWK_Glasses_Shemag_tan_Cig6", "EWK_Cig5", "EWK_Glasses_Cig5", "EWK_Cig6", "EWK_Glasses_Cig6", "EWK_Shemag_GRE_Cig6", "EWK_Shemag_NB_Cig6", "EWK_Shemag_tan_Cig6", "murshun_cigs_cig0", "murshun_cigs_cig1", "murshun_cigs_cig2", "murshun_cigs_cig3", "murshun_cigs_cig4"];
-murshun_cigs_cigsStatesArray = [["EWK_Cig1", 0, "EWK_Cig4"], ["EWK_Cig4", 66, "EWK_Cig6"], ["EWK_Cig6", 126, "EWK_Cig3"], ["EWK_Cig3", 306], ["murshun_cigs_cig0", 0, "murshun_cigs_cig1"], ["murshun_cigs_cig1", 12, "murshun_cigs_cig2"], ["murshun_cigs_cig2", 66, "murshun_cigs_cig3"], ["murshun_cigs_cig3", 126, "murshun_cigs_cig4"], ["murshun_cigs_cig4", 306]];

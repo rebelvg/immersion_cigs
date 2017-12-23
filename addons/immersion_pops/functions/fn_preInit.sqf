@@ -58,13 +58,6 @@ immersion_pops_fnc_start_cig = {
 
     private _gogglesCurrent = _goggles;
 
-    private _states = immersion_pops_cigsStatesArray select {_x select 0 == _goggles};
-
-    {
-        _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
-        _cigTime = _cigStateTime;
-    } forEach _states;
-
     if (_unit getVariable ["immersion_pops_cigLitUp", false]) exitWith {};
     _unit setVariable ["immersion_pops_cigLitUp", true, true];
 
@@ -75,20 +68,6 @@ immersion_pops_fnc_start_cig = {
     while ({alive _unit && _gogglesCurrent in immersion_pops_cigsArray && (_unit getVariable ["immersion_pops_cigLitUp", false]) && _cigTime <= 330}) do {
         _gogglesCurrent = goggles _unit;
         private _gogglesNew = "";
-
-        _states = immersion_pops_cigsStatesArray select {_x select 0 == _gogglesCurrent};
-
-        {
-            _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
-            private _statesNew = immersion_pops_cigsStatesArray select {_x select 0 == _cigStateNext};
-
-            {
-                _x params ["_cigState", "_cigStateTime", ["_cigStateNext", ""]];
-                if (_cigTime >= _cigStateTime) then {
-                    _gogglesNew = _cigState;
-                };
-            } forEach _statesNew;
-        } forEach _states;
 
         if (_gogglesNew != "") then {
             removeGoggles _unit;
@@ -140,6 +119,5 @@ if !(isClass (configFile >> "CfgPatches" >> "ace_common")) then {
 };
 
 immersion_pops_cigsArray = ["immersion_pops_pop0"];
-immersion_pops_cigsStatesArray = [];
 immersion_pops_eatSounds = ["immersion_pops_eat_01", "immersion_pops_eat_02", "immersion_pops_eat_03", "immersion_pops_eat_04", "immersion_pops_eat_05", "immersion_pops_eat_06", "immersion_pops_eat_07"];
 immersion_pops_flavours = ["banana", "cherry", "strawberry", "raspberry", "bacon", "nicotine", "tomato", "chocolate", "lemon", "cola"];
