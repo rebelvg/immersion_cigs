@@ -189,6 +189,7 @@ class CfgGlasses {
         model = "\murshun_cigs\cig4.p3d";
         picture = "\murshun_cigs\UI\gear_cig4_x_ca";
         immersion_cigs_initStateTime = 306;
+        immersion_cigs_nextState = "";
     };
 };
 

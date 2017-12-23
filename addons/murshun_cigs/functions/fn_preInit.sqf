@@ -162,7 +162,7 @@ murshun_cigs_fnc_start_cig = {
 
         _nextCigStateTime = getNumber (configFile >> "CfgGlasses" >> _nextCigState >> "immersion_cigs_initStateTime");
 
-        if (_nextCigState != "" && _cigTime >= _nextCigStateTime) then {
+        if (_cigTime >= _nextCigStateTime) then {
             _gogglesNew = _nextCigState;
         };
 
