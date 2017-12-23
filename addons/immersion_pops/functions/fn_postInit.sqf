@@ -25,7 +25,7 @@ player addEventHandler ["Respawn", {
     player setVariable ["immersion_pops_cigLitUp", false];
 }];
 
-if (!isMultiplayer) then {
+if (!isMultiplayer && immersion_cigs_giveItemsInSP) then {
     player addItem "immersion_pops_poppack";
     player addItem "immersion_pops_poppack";
     player addItem "immersion_pops_poppack";

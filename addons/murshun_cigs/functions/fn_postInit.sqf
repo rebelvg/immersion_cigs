@@ -38,7 +38,7 @@ player addEventHandler ["Respawn", {
     player setVariable ["murshun_cigs_cigLitUp", false];
 }];
 
-if (!isMultiplayer) then {
+if (!isMultiplayer && immersion_cigs_giveItemsInSP) then {
     player addItem "murshun_cigs_cigpack";
     player addItem "murshun_cigs_lighter";
 };
