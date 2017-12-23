@@ -1,4 +1,6 @@
-if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
+if (!hasInterface) exitWith {};
+
+if !(isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
     private _addVanillaActions = {
         player addAction [localize "STR_murshun_cigs_start_cig", {
             params ["_target", "_caller"];
@@ -21,12 +23,6 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
     call _addVanillaActions;
 
     player addEventHandler ["Respawn", _addVanillaActions];
-
-    ace_common_fnc_displayTextStructured = {
-        params ["_string"];
-
-        hintSilent _string;
-    };
 } else {
     private _action = ["murshun_cigs_start_someones_cig", localize "STR_murshun_cigs_start_someones_cig", "murshun_cigs\UI\light_cig.paa", {
         params ["_target", "_player"];
@@ -42,7 +38,7 @@ player addEventHandler ["Respawn", {
     player setVariable ["murshun_cigs_cigLitUp", false];
 }];
 
-if (!isMultiplayer) then {
+if (!isMultiplayer && !is3DEN) then {
     player addItem "murshun_cigs_cigpack";
     player addItem "murshun_cigs_lighter";
 };

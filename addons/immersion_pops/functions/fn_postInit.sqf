@@ -1,3 +1,5 @@
+if (!hasInterface) exitWith {};
+
 if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
     private _addVanillaActions = {
         player addAction [localize "STR_immersion_pops_start_cig", {
@@ -17,19 +19,13 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
     call _addVanillaActions;
 
     player addEventHandler ["Respawn", _addVanillaActions];
-
-    ace_common_fnc_displayTextStructured = {
-        params ["_string"];
-
-        hintSilent _string;
-    };
 };
 
 player addEventHandler ["Respawn", {
     player setVariable ["immersion_pops_cigLitUp", false];
 }];
 
-if (!isMultiplayer) then {
+if (!isMultiplayer && !is3DEN) then {
     player addItem "immersion_pops_poppack";
     player addItem "immersion_pops_poppack";
     player addItem "immersion_pops_poppack";

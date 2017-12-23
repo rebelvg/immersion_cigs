@@ -12,7 +12,7 @@ class CfgVehicles
                 {
                     displayName = "$STR_murshun_cigs_start_cig";
                     condition = "((goggles _player) in murshun_cigs_cigsArray) and (!(_player getVariable ['murshun_cigs_cigLitUp', false]))";
-                    statement = "[_player, _player] spawn murshun_cigs_fnc_start_cig_your";
+                    statement = "[_player] spawn murshun_cigs_fnc_start_cig_your";
                     showDisabled = 0;
                     exceptions[] = {"isNotInside", "isNotSitting"};
                     icon = "murshun_cigs\UI\light_cig.paa";

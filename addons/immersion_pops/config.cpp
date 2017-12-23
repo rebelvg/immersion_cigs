@@ -12,7 +12,7 @@ class CfgVehicles
                 {
                     displayName = "$STR_immersion_pops_start_cig";
                     condition = "((goggles _player) in immersion_pops_cigsArray) and (!(_player getVariable ['immersion_pops_cigLitUp', false]))";
-                    statement = "[_player, _player] spawn immersion_pops_fnc_start_cig_your";
+                    statement = "[_player] spawn immersion_pops_fnc_start_cig_your";
                     showDisabled = 0;
                     exceptions[] = {"isNotInside", "isNotSitting"};
                     icon = "immersion_pops\UI\light_cig.paa";

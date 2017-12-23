@@ -1,8 +1,3 @@
-immersion_pops_cigsArray = ["immersion_pops_pop0"];
-immersion_pops_cigsStatesArray = [];
-immersion_pops_eatSounds = ["immersion_pops_eat_01", "immersion_pops_eat_02", "immersion_pops_eat_03", "immersion_pops_eat_04", "immersion_pops_eat_05", "immersion_pops_eat_06", "immersion_pops_eat_07"];
-immersion_pops_flavours = ["banana", "cherry", "strawberry", "raspberry", "bacon", "nicotine", "tomato", "chocolate", "lemon", "cola"];
-
 immersion_pops_fnc_anim = {
     params ["_unit"];
 
@@ -135,3 +130,16 @@ immersion_pops_fnc_take_cig_from_pack = {
 
     _player addItem "immersion_pops_pop0";
 };
+
+if !(isClass (configFile >> "CfgPatches" >> "ace_common")) then {
+    ace_common_fnc_displayTextStructured = {
+        params ["_string"];
+
+        hintSilent _string;
+    };
+};
+
+immersion_pops_cigsArray = ["immersion_pops_pop0"];
+immersion_pops_cigsStatesArray = [];
+immersion_pops_eatSounds = ["immersion_pops_eat_01", "immersion_pops_eat_02", "immersion_pops_eat_03", "immersion_pops_eat_04", "immersion_pops_eat_05", "immersion_pops_eat_06", "immersion_pops_eat_07"];
+immersion_pops_flavours = ["banana", "cherry", "strawberry", "raspberry", "bacon", "nicotine", "tomato", "chocolate", "lemon", "cola"];
