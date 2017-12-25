@@ -1,0 +1,36 @@
+# IMMERSION CIGS MOD by KLPQ.men
+
+## Overview
+- https://www.youtube.com/watch?v=MPvKR3VtrEI
+
+This mod adds an ability to smoke cigarettes.
+While smoking the cig will change it's model to a smaller version disappearing in the end (around 5 minutes) and producing smoke while it's active.
+Mod is fully multiplayer compatible so you will hear the sound of the matches from other players and you'll see the smoke coming from the cigarette synchronized between all clients.
+I in no way encourage anyone to smoke in real life, I don't smoke irl, it's just a small addition that I thought would add some immersion.
+
+For educational purposes. Do not use the content in your works without our explicit permission.
+
+## Credits
+- Rebel - configs, scripting.
+- Facel - 3d models, textures.
+- Panimala - icons, sounds.
+
+## Threads
+- https://forums.bistudio.com/forums/topic/181841-immersion-cigs/
+
+## Downloads
+- https://github.com/rebelvg/immersion_cigs/releases
+- http://steamcommunity.com/sharedfiles/filedetails/?id=753946944
+
+## Dependencies
+
+### Requirements
+- Latest ARMA 3.
+
+### Optionals
+- ACE3.
+
+## Usage
+
+### Ingame
+Mod supports both vanilla and ACE interaction systems.
