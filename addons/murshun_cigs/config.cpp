@@ -161,7 +161,7 @@ class CfgGlasses {
         displayName = "Cigarette (Stage 1)";
         model = "\murshun_cigs\cig1.p3d";
         picture = "\murshun_cigs\UI\gear_cig1_x_ca";
-        immersion_cigs_initStateTime = 12;
+        immersion_cigs_initStateTime = 6;
         immersion_cigs_nextState = "murshun_cigs_cig2";
     };
 
@@ -189,6 +189,55 @@ class CfgGlasses {
         model = "\murshun_cigs\cig4.p3d";
         picture = "\murshun_cigs\UI\gear_cig4_x_ca";
         immersion_cigs_initStateTime = 306;
+        immersion_cigs_nextState = "";
+    };
+
+    class immersion_cigs_cigar0: None {
+        author = "$STR_murshun_cigs_author";
+        mass = 0.1;
+        displayName = "Cigar";
+        model = "\murshun_cigs\cigars\cigar0.p3d";
+        picture = "\murshun_cigs\UI\gear_cigar0_x_ca";
+        identityTypes[] = {};
+        immersion_cigs_type = "cigar";
+        immersion_cigs_maxTime = 660;
+        immersion_cigs_initStateTime = 0;
+        immersion_cigs_nextState = "immersion_cigs_cigar1";
+    };
+
+    class immersion_cigs_cigar1: immersion_cigs_cigar0 {
+        author = "$STR_murshun_cigs_author";
+        displayName = "Cigar (Stage 1)";
+        model = "\murshun_cigs\cigars\cigar1.p3d";
+        picture = "\murshun_cigs\UI\gear_cigar1_x_ca";
+        immersion_cigs_initStateTime = 12;
+        immersion_cigs_nextState = "immersion_cigs_cigar2";
+    };
+
+    class immersion_cigs_cigar2: immersion_cigs_cigar0 {
+        author = "$STR_murshun_cigs_author";
+        displayName = "Cigar (Stage 2)";
+        model = "\murshun_cigs\cigars\cigar2.p3d";
+        picture = "\murshun_cigs\UI\gear_cigar2_x_ca";
+        immersion_cigs_initStateTime = 132;
+        immersion_cigs_nextState = "immersion_cigs_cigar3";
+    };
+
+    class immersion_cigs_cigar3: immersion_cigs_cigar0 {
+        author = "$STR_murshun_cigs_author";
+        displayName = "Cigar (Stage 3)";
+        model = "\murshun_cigs\cigars\cigar3.p3d";
+        picture = "\murshun_cigs\UI\gear_cigar3_x_ca";
+        immersion_cigs_initStateTime = 252;
+        immersion_cigs_nextState = "immersion_cigs_cigar4";
+    };
+
+    class immersion_cigs_cigar4: immersion_cigs_cigar0 {
+        author = "$STR_murshun_cigs_author";
+        displayName = "Cigar (Stage 4)";
+        model = "\murshun_cigs\cigars\cigar4.p3d";
+        picture = "\murshun_cigs\UI\gear_cigar4_x_ca";
+        immersion_cigs_initStateTime = 612;
         immersion_cigs_nextState = "";
     };
 };
