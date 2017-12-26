@@ -50,4 +50,4 @@ Mod supports both vanilla and ACE interaction systems.
 - Get cigarette from pack (vanilla requires pack to be located in the uniform).
 
 ### Functions
-- ```[_unit] call murshun_cigs_fnc_start_cig;``` - makes unit smoke.
+- ```[_unit] spawn murshun_cigs_fnc_start_cig;``` - makes unit smoke.
