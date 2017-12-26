@@ -34,3 +34,20 @@ For educational purposes. Do not use the content in your works without our expli
 
 ### Ingame
 Mod supports both vanilla and ACE interaction systems.
+
+### Content
+- Cigarettes
+- Matches
+- Lighter
+- Cigars
+- Lollipop
+- Cig Pack
+- Packed Lollipop
+
+### Actions
+- Light up a cig.
+- Light up someones cig.
+- Get cigarette from pack (vanilla requires pack to be located in the uniform).
+
+### Functions
+- ```[_unit] call murshun_cigs_fnc_start_cig;``` - makes unit smoke.
