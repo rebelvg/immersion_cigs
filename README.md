@@ -32,7 +32,7 @@ For educational purposes. Do not use the content in your works without our expli
 
 ## Usage
 
-### Ingame
+### In-Game
 Mod supports both vanilla and ACE interaction systems.
 
 ### Content
