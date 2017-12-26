@@ -4,7 +4,7 @@
 - https://www.youtube.com/watch?v=MPvKR3VtrEI
 
 This mod adds an ability to smoke cigarettes.
-While smoking the cig will change it's model to a smaller version disappearing in the end (around 5 minutes) and producing smoke while it's active.
+While smoking, the cig will change it's model to a smaller version disappearing in the end (around 5 minutes) and producing smoke while it's active.
 Mod is fully multiplayer compatible so you will hear the sound of the matches from other players and you'll see the smoke coming from the cigarette synchronized between all clients.
 I in no way encourage anyone to smoke in real life, I don't smoke irl, it's just a small addition that I thought would add some immersion.
 
