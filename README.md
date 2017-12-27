@@ -25,10 +25,10 @@ For educational purposes. Do not use the content in your works without our expli
 ## Dependencies
 
 ### Requirements
-- Latest ARMA 3.
+- Latest ARMA 3
 
 ### Optionals
-- ACE3.
+- ACE3
 
 ## Usage
 
@@ -36,13 +36,13 @@ For educational purposes. Do not use the content in your works without our expli
 Mod supports both vanilla and ACE interaction systems.
 
 ### Content
-- Cigarettes.
-- Matches.
-- Lighter.
-- Cigars.
-- Lollipop.
-- Cig Pack.
-- Packed Lollipop.
+- Cigarettes
+- Matches
+- Lighter
+- Cigars
+- Lollipop
+- Cig Pack
+- Packed Lollipop
 
 ### Actions
 - Light up a cig.
