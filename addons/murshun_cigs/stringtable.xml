@@ -5,6 +5,7 @@
 	<Package name="Main">
 		<Key ID="STR_murshun_cigs_author">
 			<English>Rebel / Facel</English>
+			<French>Rebel / Facel</French>
 			<Japanese>Rebel / Facel</Japanese>
 		</Key>
 	</Package>
@@ -26,6 +27,7 @@
 		</Key>
         <Key ID="STR_murshun_cigs_take_cig_from_pack">
 			<English>Take Cig from Pack</English>
+			<French>Prendre une cigarette du paquet</French>
 			<Japanese>箱からタバコを取る</Japanese>
 		</Key>
 	</Package>
@@ -42,28 +44,34 @@
 		</Key>
         <Key ID="STR_murshun_cigs_cigpack">
 			<English>Cig Pack</English>
+			<French>Paquet de cigarettes</French>
 			<Japanese>タバコ</Japanese>
 		</Key>
         <Key ID="STR_murshun_cigs_matches_descr">
 			<English>Contains 10 matches.</English>
+			<French>Contient 10 allumettes</French>
 			<Japanese>10 のマッチ本入り。</Japanese>
 		</Key>
         <Key ID="STR_murshun_cigs_lighter_descr">
 			<English>Can light up 100 cigarettes.</English>
+			<French>Peut allumer 100 cigarettes</French>
 			<Japanese>100 回火を点けられる。</Japanese>
 		</Key>
         <Key ID="STR_murshun_cigs_cigpack_descr">
 			<English>Contains 20 cigarettes. Warning: Smoking is hazardous to your health.</English>
+			<French>Contient 20 cigarettes. Attention : Fumer est dangereux pour votre santé.</French>
 			<Japanese>20 本の葉巻がある。警告:喫煙はあなたの健康を害します。</Japanese>
 		</Key>
         <Key ID="STR_murshun_cigs_cigarette0">
 			<English>Cigarette</English>
+			<French>Cigarette</French>
 			<Japanese>葉巻</Japanese>
 		</Key>
 	</Package>
 	<Package name="Notification">
         <Key ID="STR_murshun_cigs_no_matches_or_lighter">
 			<English>You don't have matches or a lighter.</English>
+			<French>Vous n'avez pas d'allumettes ou de briquet.</French>
 			<Japanese>あなたはライターかマッチを持っていません。</Japanese>
 		</Key>
 	</Package>
