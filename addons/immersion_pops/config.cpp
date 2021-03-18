@@ -17,6 +17,7 @@ class CfgVehicles
                     exceptions[] = {"isNotInside", "isNotSitting"};
                     icon = "immersion_pops\UI\light_cig.paa";
                 };
+
                 class immersion_pops_stop_cig
                 {
                     displayName = "$STR_immersion_pops_stop_cig";
@@ -26,6 +27,7 @@ class CfgVehicles
                     exceptions[] = {"isNotInside", "isNotSitting"};
                     icon = "immersion_pops\UI\light_cig.paa";
                 };
+
                 class immersion_pops_take_cig_from_pack
                 {
                     displayName = "$STR_immersion_pops_take_cig_from_pack";
@@ -40,6 +42,7 @@ class CfgVehicles
     };
 
     class WeaponHolder_Single_limited_item_F;
+
     class immersion_pops_poppackItem: WeaponHolder_Single_limited_item_F {
         scope = 2;
         scopeCurator = 2;
@@ -58,6 +61,7 @@ class CfgVehicles
 
 class CfgMagazines {
     class CA_Magazine;
+
     class immersion_pops_poppack: CA_Magazine {
         author = "$STR_immersion_pops_author";
         scope = 2;
@@ -86,6 +90,8 @@ class CfgGlasses {
         model = "\immersion_pops\cig0.p3d";
         picture = "\immersion_pops\UI\gear_cig0_x_ca";
         identityTypes[] = {};
+
+        immersion_pops_isPop = true;
     };
 };
 
