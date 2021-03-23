@@ -239,7 +239,7 @@ class CfgGesturesMale
 		{
 	        speed=-4.5;
 			looped=false;
-			mask="handsWeapon";
+			mask="handsWeapon_context";
 			file="\immersion_cigs_animations\cig_in.rtm";
 			leftHandIKBeg=0;
 			leftHandIKCurve[]={0};
@@ -252,7 +252,7 @@ class CfgGesturesMale
 		{
 	        speed=-1.9;
 			looped=false;
-			mask="am_leftHalfBody";
+			mask="handsWeapon_context";
 			file="\immersion_cigs_animations\cig_out.rtm";
 			leftHandIKBeg=0;
 			leftHandIKCurve[]={0};

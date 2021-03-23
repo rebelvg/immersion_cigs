@@ -33,33 +33,35 @@ murshun_cigs_fnc_smoke = {
     _fog setDropInterval 0.005;
 
     _source attachTo [_unit, [0, 0.06, 0], "head"];
+
     sleep 0.4;
 
     deleteVehicle _source;
 };
 
 murshun_cigs_fnc_anim = {
-    params ["_unit"];
+    params ["_unit", "_gestureAnimation", "_playTimeSeconds"];
 
-    if (!alive _unit || vehicle _unit != _unit) exitWith {};
+    if (!alive _unit) exitWith {};
 
     if (_unit getVariable ["ACE_isUnconscious", false]) exitWith {};
 
-    private _animation = animationState _unit;
+    // private _animation = animationState _unit;
 
     private _time = time;
 
     _unit forceWalk true;
 
-    while {time < _time + 3} do {
-        _unit playActionNow "rebel_cig_in";
+    while {time < _time + _playTimeSeconds} do {
+        _unit playActionNow _gestureAnimation;
+
         sleep (1/60);
     };
 
     _unit forceWalk false;
 
     if (alive _unit && !(_unit getVariable ["ACE_isUnconscious", false])) then {
-        [_unit, _animation] remoteExec ["switchMove"];
+        // [_unit, _animation] remoteExec ["switchMove"];
     };
 };
 
@@ -165,7 +167,7 @@ murshun_cigs_fnc_start_cig = {
     if (_unit getVariable ["murshun_cigs_cigLitUp", false]) exitWith {};
     _unit setVariable ["murshun_cigs_cigLitUp", true, true];
 
-    [_unit] spawn murshun_cigs_fnc_anim;
+    [_unit, "immersion_cigs_cig_in", 3] spawn murshun_cigs_fnc_anim;
 
     private _cigType = getText (_cigClass >> "immersion_cigs_type");
 
@@ -180,7 +182,7 @@ murshun_cigs_fnc_start_cig = {
         _maxTime = 330;
     };
 
-    while ({alive _unit && (_gogglesCurrent in murshun_cigs_cigsArray || _hmdCurrent in murshun_cigs_cigsArray) && (_unit getVariable ["murshun_cigs_cigLitUp", false]) && _cigTime <= _maxTime}) do {
+    while ({true}) do {
         switch (_cigTypeGear) do {
             case ("GOGGLES"): {
                 _gogglesCurrent = goggles _unit;
@@ -234,12 +236,36 @@ murshun_cigs_fnc_start_cig = {
         [_unit, _cigType] remoteExec ["murshun_cigs_fnc_smoke"];
         _unit setFatigue (getFatigue _unit + 0.01);
 
-        sleep _time;
+        private _timeToSleep = time + _time;
 
-        if (_cigTypeGear == "GOGGLES" && _gogglesCurrent != goggles _unit) exitWith {};
+        private _shouldExitLoop = false;
 
-        if (_cigTypeGear == "HMD" && _hmdCurrent != hmd _unit) exitWith {};
+        waitUntil {
+            if (!(alive _unit && (_gogglesCurrent in murshun_cigs_cigsArray || _hmdCurrent in murshun_cigs_cigsArray) && (_unit getVariable ["murshun_cigs_cigLitUp", false]) && _cigTime <= _maxTime)) exitWith {
+                _shouldExitLoop = true;
+
+                true
+            };
+
+            if (_cigTypeGear == "GOGGLES" && _gogglesCurrent != goggles _unit) exitWith {
+                _shouldExitLoop = true;
+
+                true
+            };
+
+            if (_cigTypeGear == "HMD" && _hmdCurrent != hmd _unit) exitWith {
+                _shouldExitLoop = true;
+
+                true
+            };
+
+            time > _timeToSleep
+        };
+
+        if (_shouldExitLoop) exitWith {};
     };
+
+    [_unit, "immersion_cigs_cig_out", 1] spawn murshun_cigs_fnc_anim;
 
     _unit setVariable ["murshun_cigs_cigLitUp", false, true];
 
@@ -268,7 +294,15 @@ murshun_cigs_fnc_take_cig_from_pack = {
 
     [_player, "murshun_cigs_unwrap"] call murshun_cigs_playSound;
 
-    _player addItem "murshun_cigs_cig0";
+    if (goggles _player == "") then {
+        _player addItem "murshun_cigs_cig0";
+    } else {
+        if (hmd _player == "") then {
+            _player addItem "murshun_cigs_cig0_nv";
+        } else {
+            _player addItem "murshun_cigs_cig0";
+        };
+    };
 };
 
 if !(isClass (configFile >> "CfgPatches" >> "ace_common")) then {
@@ -284,28 +318,6 @@ if (isNil "immersion_cigs_giveItemsInSP") then {
 };
 
 murshun_cigs_cigsArray = ["EWK_Cigar1", "EWK_Cigar2", "EWK_Cig1", "EWK_Cig2", "EWK_Cig3", "EWK_Cig4", "EWK_Glasses_Cig1", "EWK_Glasses_Cig2", "EWK_Glasses_Cig3", "EWK_Glasses_Cig4", "EWK_Glasses_Shemag_GRE_Cig6", "EWK_Glasses_Shemag_NB_Cig6", "EWK_Glasses_Shemag_tan_Cig6", "EWK_Cig5", "EWK_Glasses_Cig5", "EWK_Cig6", "EWK_Glasses_Cig6", "EWK_Shemag_GRE_Cig6", "EWK_Shemag_NB_Cig6", "EWK_Shemag_tan_Cig6"] + (("getNumber (_x >> 'immersion_cigs_isCig') == 1" configClasses (configFile >> "CfgGlasses")) apply {configName _x}) + (("getNumber (_x >> 'immersion_cigs_isCig') == 1" configClasses (configFile >> "CfgWeapons")) apply {configName _x});
-
-murshun_cigs_cigsArray1 = [2];
-
-RebelCiga = {
-_unit = _this select 0;
-_unit forceWalk true;
-_bin = binocular _unit;
-_unit removeWeapon _bin;
-_unit addWeapon "rebel_binCiga";
-[_unit, "Controlled_idle_p"] remoteExec ["switchMove", 0];
-_unit playActionNow "rebel_cig_in";
-sleep 4.4;
-_unit playActionNow "rebel_cig_loop";
-sleep 20;
-player playActionNow "rebel_cig_out";
-sleep 1.5;
-_unit removeWeapon "rebel_binCiga";
-_unit addWeapon _bin;
-sleep 0.5;
-_unit forceWalk false;
-_unit playMoveNow "AmovPercMstpSnonWnonDnon";
-};
 
 immersion_cigs_canStartSmoking = {
     params ["_unit"];
