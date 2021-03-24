@@ -12,7 +12,7 @@ private _addVanillaActions = {
         player addAction [localize "STR_murshun_cigs_take_cig_from_pack", {
             params ["_target", "_caller"];
             [_caller] spawn murshun_cigs_fnc_take_cig_from_pack
-        }, nil, 0, false, true, "", "if (_target != player) exitWith {false}; 'murshun_cigs_cigpack' in (magazineCargo uniformContainer player)", 5, false];
+        }, nil, 0, false, true, "", "if (_target != player) exitWith {false}; 'murshun_cigs_cigpack' in (magazineCargo uniformContainer player) || 'murshun_cigs_cigpack' in (magazineCargo vestContainer player)", 5, false];
         player addAction [localize "STR_murshun_cigs_start_someones_cig", {
             params ["_target", "_caller"];
             [cursorObject, _caller] spawn murshun_cigs_fnc_start_cig_their

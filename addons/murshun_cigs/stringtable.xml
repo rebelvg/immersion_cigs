@@ -23,7 +23,7 @@
 			<Chinese>滅菸</Chinese>
 		</Key>
 		<Key ID="STR_murshun_cigs_start_someones_cig">
-			<English>Light Up his Cig</English>
+			<English>Light Up their Cig</English>
 			<French>Allumer Cigarette</French>
 			<Japanese>火を貸す</Japanese>
 			<Chinese>幫他點菸</Chinese>
@@ -56,7 +56,7 @@
 		</Key>
         <Key ID="STR_murshun_cigs_matches_descr">
 			<English>Contains 10 matches.</English>
-			<French>Contient 10 allumettes</French>
+			<French>Contient 10 allumettes.</French>
 			<Japanese>10 のマッチ本入り。</Japanese>
 			<Chinese>內含十根火柴。</Chinese>
 		</Key>
@@ -68,12 +68,19 @@
 		</Key>
         <Key ID="STR_murshun_cigs_cigpack_descr">
 			<English>Contains 20 cigarettes. Warning: Smoking is hazardous to your health.</English>
-			<French>Contient 20 cigarettes. Attention : Fumer est dangereux pour votre santé.</French>
+			<French>Contient 20 cigarettes. Attention: Fumer est dangereux pour votre santé.</French>
 			<Japanese>20 本の葉巻がある。警告:喫煙はあなたの健康を害します。</Japanese>
 			<Chinese>內含二十根菸。警告：吸菸會導致性功能障礙。</Chinese>
 		</Key>
         <Key ID="STR_murshun_cigs_cigarette0">
 			<English>Cigarette</English>
+			<French>Cigarette</French>
+			<Japanese>葉巻</Japanese>
+			<Chinese>香菸</Chinese>
+		</Key>
+		</Key>
+        <Key ID="STR_murshun_cigs_cigarette0_nv">
+			<English>Cigarette (NVG Slot)</English>
 			<French>Cigarette</French>
 			<Japanese>葉巻</Japanese>
 			<Chinese>香菸</Chinese>

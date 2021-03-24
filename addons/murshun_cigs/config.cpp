@@ -322,7 +322,7 @@ class CfgWeapons {
         scope = 2;
         author = "$STR_murshun_cigs_author";
         mass = 0.02;
-        displayName = "$STR_murshun_cigs_cigarette0";
+        displayName = "$STR_murshun_cigs_cigarette0_nv";
         descriptionShort = "";
         model = "\murshun_cigs\cig0.p3d";
         picture = "\murshun_cigs\UI\gear_cig0_x_ca";
@@ -433,7 +433,7 @@ class CfgWeapons {
         scope = 2;
         author = "$STR_murshun_cigs_author";
         mass = 0.1;
-        displayName = "Cigar";
+        displayName = "Cigar (NVG Slot)";
         model = "\murshun_cigs\cigars\cigar0.p3d";
         picture = "\murshun_cigs\UI\gear_cigar0_x_ca";
         visionMode[] = {"Normal"};
