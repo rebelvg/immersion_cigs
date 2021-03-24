@@ -118,10 +118,6 @@ if !(isClass (configFile >> "CfgPatches" >> "ace_common")) then {
     };
 };
 
-if (isNil "immersion_cigs_giveItemsInSP") then {
-    immersion_cigs_giveItemsInSP = true;
-};
-
 immersion_pops_cigsArray = ["immersion_pops_pop0"];
 immersion_pops_eatSounds = ["immersion_pops_eat_01", "immersion_pops_eat_02", "immersion_pops_eat_03", "immersion_pops_eat_04", "immersion_pops_eat_05", "immersion_pops_eat_06", "immersion_pops_eat_07"];
 immersion_pops_flavours = ["banana", "cherry", "strawberry", "raspberry", "bacon", "nicotine", "tomato", "chocolate", "lemon", "cola"];

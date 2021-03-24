@@ -1,7 +1,6 @@
 if (!hasInterface) exitWith {};
 
-if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
-    private _addVanillaActions = {
+private _addVanillaActions = {
         player addAction [localize "STR_immersion_pops_start_cig", {
             params ["_target", "_caller"];
             [_caller] spawn immersion_pops_fnc_start_cig_your
@@ -16,6 +15,7 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
         }, nil, 0, false, true, "", "if (_target != player) exitWith {false}; 'immersion_pops_poppack' in (magazineCargo uniformContainer player)", 5, false];
     };
 
+if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
     call _addVanillaActions;
 
     player addEventHandler ["Respawn", _addVanillaActions];
@@ -24,9 +24,3 @@ if (!(isClass (configFile >> "CfgPatches" >> "ace_interact_menu"))) then {
 player addEventHandler ["Respawn", {
     player setVariable ["immersion_pops_cigLitUp", false];
 }];
-
-if (!isMultiplayer && immersion_cigs_giveItemsInSP) then {
-    player addItem "immersion_pops_poppack";
-    player addItem "immersion_pops_poppack";
-    player addItem "immersion_pops_poppack";
-};

@@ -48,7 +48,7 @@ player addEventHandler ["InventoryClosed", {
     };
 }];
 
-if (!isMultiplayer && immersion_cigs_giveItemsInSP) then {
+if (!isMultiplayer && !is3DENPreview && immersion_cigs_giveItemsInSP) then {
     player addItem "murshun_cigs_cigpack";
     player addItem "murshun_cigs_lighter";
 };
