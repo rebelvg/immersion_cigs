@@ -295,10 +295,11 @@ murshun_cigs_fnc_take_cig_from_pack = {
     [_player, "murshun_cigs_unwrap"] call murshun_cigs_playSound;
 
     if (goggles _player == "") then {
-        _player addItem "murshun_cigs_cig0";
+        _player addGoggles "murshun_cigs_cig0";
     } else {
         if (hmd _player == "") then {
             _player addItem "murshun_cigs_cig0_nv";
+            _player assignItem "murshun_cigs_cig0_nv";            
         } else {
             _player addItem "murshun_cigs_cig0";
         };
