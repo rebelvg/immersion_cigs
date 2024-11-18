@@ -1,0 +1,41 @@
+[default]
+workshop = [
+    "450814997",  # CBA_A3's Workshop ID
+    "463939057",  # ACE3
+    "2369477168", # Advanced Developer Tools
+    "753946944",  # Immersive Cigs Original
+]
+
+dlc = [
+]
+
+optionals = [
+]
+
+parameters = [
+    "-filePatching",
+    "-window",
+    "-noPause",
+    "-noPauseAudio",
+]
+
+executable = "arma3_x64"        # Default: "arma3_x64"
+
+[test]
+mission = "test-immersive-cigs-hotfix.Stratis"
+workshop = [
+    "450814997", # CBA_A3's Workshop ID
+    "463939057", # ACE3
+    "2369477168", # Advanced Developer Tools
+    "753946944",  # Immersive Cigs Original
+]
+parameters = [
+    "-filePatching",
+    "-window",
+    "-noPause",
+    "-noPauseAudio",
+]
+dlc = [
+]
+optionals = [
+]
