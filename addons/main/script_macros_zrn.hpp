@@ -13,6 +13,7 @@
 // Stringtable.xml - use LSTRING() instead
 // #define XML(var1) TRIPLES(STR,ADDON,var1)
 // #define QXML(var1) Q(XML(var1))
+#define LSTRING_SET_ARRAY(name) [LSTRING(DOUBLES(set,name)), LSTRING(TRIPLES(set,name,desc))]
 
 // hashMapObjects
 #define OGET(var1) (_self get Q(var1))
@@ -70,6 +71,7 @@
 #define PATH_TO_ADDON_2(var1,var2) QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1\var2)
 #define PATH_TO_ADDON_3(var1,var2,var3) QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1\var2\var3)
 
+#define QPATH_TO_ADDON(var1) QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1)
 #define QQPATH_TO_ADDON(var1) Q(QUOTE(\MAINPREFIX\PREFIX\addons\COMPONENT\var1))
 
 // Debug
