@@ -1,9 +1,26 @@
+#include "../script_component.hpp"
+
+/*
+* Author: Zorn
+* Main, recursive Function to handle the smoking of the Cigs. Triggers Smoke Particles
+*
+* Arguments:
+*
+* Return Value:
+* None
+*
+* Example:
+* ['something', player] call prefix_component_fnc_functionname
+*
+* Public: No
+*/
+
 params ["_unit","_cigTime","_gogglesCurrent","_hmdCurrent","_cigTypeGear","_cigClass","_cigType","_maxTime"];
 
 ////////////////////////////////////////
 // Smoke Particles & Effects
 ////////////////////////////////////////
-["murshun_cigs_smoke", [_unit, _cigType]] call CBA_fnc_globalEvent;
+[QGVAR(EH_smoke), [_unit, _cigType]] call CBA_fnc_globalEvent;
 _unit setFatigue (getFatigue _unit + 0.01);
 
 
@@ -58,7 +75,7 @@ _code = {
 
 
     // Fail/Break/Exit Conditions
-    private _condition1 = (!(alive _unit && (_gogglesCurrent in murshun_cigs_cigsArray || _hmdCurrent in murshun_cigs_cigsArray) && (_unit getVariable ["murshun_cigs_cigLitUp", false]) && _cigTime <= _maxTime));
+    private _condition1 = (!(alive _unit && (_gogglesCurrent in GVAR(cigsArray) || _hmdCurrent in GVAR(cigsArray)) && (_unit getVariable [QGVAR(cigLitUp), false]) && _cigTime <= _maxTime));
     private _condition2 = (_cigTypeGear == "GOGGLES" && _gogglesCurrent != goggles _unit);
     private _condition3 = (_cigTypeGear == "HMD" && _hmdCurrent != hmd _unit);
 
@@ -67,8 +84,8 @@ _code = {
 
     if (  _condition1 ||_condition2 || _condition3 ) then {
         // IF fail condition detected
-        [_unit, "immersion_cigs_cig_out", 1] call murshun_cigs_fnc_anim;
-        _unit setVariable ["murshun_cigs_cigLitUp", false, true];
+        [_unit, "immersion_cigs_cig_out", 1] call FUNC(anim);
+        _unit setVariable [QGVAR(cigLitUp), false, true];
 
         if (_cigTime >= _maxTime) then {
             switch (_cigTypeGear) do {
@@ -77,7 +94,7 @@ _code = {
             };
         };
     } else {
-        [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime] call murshun_cigs_fnc_start_cig_recursive;
+        [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime] call FUNC(start_cig_recursive);
     };
 };
 

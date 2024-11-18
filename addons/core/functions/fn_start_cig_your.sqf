@@ -1,6 +1,20 @@
-// Need to unschedule murshun_cigs_fnc_start_cig first
-//murshun_cigs_fnc_start_cig_your
+#include "../script_component.hpp"
+
+/*
+* Author: Zorn
+* [Description]
+*
+* Arguments:
+*
+* Return Value:
+* None
+*
+* Example:
+* ['something', player] call prefix_component_fnc_functionname
+*
+* Public: No
+*/
 
 params ["_player"];
-if !([_player, _player] call murshun_cigs_fnc_useItem) exitWith {};
-[_player] call murshun_cigs_fnc_start_cig;
+if !([_player, _player] call FUNC(useItem)) exitWith {};
+[_player] call FUNC(_start_cig);

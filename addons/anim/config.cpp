@@ -18,13 +18,13 @@ class CfgPatches {
 
         // Required addons, used for setting load order.
         // When any of the addons is missing, pop-up warning will appear when launching the game.
-        requiredAddons[] = {QPVAR(main), "cba_main", "cba_common"};
+        requiredAddons[] = {QPVAR(main), "cba_main", "a3_anims_f"};
 
 		// Optional. If this is 1, if any of requiredAddons[] entry is missing in your game the entire config will be ignored and return no error (but in rpt) so useful to make a compat Mod (Since Arma 3 2.14)
 		skipWhenMissingDependencies = 1;
         
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups)
-        units[] = {"murshun_cigs_matches", "murshun_cigs_lighter", "murshun_cigs_cigpack", "murshun_cigs_matchesItem", "murshun_cigs_lighterItem", "murshun_cigs_cigpackItem"};
+        units[] = {};
 
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
@@ -32,11 +32,4 @@ class CfgPatches {
 	};
 };
 
-#include "CfgFunctions.hpp"
-#include "XEH\CfgXEH.hpp"
-
-#include "CfgSounds.hpp"
-#include "CfgVehicles.hpp"
-
-#include "CfgMagazines.hpp"
-#include "CfgWeapons.hpp"
+#include "CfgMovesBasic.hpp"

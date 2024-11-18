@@ -1,9 +1,8 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
 * Author: Zorn
-* Function to stop smoking
-*
+* Checks if the unit can takea a cig from a pack
 * Arguments:
 *
 * Return Value:
@@ -15,5 +14,6 @@
 * Public: No
 */
 
-params ["_player"];
-_player setVariable [QGVAR(cigLitUp), false, true];
+
+params ["_unit"];
+"murshun_cigs_cigpack" in (magazines _unit)

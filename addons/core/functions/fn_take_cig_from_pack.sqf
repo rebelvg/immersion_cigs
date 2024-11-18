@@ -1,10 +1,25 @@
-// Doesnt need to be scheduled
-// murshun_cigs_fnc_take_cig_from_pack
+#include "../script_component.hpp"
+
+/*
+* Author: Zorn
+* Function to Take a Cigarette from a box
+*
+* Arguments:
+*
+* Return Value:
+* None
+*
+* Example:
+* ['something', player] call prefix_component_fnc_functionname
+*
+* Public: No
+*/
+
 params ["_player"];
 
-[_player, "murshun_cigs_cigpack"] call murshun_cigs_fnc_removeItemFromMag;
+[_player, "murshun_cigs_cigpack"] call FUNC(removeItemFromMag);
 
-["murshun_cigs_sound", ["murshun_cigs_unwrap",_player]] call CBA_fnc_globalEvent; //params ["sound" , source]
+[QGVAR(EH_sound), [QGVAR(unwrap),_player]] call CBA_fnc_globalEvent; //params ["sound" , source]
 
 if (goggles _player == "") then {
     _player addGoggles "murshun_cigs_cig0";

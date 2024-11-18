@@ -1,4 +1,19 @@
-// murshun_cigs_fnc_anim
+#include "../script_component.hpp"
+
+/*
+* Author: Zorn
+* Function to play an animation
+*
+* Arguments:
+*
+* Return Value:
+* None
+*
+* Example:
+* ['something', player] call prefix_component_fnc_functionname
+*
+* Public: No
+*/
 
 params ["_unit", "_gestureAnimation", "_playTimeSeconds"];
 
