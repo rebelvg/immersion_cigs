@@ -22,7 +22,7 @@ parameters = [
 executable = "arma3_x64"        # Default: "arma3_x64"
 
 [test]
-mission = "test-immersive-cigs-hotfix.Stratis"
+mission = "test.Stratis"
 workshop = [
     "450814997", # CBA_A3's Workshop ID
     "463939057", # ACE3
