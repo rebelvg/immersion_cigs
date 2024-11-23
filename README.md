@@ -14,6 +14,8 @@ For educational purposes. Do not use the content in your works without our expli
 - Rebel - configs, scripting.
 - Facel - 3d models, textures.
 - Panimala - icons, sounds.
+- Overlord Zorn - Scripting, German Translation.
+- prisonerMO - Scripting.
 
 ## Threads
 - https://forums.bistudio.com/forums/topic/181841-immersion-cigs/
@@ -23,6 +25,7 @@ For educational purposes. Do not use the content in your works without our expli
 - http://steamcommunity.com/sharedfiles/filedetails/?id=753946944
 
 ## Dependencies
+- CBA
 
 ### Requirements
 - Latest ARMA 3
