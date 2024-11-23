@@ -50,7 +50,7 @@ private _code = {
         private _action = [
             "murshun_cigs_start_someones_cig",
             LLSTRING(start_someones_cig),
-            "murshun_cigs\UI\light_cig.paa",
+            PATH_TO_ADDON_3(data,ui,light_cig.paa),
             {
                 params ["_target", "_player"];
                 [_target, _player] call FUNC(start_cig_their);
