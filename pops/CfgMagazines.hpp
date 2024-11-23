@@ -6,7 +6,7 @@ class CfgMagazines {
         scope = 2;
 
         displayName = "$STR_immersion_pops_poppack";
-        descriptionShort = "$STR_immersion_pops_poppack_descr";
+        descriptionShort = "$STR_immersion_pops_poppack_desc";
         model = "\immersion_pops\cigpack.p3d";
         picture = "\immersion_pops\UI\gear_cigpack_x_ca";
 

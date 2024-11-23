@@ -18,7 +18,7 @@ player] call prefix_component_fnc_functionname
 
 
 player addAction [
-    localize "STR_murshun_cigs_start_cig",
+    LLSTRING(start_cig),
     {
         params ["_target", "_caller"];
         [_caller] call FUNC(start_cig_your);    //murshun_cigs_fnc_start_cig_your
@@ -35,7 +35,7 @@ player addAction [
 
 
 player addAction [
-    localize "STR_murshun_cigs_stop_cig", 
+    LLSTRING(stop_cig), 
     {
         params ["_target", "_caller"];
         [_caller] call FUNC(stop_cig)   //murshun_cigs_fnc_stop_cig
@@ -52,7 +52,7 @@ player addAction [
 
 
 player addAction [
-    localize "STR_murshun_cigs_take_cig_from_pack", 
+    LLSTRING(take_cig_from_pack), 
     {
         params ["_target", "_caller"];
         [_caller] call FUNC(take_cig_from_pack);    //murshun_cigs_fnc_take_cig_from_pack
@@ -69,7 +69,7 @@ player addAction [
 
 
 player addAction [
-    localize "STR_murshun_cigs_start_someones_cig", 
+    LLSTRING(start_someones_cig), 
     {
         params ["_target", "_caller"];
         [cursorObject, _caller] call FUNC(start_cig_their);        //murshun_cigs_fnc_start_cig_their

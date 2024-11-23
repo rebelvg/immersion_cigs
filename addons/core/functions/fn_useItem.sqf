@@ -18,7 +18,7 @@
 params ["_unit", "_player"];
 
 if (!("murshun_cigs_matches" in (magazines _player)) && !("murshun_cigs_lighter" in (magazines _player))) exitWith {
-    [QGVAR(EH_notify), [localize "STR_murshun_cigs_no_matches_or_lighter", 2.5], _player] call CBA_fnc_targetEvent;
+    [QGVAR(EH_notify), [LLSTRING(no_matches_or_lighter), 2.5], _player] call CBA_fnc_targetEvent;
     false
 };
 

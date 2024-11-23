@@ -8,7 +8,7 @@ class CfgVehicles
             class ACE_Equipment {
                 class murshun_cigs_start_cig
                 {
-                    displayName = "$STR_murshun_cigs_start_cig";
+                    displayName = LSTRING(start_cig);
                     condition = Q([_player] call FUNC(canStartSmoking));
                     statement = Q([_player] call FUNC(start_cig_your));
                     showDisabled = 0;
@@ -17,7 +17,7 @@ class CfgVehicles
                 };
                 class murshun_cigs_stop_cig
                 {
-                    displayName = "$STR_murshun_cigs_stop_cig";
+                    displayName = LSTRING(stop_cig);
                     condition = Q([_player] call FUNC(canStopSmoking));
                     statement = Q([_player] call FUNC(stop_cig));
                     showDisabled = 0;
@@ -26,7 +26,7 @@ class CfgVehicles
                 };
                 class murshun_cigs_take_cig_from_pack
                 {
-                    displayName = "$STR_murshun_cigs_take_cig_from_pack";
+                    displayName = LSTRING(take_cig_from_pack);
                     condition = Q([_player] call FUNC(canTakeCigFromPack));
                     statement = Q([_player] call FUNC(take_cig_from_pack));
                     showDisabled = 0;
@@ -42,8 +42,8 @@ class CfgVehicles
     class murshun_cigs_matchesItem: WeaponHolder_Single_limited_item_F {
         scope = 2;
         scopeCurator = 2;
-        displayName = "$STR_murshun_cigs_matches";
-        author = "$STR_murshun_cigs_author";
+        displayName = LSTRING(matches);
+        author = LSTRING(author);
         vehicleClass = "Magazines";
 
         class TransportMagazines {
@@ -57,8 +57,8 @@ class CfgVehicles
     class murshun_cigs_lighterItem: WeaponHolder_Single_limited_item_F {
         scope = 2;
         scopeCurator = 2;
-        displayName = "$STR_murshun_cigs_lighter";
-        author = "$STR_murshun_cigs_author";
+        displayName = LSTRING(lighter);
+        author = LSTRING(author);
         vehicleClass = "Magazines";
 
         class TransportMagazines {
@@ -72,8 +72,8 @@ class CfgVehicles
     class murshun_cigs_cigpackItem: WeaponHolder_Single_limited_item_F {
         scope = 2;
         scopeCurator = 2;
-        displayName = "$STR_murshun_cigs_cigpack";
-        author = "$STR_murshun_cigs_author";
+        displayName = LSTRING(cigpack);
+        author = LSTRING(author);
         vehicleClass = "Magazines";
 
         class TransportMagazines {

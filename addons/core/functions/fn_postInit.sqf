@@ -49,7 +49,7 @@ private _code = {
         // Add Ace Interactions when ace loaded
         private _action = [
             "murshun_cigs_start_someones_cig",
-            localize "STR_murshun_cigs_start_someones_cig",
+            LLSTRING(start_someones_cig),
             "murshun_cigs\UI\light_cig.paa",
             {
                 params ["_target", "_player"];
