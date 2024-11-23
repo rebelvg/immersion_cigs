@@ -1,12 +1,12 @@
 class CfgMagazines {
     class CA_Magazine;
     class murshun_cigs_matches: CA_Magazine {
-        author = LSTRING(author);
+        author = CSTRING(author);
         scope = 2;
 
-        displayName = LSTRING(matches);
-        descriptionShort = LSTRING(matches_desc);
-        model = PATH_TO_ADDON_3(data,matches,matches.paa);
+        displayName = CSTRING(matches);
+        descriptionShort = CSTRING(matches_desc);
+        model = PATH_TO_ADDON_3(data,matches,matches.p3d);
         picture = PATH_TO_ADDON_3(data,ui,gear_matches_x_ca.paa);
 
         ammo = "";
@@ -18,12 +18,12 @@ class CfgMagazines {
     };
 
     class murshun_cigs_lighter: CA_Magazine {
-        author = LSTRING(author);
+        author = CSTRING(author);
         scope = 2;
 
-        displayName = LSTRING(lighter);
-        descriptionShort = LSTRING(lighter_desc);
-        model = PATH_TO_ADDON_3(data,lighter,lighter.paa);
+        displayName = CSTRING(lighter);
+        descriptionShort = CSTRING(lighter_desc);
+        model = PATH_TO_ADDON_3(data,lighter,lighter.p3d);
         picture = PATH_TO_ADDON_3(data,ui,gear_lighter_x_ca.paa);
 
         ammo = "";
@@ -35,12 +35,12 @@ class CfgMagazines {
     };
 
     class murshun_cigs_cigpack: CA_Magazine {
-        author = LSTRING(author);
+        author = CSTRING(author);
         scope = 2;
 
-        displayName = LSTRING(cigpack);
-        descriptionShort = LSTRING(cigpack_desc);
-        model = PATH_TO_ADDON_3(data,cigpack,cigpack.paa);
+        displayName = CSTRING(cigpack);
+        descriptionShort = CSTRING(cigpack_desc);
+        model = PATH_TO_ADDON_3(data,cigpack,cigpack.p3d);
         picture = PATH_TO_ADDON_3(data,ui,gear_cigpack_x_ca.paa);
 
         ammo = "";
