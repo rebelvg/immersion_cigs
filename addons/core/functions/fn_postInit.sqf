@@ -57,7 +57,7 @@ private _code = {
             },
             {
                 params ["_target", "_player"];
-                (((goggles _target) in GVAR(cigsArray)) || ((hmd _target) in GVAR(cigsArray))) && !(_target getVariable ['murshun_cigs_cigLitUp', false]) && (alive _target)
+                (((goggles _target) in GVAR(cigsArray)) || ((hmd _target) in GVAR(cigsArray))) && !(_target getVariable [QGVAR(cigLitUp), false]) && (alive _target)
             }
         ] call ace_interact_menu_fnc_createAction;
 
