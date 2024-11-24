@@ -16,27 +16,17 @@
 * Public: No
 */
 
+// I dont remember why this waits for cba settings :harold:
+
 private _code = {
-    [QGVAR(EH_sound), {
-        params ["_sound", "_source"];
-        diag_log _this;
-        _source say3D _sound;
-    }] call CBA_fnc_addEventHandler;
 
-    [QGVAR(EH_start_cig), {
-        _this call FUNC(start_cig);
-        diag_log _this;
-    }] call CBA_fnc_addEventHandler;
-
+    [QGVAR(EH_sound), FUNC(sound)] call CBA_fnc_addEventHandler;
+    [QGVAR(EH_start_cig), FUNC(start_cig)] call CBA_fnc_addEventHandler;
     [QGVAR(EH_notify), CBA_fnc_notify] call CBA_fnc_addEventHandler;
+    [QGVAR(EH_smoke), FUNC(smoke)] call CBA_fnc_addEventHandler;
 
 
     if (!hasInterface) exitWith {};
-
-    [QGVAR(EH_smoke), {
-        diag_log _this;
-        _this call FUNC(smoke);
-    }] call CBA_fnc_addEventHandler;
 
     if !(isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
 
@@ -46,9 +36,12 @@ private _code = {
 
     } else {
 
+
         // Add Ace Interactions when ace loaded
+        // TODO: Could be moved into config?
+
         private _action = [
-            "murshun_cigs_start_someones_cig",
+            QGVAR(start_someones_cig),
             LLSTRING(start_someones_cig),
             PATH_TO_ADDON_3(data,ui,light_cig.paa),
             {
@@ -64,17 +57,20 @@ private _code = {
         ["CAManBase", 0, ["ACE_Head"], _action, true] call ace_interact_menu_fnc_addActionToClass;
     };
 
+    // reset cigLitUp variable on respawn
     player addEventHandler ["Respawn", { player setVariable [QGVAR(cigLitUp), false]; }];
 
+    // why? :sus:
     player addEventHandler ["InventoryClosed", {
         params ["_unit", "_container"];
-
         if (goggles _unit in GVAR(cigsArray) && hmd _unit in GVAR(cigsArray)) then {
             _unit addItem (hmd _unit);
             _unit unlinkItem (hmd _unit);
         };
     }];
 
+
+    // Add items to Player in SP
     ["unit", {
         params ["_player"];
         if (!isMultiplayer && !is3DENPreview && GVAR(giveItems_SP)) then {
