@@ -16,10 +16,14 @@ player] call prefix_component_fnc_functionname
 * Public: No
 */
 
+// Defaults to enable giving items in SP - can be made into a cba setting
+
 if (isNil QGVAR(giveItems_SP)) then {
     GVAR(giveItems_SP) = true;
 };
 
+
+// Generates GVAR array of all smokable items
 GVAR(cigsArray) = [
     "EWK_Cigar1", 
     "EWK_Cigar2", 
@@ -42,5 +46,5 @@ GVAR(cigsArray) = [
     "EWK_Shemag_NB_Cig6", 
     "EWK_Shemag_tan_Cig6"
 ] + (
-    ("getNumber (_x >> 'immersion_cigs_isCig') == 1" configClasses (configFile >> "CfgGlasses")) apply {configName _x}) + (("getNumber (_x >> 'immersion_cigs_isCig') == 1" configClasses (configFile >> "CfgWeapons")) apply {configName _x}
+    ("getNumber (_x >> 'immersion_cigs_isSmokeable') == 1" configClasses (configFile >> "CfgGlasses")) apply {configName _x}) + (("getNumber (_x >> 'immersion_cigs_isSmokeable') == 1" configClasses (configFile >> "CfgWeapons")) apply {configName _x}
 );
