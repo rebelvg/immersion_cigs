@@ -79,7 +79,7 @@ player addAction [
     false, 
     true, 
     "",
-    "", //    QUOTE(if !(cursorObject isKindOf 'Man') exitWith {false}; ((hmd cursorObject) in GVAR(cigsArray)) && !(cursorObject getVariable ['murshun_cigs_cigLitUp', false]) && (alive cursorObject)), // TO DO LATER
+    "", //QUOTE(if !(cursorObject isKindOf 'Man') exitWith {false}; ((hmd cursorObject) in GVAR(cigsArray)) && !(cursorObject getVariable ['murshun_cigs_cigLitUp', false]) && (alive cursorObject)), // TO DO LATER
     5, 
     false
 ];
