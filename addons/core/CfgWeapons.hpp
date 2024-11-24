@@ -1,3 +1,6 @@
+// NVG's are defined within CfgWeapons
+// The Facewear Version is defined in CfgGoggles
+
 class CfgWeapons {
 	class NVGoggles;
 
@@ -18,7 +21,7 @@ class CfgWeapons {
         immersion_cigs_maxTime = 330;
         immersion_cigs_initStateTime = 0;
         immersion_cigs_nextState = "murshun_cigs_cig1_nv";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
@@ -41,7 +44,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 6;
         immersion_cigs_nextState = "murshun_cigs_cig2_nv";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
@@ -61,7 +64,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 66;
         immersion_cigs_nextState = "murshun_cigs_cig3_nv";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
@@ -81,7 +84,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 126;
         immersion_cigs_nextState = "murshun_cigs_cig4_nv";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
@@ -101,7 +104,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 306;
         immersion_cigs_nextState = "";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
@@ -128,7 +131,7 @@ class CfgWeapons {
         immersion_cigs_maxTime = 660;
         immersion_cigs_initStateTime = 0;
         immersion_cigs_nextState = "immersion_cigs_cigar1_nv";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
@@ -148,7 +151,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 12;
         immersion_cigs_nextState = "immersion_cigs_cigar2_nv";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
@@ -168,7 +171,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 132;
         immersion_cigs_nextState = "immersion_cigs_cigar3_nv";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
@@ -188,7 +191,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 252;
         immersion_cigs_nextState = "immersion_cigs_cigar4_nv";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
@@ -208,7 +211,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 612;
         immersion_cigs_nextState = "";
-        immersion_cigs_isCig = 1;
+        immersion_cigs_isSmokeable = 1;
 
         class ItemInfo
         {
