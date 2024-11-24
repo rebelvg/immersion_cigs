@@ -32,19 +32,19 @@ immersion_pops_removeItemFromMag = {
     } else {
         [format ["%1 is now empty.", getText (configFile >> "CfgMagazines" >> _mag >> "displayName")], 2.5, _player] spawn ace_common_fnc_displayTextStructured;
     };
-};
+};      // This is 1:1 the same function
 
 immersion_pops_playSound = {
     params ["_unit", "_class"];
 
     [_unit, _class] remoteExec ["say3D"];
-};
+}; // This is new but can be made into an cba event
 
 immersion_pops_fnc_start_cig_your = {
     params ["_player"];
 
     [_player] spawn immersion_pops_fnc_start_cig;
-};
+};  // lacks the can use item chat
 
 immersion_pops_fnc_start_cig = {
     params ["_unit"];

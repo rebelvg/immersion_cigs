@@ -21,7 +21,7 @@ player addAction [
     LLSTRING(start_cig),
     {
         params ["_target", "_caller"];
-        [_caller] call FUNC(start_cig_your);    //murshun_cigs_fnc_start_cig_your
+        [_caller] call FUNC(start_cig_your);
     },
     nil,
     0,
@@ -38,7 +38,7 @@ player addAction [
     LLSTRING(stop_cig), 
     {
         params ["_target", "_caller"];
-        [_caller] call FUNC(stop_cig)   //murshun_cigs_fnc_stop_cig
+        [_caller] call FUNC(stop_cig);
     }, 
     nil, 
     0, 
@@ -55,14 +55,14 @@ player addAction [
     LLSTRING(take_cig_from_pack), 
     {
         params ["_target", "_caller"];
-        [_caller] call FUNC(take_cig_from_pack);    //murshun_cigs_fnc_take_cig_from_pack
+        [_caller] call FUNC(take_cig_from_pack);
     }, 
     nil, 
     0, 
     false, 
     true, 
-    "", 
-    "if (_target != player) exitWith {false}; 'murshun_cigs_cigpack' in (magazineCargo uniformContainer player) || 'murshun_cigs_cigpack' in (magazineCargo vestContainer player)", 
+    "",
+    Q(if (_target != player) exitWith {false}; QQPVAR(cigpack) in (magazineCargo uniformContainer player) || QQPVAR(cigpack) in (magazineCargo vestContainer player)), 
     5, 
     false
 ];
@@ -72,14 +72,14 @@ player addAction [
     LLSTRING(start_someones_cig), 
     {
         params ["_target", "_caller"];
-        [cursorObject, _caller] call FUNC(start_cig_their);        //murshun_cigs_fnc_start_cig_their
+        [cursorObject, _caller] call FUNC(start_cig_their);
     }, 
     nil, 
     0, 
     false, 
     true, 
-    "", 
-    "if !(cursorObject isKindOf 'Man') exitWith {false}; ((hmd cursorObject) in GVAR(cigsArray)) && !(cursorObject getVariable ['murshun_cigs_cigLitUp', false]) && (alive cursorObject)", 
+    "",
+    "", //QUOTE(if !(cursorObject isKindOf 'Man') exitWith {false}; ((hmd cursorObject) in GVAR(cigsArray)) && !(cursorObject getVariable [QQPVAR(cigLitUp), false]) && (alive cursorObject)), // TO DO LATER
     5, 
     false
 ];

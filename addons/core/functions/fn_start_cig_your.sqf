@@ -17,4 +17,4 @@
 
 params ["_player"];
 if !([_player, _player] call FUNC(useItem)) exitWith {};
-[_player] call FUNC(_start_cig);
+[_player] call FUNC(start_cig);

@@ -17,17 +17,17 @@
 
 params ["_player"];
 
-[_player, "murshun_cigs_cigpack"] call FUNC(removeItemFromMag);
+[_player, QPVAR(cigpack)] call FUNC(removeItemFromMag);
 
 [QGVAR(EH_sound), [QGVAR(unwrap),_player]] call CBA_fnc_globalEvent; //params ["sound" , source]
 
 if (goggles _player == "") then {
-    _player addGoggles "murshun_cigs_cig0";
+    _player addGoggles QPVAR(cig0);
 } else {
     if (hmd _player == "") then {
-        _player addItem "murshun_cigs_cig0_nv";
-        _player assignItem "murshun_cigs_cig0_nv";
+        _player addItem QPVAR(cig0_nv);
+        _player assignItem QPVAR(cig0_nv);
     } else {
-        _player addItem "murshun_cigs_cig0";
+        _player addItem QPVAR(cig0);
     };
 };

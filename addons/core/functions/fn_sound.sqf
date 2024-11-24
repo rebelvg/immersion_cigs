@@ -1,8 +1,9 @@
-#include "../../script_component.hpp"
+#include "../script_component.hpp"
 
 /*
 * Author: Zorn
-* Checks if the unit can takea a cig from a pack
+* EH Function to the sound 3d on each client
+*
 * Arguments:
 *
 * Return Value:
@@ -14,6 +15,5 @@
 * Public: No
 */
 
-
-params ["_unit"];
-QPVAR(cigpack) in (magazines _unit)
+params ["_sound", "_source"];
+_source say3D _sound;
