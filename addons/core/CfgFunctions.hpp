@@ -13,8 +13,10 @@ class CfgFunctions
 
             class addVanillaActions {};
 
+            class sound {};
             class smoke {};
             class anim {};
+
             class removeItemFromMag {};
             class useItem {};
 
