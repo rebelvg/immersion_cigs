@@ -61,8 +61,8 @@ player addAction [
     0, 
     false, 
     true, 
-    "", 
-    "if (_target != player) exitWith {false}; 'murshun_cigs_cigpack' in (magazineCargo uniformContainer player) || 'murshun_cigs_cigpack' in (magazineCargo vestContainer player)", 
+    "",
+    Q(if (_target != player) exitWith {false}; 'murshun_cigs_cigpack' in (magazineCargo uniformContainer player) || 'murshun_cigs_cigpack' in (magazineCargo vestContainer player)), 
     5, 
     false
 ];
@@ -78,8 +78,8 @@ player addAction [
     0, 
     false, 
     true, 
-    "", 
-    "if !(cursorObject isKindOf 'Man') exitWith {false}; ((hmd cursorObject) in GVAR(cigsArray)) && !(cursorObject getVariable ['murshun_cigs_cigLitUp', false]) && (alive cursorObject)", 
+    "",
+    "", //    QUOTE(if !(cursorObject isKindOf 'Man') exitWith {false}; ((hmd cursorObject) in GVAR(cigsArray)) && !(cursorObject getVariable ['murshun_cigs_cigLitUp', false]) && (alive cursorObject)), // TO DO LATER
     5, 
     false
 ];
