@@ -38,13 +38,13 @@ switch (_cigTypeGear) do {
 ////////////////////////////////////////
 
 private _gogglesNew = "";
-private _nextCigState = getText (_cigClass >> "immersion_cigs_nextState");
+private _nextCigState = getText (_cigClass >> QPVAR(nextState));
 
 private _nextCigStateTime = 0;
 
 switch (_cigTypeGear) do {
-    case ("GOGGLES"): { _nextCigStateTime = getNumber (configFile >> "CfgGlasses" >> _nextCigState >> "immersion_cigs_initStateTime");  };
-    case ("HMD"):     { _nextCigStateTime = getNumber (configFile >> "CfgWeapons" >> _nextCigState >> "immersion_cigs_initStateTime");  };
+    case ("GOGGLES"): { _nextCigStateTime = getNumber (configFile >> "CfgGlasses" >> _nextCigState >> QPVAR(initStateTime));  };
+    case ("HMD"):     { _nextCigStateTime = getNumber (configFile >> "CfgWeapons" >> _nextCigState >> QPVAR(initStateTime));  };
 };
 
 if (_cigTime >= _nextCigStateTime) then {    _gogglesNew = _nextCigState;   };

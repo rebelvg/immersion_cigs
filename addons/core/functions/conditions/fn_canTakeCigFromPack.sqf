@@ -16,4 +16,4 @@
 
 
 params ["_unit"];
-"murshun_cigs_cigpack" in (magazines _unit)
+QPVAR(cigpack) in (magazines _unit)

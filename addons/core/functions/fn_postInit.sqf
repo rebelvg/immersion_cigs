@@ -74,8 +74,8 @@ private _code = {
     ["unit", {
         params ["_player"];
         if (!isMultiplayer && !is3DENPreview && GVAR(giveItems_SP)) then {
-            _player addItem "murshun_cigs_cigpack";
-            _player addItem "murshun_cigs_lighter";
+            _player addItem QPVAR(cigpack);
+            _player addItem QPVAR(lighter);
         };
     },true] call CBA_fnc_addPlayerEventHandler;
 };

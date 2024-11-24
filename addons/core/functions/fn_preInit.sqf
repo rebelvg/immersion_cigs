@@ -46,5 +46,5 @@ GVAR(cigsArray) = [
     "EWK_Shemag_NB_Cig6", 
     "EWK_Shemag_tan_Cig6"
 ] + (
-    ("getNumber (_x >> 'immersion_cigs_isSmokeable') == 1" configClasses (configFile >> "CfgGlasses")) apply {configName _x}) + (("getNumber (_x >> 'immersion_cigs_isSmokeable') == 1" configClasses (configFile >> "CfgWeapons")) apply {configName _x}
+    (Q(getNumber (_x >> QQPVAR(isSmokeable)) == 1) configClasses (configFile >> "CfgGlasses")) apply {configName _x}) + ((Q(getNumber (_x >> QQPVAR(isSmokeable)) == 1) configClasses (configFile >> "CfgWeapons")) apply {configName _x}
 );

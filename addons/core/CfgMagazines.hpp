@@ -1,6 +1,6 @@
 class CfgMagazines {
     class CA_Magazine;
-    class murshun_cigs_matches: CA_Magazine {
+    class PVAR(matches): CA_Magazine {
         author = CSTRING(author);
         scope = 2;
 
@@ -17,7 +17,7 @@ class CfgMagazines {
         mass = 1;
     };
 
-    class murshun_cigs_lighter: CA_Magazine {
+    class PVAR(lighter): CA_Magazine {
         author = CSTRING(author);
         scope = 2;
 
@@ -34,7 +34,7 @@ class CfgMagazines {
         mass = 2;
     };
 
-    class murshun_cigs_cigpack: CA_Magazine {
+    class PVAR(cigpack): CA_Magazine {
         author = CSTRING(author);
         scope = 2;
 

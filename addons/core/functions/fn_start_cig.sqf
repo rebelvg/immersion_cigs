@@ -55,7 +55,7 @@ switch (_cigTypeGear) do {
 ////////////////////////////////////////
 
 private _cigTime = 0;
-_cigTime = getNumber (_cigClass >> "immersion_cigs_initStateTime");
+_cigTime = getNumber (_cigClass >> QPVAR(initStateTime));
 
 
 ////////////////////////////////////////
@@ -63,8 +63,8 @@ _cigTime = getNumber (_cigClass >> "immersion_cigs_initStateTime");
 ////////////////////////////////////////
 [_unit, "immersion_cigs_cig_in", 3] call FUNC(anim);
 
-private _cigType = getText   (_cigClass >> "immersion_cigs_type"   );
-private _maxTime = getNumber (_cigClass >> "immersion_cigs_maxTime");
+private _cigType = getText   (_cigClass >> QPVAR(type)   );
+private _maxTime = getNumber (_cigClass >> QPVAR(maxTime));
 
 if (_maxTime == 0) then { _maxTime = 330; };
 
@@ -87,10 +87,11 @@ private _sleep2 = _sleep1 + (1.0 + random 1);
 // Start Recursive Loop
 ////////////////////////////////////////
 
-
+/*
 private _code = {
     params  ["_unit","_cigTime","_gogglesCurrent","_hmdCurrent","_cigTypeGear","_cigClass","_cigType","_maxTime"];
-    [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime] call FUNC(start_cig_recursive);
+    [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime] call ;
 };
+*/
 
-[_code, [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime], _sleep2] call CBA_fnc_waitAndExecute;
+[FUNC(start_cig_recursive), [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime], _sleep2] call CBA_fnc_waitAndExecute;
