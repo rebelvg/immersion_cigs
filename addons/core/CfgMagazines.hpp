@@ -15,6 +15,9 @@ class CfgMagazines {
         tracersEvery = 0;
         lastRoundsTracer = 0;
         mass = 1;
+
+        PVAR(isLighter) = 1;
+        PVAR(LighterSound) = QPVAR(matches_01);     // CfgSounds Class
     };
 
     class PVAR(lighter): CA_Magazine {
@@ -32,6 +35,9 @@ class CfgMagazines {
         tracersEvery = 0;
         lastRoundsTracer = 0;
         mass = 2;
+
+        PVAR(isLighter) = 1;
+        PVAR(LighterSound) = QPVAR(lighter_01);     // CfgSounds Class
     };
 
     class PVAR(cigpack): CA_Magazine {
@@ -49,5 +55,10 @@ class CfgMagazines {
         tracersEvery = 0;
         lastRoundsTracer = 0;
         mass = 2;
+
+        PVAR(isPack) = 1;
+        PVAR(unpackSound) = QPVAR(unwrap);
+        PVAR(item_glasses) = QPVAR(cig0);
+        PVAR(item_hmd) = QPVAR(cig0_nv);
     };
 };

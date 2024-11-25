@@ -17,19 +17,27 @@ class CfgFunctions
             class smoke {};
             class anim {};
 
+            class take_cig_from_pack {};
             class removeItemFromMag {};
-            class useItem {};
 
             class start_cig_your {};
             class start_cig_their {};
 
-            class start_cig {};
-            class start_cig_recursive {};
+            class start_smoking {};
+            class smoking {};
 
             class stop_cig {};
-            class take_cig_from_pack {};
         };
-        
+
+        class lighter
+        {
+            file = PATH_TO_FUNC_SUB(lighter);
+
+            class hasLighter {};
+            class getLighter {};
+            class useLighter {};
+        };
+
         class conditions
         {
             file = PATH_TO_FUNC_SUB(conditions);
@@ -41,5 +49,3 @@ class CfgFunctions
         };
     };
 };
-
-// cigs_core_fnc_name

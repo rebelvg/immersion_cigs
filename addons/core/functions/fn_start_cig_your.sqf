@@ -16,5 +16,6 @@
 */
 
 params ["_player"];
-if !([_player, _player] call FUNC(useItem)) exitWith {};
-[_player] call FUNC(start_cig);
+if !( [_player] call FUNC(hasLighter) ) exitWith {};
+[_player] call FUNC(useLighter);
+[_player] call FUNC(start_smoking);

@@ -18,7 +18,9 @@
 
 params ["_unit", "_player"];
 
-if !([_unit, _player] call FUNC(useItem)) exitWith {};
+if !([_unit, _player] call FUNC(useLighter)) exitWith {};
 _player playActionNow "PutDown";
 
+if !([_player] call FUNC(hasLighter)) exitWith {};
+[_player] call FUNC(useLighter);
 [QGVAR(EH_start_cig), [_unit],_unit] call CBA_fnc_targetEvent; // raises event local

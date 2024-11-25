@@ -80,7 +80,7 @@ class CfgGlasses {
         PVAR(type) = "cigar";
         PVAR(maxTime) = 660;
         PVAR(initStateTime) = 0;
-        PVAR(nextState) = QPVAR(cigar1)
+        PVAR(nextState) = QPVAR(cigar1);
         PVAR(isSmokeable) = 1;
     };
 

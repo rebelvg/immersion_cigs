@@ -17,4 +17,4 @@
 
 params ["_unit"];
 
-(((goggles _unit) in GVAR(cigsArray)) || ((hmd _unit) in GVAR(cigsArray))) && !(_unit getVariable [QGVAR(cigLitUp), false])
+(((goggles _unit) in GVAR(array_cigs)) || ((hmd _unit) in GVAR(array_cigs))) && !(_unit getVariable [QGVAR(cigLitUp), false])

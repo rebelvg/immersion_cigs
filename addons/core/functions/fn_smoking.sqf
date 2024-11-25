@@ -2,7 +2,7 @@
 
 /*
 * Author: Zorn
-* Main, recursive Function to handle the smoking of the Cigs. Triggers Smoke Particles
+* Recursive Function to handle the smoking of the Cigs. Triggers Smoke Particles
 *
 * Arguments:
 *
@@ -75,7 +75,7 @@ _code = {
 
 
     // Fail/Break/Exit Conditions
-    private _condition1 = (!(alive _unit && (_gogglesCurrent in GVAR(cigsArray) || _hmdCurrent in GVAR(cigsArray)) && (_unit getVariable [QGVAR(cigLitUp), false]) && _cigTime <= _maxTime));
+    private _condition1 = (!(alive _unit && (_gogglesCurrent in GVAR(array_cigs) || _hmdCurrent in GVAR(array_cigs)) && (_unit getVariable [QGVAR(cigLitUp), false]) && _cigTime <= _maxTime));
     private _condition2 = (_cigTypeGear == "GOGGLES" && _gogglesCurrent != goggles _unit);
     private _condition3 = (_cigTypeGear == "HMD" && _hmdCurrent != hmd _unit);
 
@@ -94,7 +94,7 @@ _code = {
             };
         };
     } else {
-        [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime] call FUNC(start_cig_recursive);
+        [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime] call FUNC(smoking);
     };
 };
 

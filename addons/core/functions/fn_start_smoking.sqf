@@ -36,8 +36,8 @@ _unit setVariable [QGVAR(cigLitUp), true, true];
 private _gogglesCurrent = goggles _unit;
 private _hmdCurrent = hmd _unit;
 private _cigTypeGear = "";
-if (_gogglesCurrent in GVAR(cigsArray)) then { _cigTypeGear = "GOGGLES"; };
-if (_hmdCurrent     in GVAR(cigsArray)) then { _cigTypeGear = "HMD";     };
+if (_gogglesCurrent in GVAR(array_cigs)) then { _cigTypeGear = "GOGGLES"; };
+if (_hmdCurrent     in GVAR(array_cigs)) then { _cigTypeGear = "HMD";     };
 if (_cigTypeGear == "") exitWith {};
 
 
@@ -94,4 +94,4 @@ private _code = {
 };
 */
 
-[FUNC(start_cig_recursive), [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime], _sleep2] call CBA_fnc_waitAndExecute;
+[FUNC(smoking), [_unit,_cigTime,_gogglesCurrent,_hmdCurrent,_cigTypeGear,_cigClass,_cigType,_maxTime], _sleep2] call CBA_fnc_waitAndExecute;

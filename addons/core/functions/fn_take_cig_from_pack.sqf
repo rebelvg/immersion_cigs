@@ -15,19 +15,21 @@
 * Public: No
 */
 
-params ["_player"];
+params [
+    "_player",
+    ["_class_cigpack", QPVAR(cigpack), [""]]
+];
 
-[_player, QPVAR(cigpack)] call FUNC(removeItemFromMag);
+[_player, _class_cigpack] call FUNC(removeItemFromMag);
 
-[QGVAR(EH_sound), [QGVAR(unwrap),_player]] call CBA_fnc_globalEvent; //params ["sound" , source]
+private _sound = getText (configFile >> "CfgMagazines" >> _class_cigpack >> QPVAR(unpackSound));
+if (_sound != "") then { [QGVAR(EH_sound), [ _sound, _player ]] call CBA_fnc_globalEvent; }; //params ["sound" , source] 
 
-if (goggles _player == "") then {
-    _player addGoggles QPVAR(cig0);
-} else {
-    if (hmd _player == "") then {
-        _player addItem QPVAR(cig0_nv);
-        _player assignItem QPVAR(cig0_nv);
-    } else {
-        _player addItem QPVAR(cig0);
-    };
+private _item_glasses = getText (configFile >> "CfgMagazines" >> _class_cigpack >> QPVAR(item_glasses));
+private _item_hmd =     getText (configFile >> "CfgMagazines" >> _class_cigpack >> QPVAR(item_hmd));
+
+switch (true) do {
+    case (goggles _player == ""): { _player addGoggles _item_glasses };
+    case (    hmd _player == ""): { _player addItem _item_hmd; _player assignItem _item_hmd; };
+    default { _player addItem _item_glasses; };
 };

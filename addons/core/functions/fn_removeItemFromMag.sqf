@@ -2,7 +2,7 @@
 
 /*
 * Author: Zorn
-* Removes a cigarette from the box of cigarettes (magazine)
+* Removes a unit from a magazine. Used by finite lighters, matches or Cigarettes.
 *
 * Arguments:
 *

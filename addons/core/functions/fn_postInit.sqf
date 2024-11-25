@@ -21,7 +21,7 @@
 private _code = {
 
     [QGVAR(EH_sound), FUNC(sound)] call CBA_fnc_addEventHandler;
-    [QGVAR(EH_start_cig), FUNC(start_cig)] call CBA_fnc_addEventHandler;
+    [QGVAR(EH_start_cig), FUNC(start_smoking)] call CBA_fnc_addEventHandler;
     [QGVAR(EH_notify), CBA_fnc_notify] call CBA_fnc_addEventHandler;
     [QGVAR(EH_smoke), FUNC(smoke)] call CBA_fnc_addEventHandler;
 
@@ -50,7 +50,7 @@ private _code = {
             },
             {
                 params ["_target", "_player"];
-                (((goggles _target) in GVAR(cigsArray)) || ((hmd _target) in GVAR(cigsArray))) && !(_target getVariable [QGVAR(cigLitUp), false]) && (alive _target)
+                (((goggles _target) in GVAR(array_cigs)) || ((hmd _target) in GVAR(array_cigs))) && !(_target getVariable [QGVAR(cigLitUp), false]) && (alive _target)
             }
         ] call ace_interact_menu_fnc_createAction;
 
@@ -63,7 +63,7 @@ private _code = {
     // why? :sus:
     player addEventHandler ["InventoryClosed", {
         params ["_unit", "_container"];
-        if (goggles _unit in GVAR(cigsArray) && hmd _unit in GVAR(cigsArray)) then {
+        if (goggles _unit in GVAR(array_cigs) && hmd _unit in GVAR(array_cigs)) then {
             _unit addItem (hmd _unit);
             _unit unlinkItem (hmd _unit);
         };

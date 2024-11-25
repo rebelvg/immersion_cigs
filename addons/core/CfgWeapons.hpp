@@ -21,6 +21,7 @@ class CfgWeapons {
         PVAR(maxTime) = 330;
         PVAR(initStateTime) = 0;
         PVAR(nextState) = QPVAR(cig1_nv);
+
         PVAR(isSmokeable) = 1;
 
         class ItemInfo

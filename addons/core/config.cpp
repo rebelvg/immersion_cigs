@@ -40,3 +40,4 @@ class CfgPatches {
 
 #include "CfgMagazines.hpp"
 #include "CfgWeapons.hpp"
+#include "CfgGlasses.hpp"

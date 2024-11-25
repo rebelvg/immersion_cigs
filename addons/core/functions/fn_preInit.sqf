@@ -24,7 +24,7 @@ if (isNil QGVAR(giveItems_SP)) then {
 
 
 // Generates GVAR array of all smokable items
-GVAR(cigsArray) = [
+GVAR(array_cigs) = [
     "EWK_Cigar1", 
     "EWK_Cigar2", 
     "EWK_Cig1", 
@@ -48,3 +48,4 @@ GVAR(cigsArray) = [
 ] + (
     (Q(getNumber (_x >> QQPVAR(isSmokeable)) == 1) configClasses (configFile >> "CfgGlasses")) apply {configName _x}) + ((Q(getNumber (_x >> QQPVAR(isSmokeable)) == 1) configClasses (configFile >> "CfgWeapons")) apply {configName _x}
 );
+
