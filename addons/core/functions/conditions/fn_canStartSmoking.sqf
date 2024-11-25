@@ -17,4 +17,14 @@
 
 params ["_unit"];
 
-(((goggles _unit) in GVAR(array_cigs)) || ((hmd _unit) in GVAR(array_cigs))) && !(_unit getVariable [QGVAR(cigLitUp), false])
+
+
+!(_unit getVariable [QGVAR(cigLitUp), false])
+&& 
+{
+    getNumber (configFile >> "CfgGlasses" >> goggles _unit >> QPVAR(isSmokeable)) == 1
+    ||
+    {
+        getNumber (configFile >> "CfgWeapons" >> hmd _unit >> QPVAR(isSmokeable)) == 1
+    }
+}

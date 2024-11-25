@@ -22,5 +22,5 @@ private _return = switch (true) do {
     case (    items _player findIf { getNumber (configFile >> "CfgWeapons"   >> _x >> QPVAR(isLighter) ) == 1}  >= 0): { true };     // infinite lighter
     default { false };
 };
-
+ZRN_LOG_1(_return);
 _return
