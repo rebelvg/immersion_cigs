@@ -22,19 +22,19 @@ class CfgMovesBasic
 			"Disable_Gesture",
 			"Gesture"
 		};
-		immersion_cigs_cig_in[]=
+		GVAR(cig_in)[]=
 		{
-			"immersion_cigs_cig_in",
+			QGVAR(cig_in),
 			"Gesture"
 		};
-		immersion_cigs_cig_loop[]=
+		GVAR(cig_loop)[]=
 		{
-			"immersion_cigs_cig_loop",
+			QGVAR(cig_loop),
 			"Gesture"
 		};
-		immersion_cigs_cig_out[]=
+		GVAR(cig_out)[]=
 		{
-			"immersion_cigs_cig_out",
+			QGVAR(cig_out),
 			"Gesture"
 		};
 	};
@@ -220,7 +220,7 @@ class CfgGesturesMale
 			rightHandIKCurve[]={1};
 			rightHandIKEnd=1;
 		};
-		class immersion_cigs_cig_in: Default
+		class GVAR(cig_in): Default
 		{
 	        speed=-4.5;
 			looped=0;
@@ -233,7 +233,7 @@ class CfgGesturesMale
 			rightHandIKCurve[]={0};
 			rightHandIKEnd=0;
 		};
-		class immersion_cigs_cig_out: Default
+		class GVAR(cig_out): Default
 		{
 	        speed=-1.9;
 			looped=0;
@@ -246,7 +246,7 @@ class CfgGesturesMale
 			rightHandIKCurve[]={0};
 			rightHandIKEnd=0;
 		};
-		class immersion_cigs_cig_loop: Default
+		class GVAR(cig_loop): Default
 		{
 	        speed=-6.5;
 			looped=1;

@@ -14,7 +14,6 @@
 *
 * Public: No
 */
-ZRN_LOG_1(_this);
 
 params ["_player"];
 if !( [_player] call FUNC(hasLighter) ) exitWith {};

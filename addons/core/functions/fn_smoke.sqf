@@ -15,14 +15,14 @@
 * Public: No
 */
 
-params ["_unit", "_type"];
 
-private _multiplier = 1;
+params ["_unit", "_cigConfig"];
 
-switch (_type) do {
-    case "cigarette": { _multiplier = 1 };
-    case "cigar": { _multiplier = 2 };
-};
+ZRN_LOG_1(_cigConfig);
+
+private _multiplier = getNumber (_cigConfig >> QPVAR(smokeMultiplier));
+
+ZRN_LOG_1(_multiplier);
 
 //private _source = "logic" createVehicleLocal (getPosATL _unit);
 private _source = "#particleSource" createVehicleLocal getPosATL _unit;

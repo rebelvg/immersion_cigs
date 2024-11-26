@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="cigs_cigars">
+    <Package name="Items">
+        <Key ID="STR_cigs_cigars_template">
+            <English></English>
+            <French></French>
+            <German></German>
+            <Japanese></Japanese>
+            <Chinese></Chinese>
+        </Key>
+        <Key ID="STR_cigs_cigars_template_desc">
+            <English></English>
+            <French></French>
+            <German></German>
+            <Japanese></Japanese>
+            <Chinese></Chinese>
+        </Key>
+    </Package>
+</Project>

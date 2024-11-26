@@ -34,19 +34,4 @@ class CfgVehicles
             };
         };
     };
-
-    class PVAR(cigpackItem): WeaponHolder_Single_limited_item_F {
-        scope = 2;
-        scopeCurator = 2;
-        displayName = CSTRING(cigpack);
-        author = CSTRING(author);
-        vehicleClass = "Magazines";
-
-        class TransportMagazines {
-            class PVAR(cigpack) {
-                magazine = QPVAR(cigpack);
-                count = 1;
-            };
-        };
-    };
 };

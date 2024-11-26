@@ -6,7 +6,7 @@ class CfgPatches {
         // Meta information for editor
 		name = ADDON_NAME;
 		author = "$STR_mod_author";
-        authors[] = {"Rebel", "Facel", "Panimala", "OverlordZorn [CVO]", "prisonerMO"};
+        authors[] = {"OverlordZorn [CVO]"};
 		
         url = "$STR_mod_URL";
 
@@ -18,13 +18,13 @@ class CfgPatches {
 
         // Required addons, used for setting load order.
         // When any of the addons is missing, pop-up warning will appear when launching the game.
-        requiredAddons[] = {QPVAR(main), "cba_main", "cba_common"};
+        requiredAddons[] = {QPVAR(main),"cba_main"};
 
 		// Optional. If this is 1, if any of requiredAddons[] entry is missing in your game the entire config will be ignored and return no error (but in rpt) so useful to make a compat Mod (Since Arma 3 2.14)
 		skipWhenMissingDependencies = 1;
         
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups)
-        units[] = {QPVAR(matches), QPVAR(lighter), QPVAR(cigpack), QPVAR(matchesItem), QPVAR(lighterItem), QPVAR(cigpackItem)};
+        units[] = {};
 
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
@@ -32,10 +32,5 @@ class CfgPatches {
 	};
 };
 
-#include "CfgFunctions.hpp"
-#include "XEH\CfgXEH.hpp"
-
-#include "CfgSounds.hpp"
-#include "CfgVehicles.hpp"
-
-#include "CfgMagazines.hpp"
+#include "CfgGlasses.hpp"
+#include "CfgWeapons.hpp"
