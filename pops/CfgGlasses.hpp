@@ -1,14 +1,16 @@
 class CfgGlasses {
     class None;
 
-    class immersion_pops_pop0: None {
-        author = "$STR_immersion_pops_author";
+    class GVAR(pop0): None {
+        author = CSTRING(author);
         mass = 0.2;
-        displayName = "$STR_immersion_pops_cigarette0";
-        model = "\immersion_pops\cig0.p3d";
-        picture = "\immersion_pops\UI\gear_cig0_x_ca";
+        displayName = CSTRING(pop0);
+        model = PATH_TO_ADDON_3(data,pop,pop.p3d);
+        picture = PATH_TO_ADDON_3(data,ui,gear_pop0_x_ca.paa);
         identityTypes[] = {};
 
-        immersion_pops_isPop = true;
+        PVAR(isSuckable) = 1;
+
+        KJW_Imposters_SuspicionAmount = 0;
     };
 };

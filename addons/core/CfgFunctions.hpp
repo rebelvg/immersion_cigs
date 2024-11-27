@@ -49,5 +49,12 @@ class CfgFunctions
 
             class canTakeCigFromPack {};
         };
+
+        class singleplayer
+        {
+            file = PATH_TO_FUNC_SUB(singleplayer);
+
+            class addItemsInSP { postInit = 1; };
+        };
     };
 };

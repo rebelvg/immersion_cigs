@@ -41,16 +41,16 @@ class CfgVehicles
 
     class WeaponHolder_Single_limited_item_F;
 
-    class immersion_pops_poppackItem: WeaponHolder_Single_limited_item_F {
+    class GVAR(poppackItem): WeaponHolder_Single_limited_item_F {
         scope = 2;
         scopeCurator = 2;
-        displayName = "$STR_immersion_pops_poppack";
-        author = "$STR_immersion_pops_author";
+        displayName = CSTRING(poppack);
+        author = CSTRING(author);
         vehicleClass = "Magazines";
 
         class TransportMagazines {
-            class immersion_pops_poppack {
-                magazine = "immersion_pops_poppack";
+            class GVAR(poppack) {
+                magazine = QGVAR(poppack);
                 count = 1;
             };
         };
