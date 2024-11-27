@@ -23,6 +23,8 @@ class CfgGlasses {
 
         PVAR(isSmokeable) = 1;
         PVAR(smokeMultiplier) = 2;
+
+        KJW_Imposters_SuspicionAmount = 0;
     };
 
     class PVAR(cigar1): PVAR(cigar0) {

@@ -35,6 +35,8 @@ class CfgWeapons {
 	    	modelOff = PATH_TO_ADDON_3(data,cigs,cig0.p3d);
             mass = 0.02;
         };
+
+        KJW_Imposters_SuspicionAmount = 0;
     };
 
     class GVAR(cig1_nv): GVAR(cig0_nv) {

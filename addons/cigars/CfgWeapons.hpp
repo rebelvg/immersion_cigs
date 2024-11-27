@@ -34,6 +34,8 @@ class CfgWeapons {
     		uniformModel = PATH_TO_ADDON_3(data,cigars,cigar0.p3d);
 	    	modelOff = PATH_TO_ADDON_3(data,cigars,cigar0.p3d);
         };
+
+        KJW_Imposters_SuspicionAmount = 0;
     };
 
     class PVAR(cigar1_nv): PVAR(cigar0_nv) {
