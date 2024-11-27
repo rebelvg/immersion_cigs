@@ -62,7 +62,7 @@ player addAction [
     false, 
     true, 
     "",
-    Q(if (_target != player) exitWith {false}; QQPVAR(cigpack) in (magazineCargo uniformContainer player) || QQPVAR(cigpack) in (magazineCargo vestContainer player)), 
+    Q(if (_target != player) exitWith {false}; QQEGVAR(morley,cigpack) in (magazineCargo uniformContainer player) || QQEGVAR(morley,cigpack) in (magazineCargo vestContainer player)), 
     5, 
     false
 ];

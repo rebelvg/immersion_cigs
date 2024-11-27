@@ -17,8 +17,10 @@ class CfgFunctions
             class smoke {};
             class anim {};
 
-            class take_cig_from_pack {};
             class removeItemFromMag {};
+
+            class action_cigPack_children {};
+            class take_cig_from_pack {};
 
             class start_cig_your {};
             class start_cig_their {};

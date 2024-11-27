@@ -39,4 +39,4 @@ private _sound = switch (_type) do {
     case "typeItem":     { getText ( configFile >> "CfgWeapons"   >> _className >> QPVAR(LighterSound) ) };
     default { QGVAR(matches_01) };
 };
-[ QGVAR(EH_sound), _sound ] call CBA_fnc_globalEvent;
+[ QGVAR(EH_sound), [_sound, _player] ] call CBA_fnc_globalEvent;

@@ -6,7 +6,7 @@ class CfgPatches {
         // Meta information for editor
 		name = ADDON_NAME;
 		author = "$STR_mod_author";
-        authors[] = {"OverlordZorn [CVO]"};
+        authors[] = {"Rebel", "Facel", "Panimala", "OverlordZorn [CVO]", "prisonerMO"};
 		
         url = "$STR_mod_URL";
 
@@ -28,7 +28,6 @@ class CfgPatches {
 
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
-
 	};
 };
 

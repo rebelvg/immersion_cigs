@@ -6,7 +6,7 @@ class CfgPatches {
         // Meta information for editor
 		name = ADDON_NAME;
 		author = "$STR_mod_author";
-        authors[] = {"OverlordZorn [CVO]"};
+        authors[] = {"Rebel", "Facel", "Panimala", "OverlordZorn [CVO]", "prisonerMO"};
 		
         url = "$STR_mod_URL";
 
@@ -24,7 +24,7 @@ class CfgPatches {
 		skipWhenMissingDependencies = 1;
         
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups)
-        units[] = {};
+        units[] = {QGVAR(cigpack), QGVAR(cigpackItem)};
 
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};

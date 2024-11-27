@@ -2,25 +2,25 @@
 <Project name="cigs_morley">
     <Package name="Items">
         <Key ID="STR_cigs_morley_cigarette0">
-            <English>Cigarette</English>
-            <French>Cigarette</French>
-            <German>Zigarette</German>
-            <Japanese>葉巻</Japanese>
-            <Chinese>香菸</Chinese>
+            <English>Morley Cigarette</English>
+            <French>Morley Cigarette</French>
+            <German>Morley Zigarette</German>
+            <Japanese>Morley 葉巻</Japanese>
+            <Chinese>Morley 香菸</Chinese>
         </Key>
         <Key ID="STR_cigs_morley_cigarette0_nv">
-            <English>Cigarette (NVG Slot)</English>
-            <French>Cigarette</French>
-            <German>Zigarette (NVG Slot)</German>
-            <Japanese>葉巻</Japanese>
-            <Chinese>香菸</Chinese>
+            <English>Morley Cigarette (NVG Slot)</English>
+            <French>Morley Cigarette</French>
+            <German>Morley Zigarette (NVG Slot)</German>
+            <Japanese>Morley 葉巻</Japanese>
+            <Chinese>Morley 香菸</Chinese>
         </Key>
         <Key ID="STR_cigs_morley_cigpack">
-            <English>Cig Pack</English>
-            <French>Paquet de cigarettes</French>
-            <German>Zigarettenschachtel</German>
-            <Japanese>タバコ</Japanese>
-            <Chinese>一包菸</Chinese>
+            <English>Morley Cig Pack</English>
+            <French>Morley Paquet de cigarettes</French>
+            <German>Morley Zigarettenschachtel</German>
+            <Japanese>Morley タバコ</Japanese>
+            <Chinese>Morley 一包菸</Chinese>
         </Key>
         <Key ID="STR_cigs_morley_cigpack_desc">
             <English>Contains 20 cigarettes. Warning: Smoking is hazardous to your health.</English>

@@ -26,7 +26,8 @@ class CAManBase: Man
             {
                 displayName = CSTRING(take_cig_from_pack);
                 condition = Q([_player] call FUNC(canTakeCigFromPack));
-                statement = Q([_player] call FUNC(take_cig_from_pack));
+                statement = "";
+                insertChildren = Q([_player] call FUNC(action_cigPack_children));
                 showDisabled = 0;
                 exceptions[] = {"isNotInside", "isNotSitting"};
                 icon = PATH_TO_ADDON_3(data,ui,take_cig.paa);

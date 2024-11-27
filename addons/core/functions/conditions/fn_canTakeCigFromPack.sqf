@@ -15,5 +15,8 @@
 */
 
 
+//  moveToCompleted
+
 params ["_unit"];
-QPVAR(cigpack) in (magazines _unit)
+magazines _unit findIf { getNumber (configFile >> "CfgMagazines" >> _x >> QPVAR(isPack) ) == 1} > -1
+

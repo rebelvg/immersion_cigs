@@ -17,7 +17,7 @@
 
 params [
     "_player",
-    ["_class_cigpack", QPVAR(cigpack), [""]]
+    ["_class_cigpack", QEGVAR(morley,cigpack), [""]]
 ];
 
 [_player, _class_cigpack] call FUNC(removeItemFromMag);
