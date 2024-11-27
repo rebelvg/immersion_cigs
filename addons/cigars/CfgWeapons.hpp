@@ -4,7 +4,7 @@
 class CfgWeapons {
 	class NVGoggles;
 
-    class PVAR(cigar0)_nv: NVGoggles {
+    class PVAR(cigar0_nv): NVGoggles {
 
         visionMode[] = {"Normal"};
 		thermalMode[] = {0};
