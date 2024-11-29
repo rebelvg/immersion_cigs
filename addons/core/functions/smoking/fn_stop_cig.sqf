@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
 * Author: Zorn
@@ -16,4 +16,4 @@
 */
 
 params ["_player"];
-_player setVariable [QGVAR(cigLitUp), false, true];
+_player setVariable [QPVAR(isSmoking), false, true];

@@ -16,17 +16,19 @@
 * Public: No
 */
 
+
+// CBA Events
+[QGVAR(EH_start_cig), FUNC(start_smoking)] call CBA_fnc_addEventHandler;
+
+[QGVAR(EH_notify), CBA_fnc_notify] call CBA_fnc_addEventHandler;
+
+[QGVAR(EH_sound), FUNC(sound)] call CBA_fnc_addEventHandler;
+[QGVAR(EH_smoke), FUNC(smoke)] call CBA_fnc_addEventHandler;
+
 // I dont remember why this waits for cba settings :harold:
 
+if (!hasInterface) exitWith {};
 private _code = {
-
-    [QGVAR(EH_sound), FUNC(sound)] call CBA_fnc_addEventHandler;
-    [QGVAR(EH_start_cig), FUNC(start_smoking)] call CBA_fnc_addEventHandler;
-    [QGVAR(EH_notify), CBA_fnc_notify] call CBA_fnc_addEventHandler;
-    [QGVAR(EH_smoke), FUNC(smoke)] call CBA_fnc_addEventHandler;
-
-
-    if (!hasInterface) exitWith {};
 
     if !(isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
 
@@ -50,34 +52,39 @@ private _code = {
             },
             {
                 params ["_target", "_player"];
-                (((goggles _target) in GVAR(array_cigs)) || ((hmd _target) in GVAR(array_cigs))) && !(_target getVariable [QGVAR(cigLitUp), false]) && (alive _target)
+                (((goggles _target) in GVAR(array_cigs)) || ((hmd _target) in GVAR(array_cigs))) && !(_target getVariable [QPVAR(isSmoking), false]) && (alive _target)
             }
         ] call ace_interact_menu_fnc_createAction;
 
         ["CAManBase", 0, ["ACE_Head"], _action, true] call ace_interact_menu_fnc_addActionToClass;
     };
 
-    // reset cigLitUp variable on respawn
-    player addEventHandler ["Respawn", { player setVariable [QGVAR(cigLitUp), false]; }];
+    // reset isSmoking/isSucking variable on respawn
+    player addEventHandler ["Respawn", {
+        player setVariable [QPVAR(isSmoking), false];
+        player setVariable [QPVAR(isSucking), false];
+    }];
 
-    // why? :sus:
+    // if 2 suckable/smokable items are equipped, it will put the nvg one back in the inventory.
     player addEventHandler ["InventoryClosed", {
         params ["_unit", "_container"];
-        if (goggles _unit in GVAR(array_cigs) && hmd _unit in GVAR(array_cigs)) then {
+        if (
+            (
+                getNumber (configFile >> "CfgGlasses" >> goggles _unit >> QPVAR(isSmokable)) == 1
+                ||
+              { getNumber (configFile >> "CfgGlasses" >> goggles _unit >> QPVAR(isSuckable)) == 1 }
+            )
+            &&
+            {
+                getNumber (configFile >> "CfgWeapons" >> hmd     _unit >> QPVAR(isSmokable)) == 1
+                ||
+              { getNumber (configFile >> "CfgWeapons" >> hmd     _unit >> QPVAR(isSuckable)) == 1 }
+            }
+        ) then {
             _unit addItem (hmd _unit);
             _unit unlinkItem (hmd _unit);
         };
     }];
-
-
-    // Add items to Player in SP
-    ["unit", {
-        params ["_player"];
-        if (!isMultiplayer && !is3DENPreview && GVAR(giveItems_SP)) then {
-            _player addItem QEGVAR(morley,cigpack);
-            _player addItem QPVAR(lighter);
-        };
-    },true] call CBA_fnc_addPlayerEventHandler;
 };
 
 if (missionNamespace getVariable ["cba_settings_ready",false]) then _code else { ["CBA_settingsInitialized",_code,[]] call CBA_fnc_addEventHandler; };

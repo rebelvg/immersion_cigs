@@ -17,7 +17,7 @@
 
 params ["_unit"];
 
-(_unit getVariable [QGVAR(cigLitUp), false])
+(_unit getVariable [QPVAR(isSmoking), false])
 && 
 {
     getNumber (configFile >> "CfgGlasses" >> goggles _unit >> QPVAR(isSmokeable)) == 1

@@ -18,27 +18,6 @@ immersion_pops_fnc_anim = {
     };
 };
 
-immersion_pops_removeItemFromMag = {
-    params ["_player", "_mag"];
-
-    private _matchesMags = magazinesAmmo _player select {_x select 0 == _mag};
-
-    _player removeMagazineGlobal _mag;
-
-    private _oldMag = _matchesMags select 0;
-
-    if ((_oldMag select 1) > 1) then {
-        _player addMagazine [_mag, (_oldMag select 1) - 1];
-    } else {
-        [format ["%1 is now empty.", getText (configFile >> "CfgMagazines" >> _mag >> "displayName")], 2.5, _player] spawn ace_common_fnc_displayTextStructured;
-    };
-};      // This is 1:1 the same function
-
-immersion_pops_playSound = {
-    params ["_unit", "_class"];
-
-    [_unit, _class] remoteExec ["say3D"];
-}; // This is new but can be made into an cba event
 
 immersion_pops_fnc_start_cig_your = {
     params ["_player"];
@@ -48,8 +27,6 @@ immersion_pops_fnc_start_cig_your = {
 
 immersion_pops_fnc_start_cig = {
     params ["_unit"];
-
-    if (!(local _unit)) exitWith {};
 
     private _cigTime = 0;
     private _goggles = goggles _unit;
@@ -100,23 +77,6 @@ immersion_pops_fnc_stop_cig = {
     _player setVariable ["immersion_pops_cigLitUp", false, true];
 };
 
-immersion_pops_fnc_take_cig_from_pack = {
-    params ["_player"];
-
-    [_player, "immersion_pops_poppack"] call immersion_pops_removeItemFromMag;
-
-    [_player, "immersion_pops_unwrap"] call immersion_pops_playSound;
-
-    _player addItem "immersion_pops_pop0";
-};
-
-if !(isClass (configFile >> "CfgPatches" >> "ace_common")) then {
-    ace_common_fnc_displayTextStructured = {
-        params ["_string"];
-
-        hintSilent _string;
-    };
-};
 
 immersion_pops_cigsArray = ["immersion_pops_pop0"];
 immersion_pops_eatSounds = ["immersion_pops_eat_01", "immersion_pops_eat_02", "immersion_pops_eat_03", "immersion_pops_eat_04", "immersion_pops_eat_05", "immersion_pops_eat_06", "immersion_pops_eat_07"];

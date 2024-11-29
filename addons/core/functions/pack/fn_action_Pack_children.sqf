@@ -1,4 +1,4 @@
-#include "../script_component.hpp"
+#include "../../script_component.hpp"
 
 /*
 * Author: Zorn
@@ -29,7 +29,7 @@ private _cigPacks = _cigPacks arrayIntersect _cigPacks;
     private _code = {
         params ["_target", "_player", "_actionParams"];
         _actionParams params ["_class_cigpack"];
-        [_player, _class_cigpack] call FUNC(take_Cig_from_pack);
+        [_player, _class_cigpack] call FUNC(take_from_pack);
     };
     
     private _action = [

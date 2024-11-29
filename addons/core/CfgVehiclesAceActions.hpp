@@ -22,12 +22,12 @@ class CAManBase: Man
                 exceptions[] = {"isNotInside", "isNotSitting"};
                 icon = PATH_TO_ADDON_3(data,ui,light_cig.paa);
             };
-            class PVAR(take_cig_from_pack)
+            class PVAR(take_from_pack)
             {
-                displayName = CSTRING(take_cig_from_pack);
-                condition = Q([_player] call FUNC(canTakeCigFromPack));
+                displayName = CSTRING(take_from_pack);
+                condition = Q([_player] call FUNC(canTakeFromPack));
                 statement = "";
-                insertChildren = Q([_player] call FUNC(action_cigPack_children));
+                insertChildren = Q([_player] call FUNC(action_pack_children));
                 showDisabled = 0;
                 exceptions[] = {"isNotInside", "isNotSitting"};
                 icon = PATH_TO_ADDON_3(data,ui,take_cig.paa);

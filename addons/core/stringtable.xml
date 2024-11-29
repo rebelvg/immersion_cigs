@@ -22,7 +22,7 @@
             <Japanese>タバコを置く</Japanese>
             <Chinese>滅菸</Chinese>
         </Key>
-        <Key ID="STR_cigs_core_take_cig_from_pack">
+        <Key ID="STR_cigs_core_take_from_pack">
             <English>Take Cig from Pack</English>
             <French>Prendre une cigarette du paquet</French>
             <German>Zigarette aus der Sachtel nehmen</German>

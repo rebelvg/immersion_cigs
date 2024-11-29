@@ -16,12 +16,6 @@ player] call prefix_component_fnc_functionname
 * Public: No
 */
 
-// Defaults to enable giving items in SP - can be made into a cba setting
-
-if (isNil QGVAR(giveItems_SP)) then {
-    GVAR(giveItems_SP) = true;
-};
-
 
 // Generates GVAR array of all smokable items
 GVAR(array_cigs) = [

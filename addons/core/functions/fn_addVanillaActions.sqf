@@ -52,10 +52,10 @@ player addAction [
 
 
 player addAction [
-    LLSTRING(take_cig_from_pack), 
+    LLSTRING(take_from_pack), 
     {
         params ["_target", "_caller"];
-        [_caller] call FUNC(take_cig_from_pack);
+        [_caller] call FUNC(take_from_pack);
     }, 
     nil, 
     0, 
@@ -79,7 +79,7 @@ player addAction [
     false, 
     true, 
     "",
-    "", //QUOTE(if !(cursorObject isKindOf 'Man') exitWith {false}; ((hmd cursorObject) in GVAR(array_cigs)) && !(cursorObject getVariable [QQPVAR(cigLitUp), false]) && (alive cursorObject)), // TO DO LATER
+    "", //QUOTE(if !(cursorObject isKindOf 'Man') exitWith {false}; ((hmd cursorObject) in GVAR(array_cigs)) && !(cursorObject getVariable [QQPVAR(isSmoking), false]) && (alive cursorObject)), // TO DO LATER
     5, 
     false
 ];
