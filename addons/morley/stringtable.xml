@@ -30,4 +30,13 @@
             <Chinese>內含二十根菸。警告：&lt;br/&gt;吸菸會導致性功能障礙。</Chinese>
         </Key>
     </Package>
+    <Package name="Main">
+        <Key ID="STR_cigs__morley_author">
+            <English>Rebel / Facel</English>
+            <French>Rebel / Facel</French>
+            <German>Rebel / Facel</German>
+            <Japanese>Rebel / Facel</Japanese>
+        </Key>
+    </Package>
+
 </Project>

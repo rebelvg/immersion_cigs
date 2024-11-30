@@ -12,8 +12,8 @@ class CfgMagazines {
 
         PVAR(isPack) = 1;
         PVAR(unpackSound) = QPVAR(unwrap);
-        PVAR(item_glasses) = QEGVAR(lucky_strike,cig0); // Can be replaced with sog specific cig texture and model later
-        PVAR(item_hmd) = QEGVAR(lucky_strike,cig0_nv); // Can be replaced with sog specific cig texture and model later
+        PVAR(item_glasses) = QGVAR(cig0); // Can be replaced with sog specific cig texture and model later
+        PVAR(item_hmd) = QGVAR(cig0_nv); // Can be replaced with sog specific cig texture and model later
 
         ACE_asItem = 1;
     };
@@ -27,5 +27,31 @@ class CfgMagazines {
         PVAR(LighterSound) = QPVAR(lighter_01);     // CfgSounds Class
 
         ACE_asItem = 1;
+    };
+
+    // Modded Item
+    class CA_Magazine;
+    class GVAR(cigpack): CA_Magazine {
+        author = CSTRING(author);
+        scope = 2;
+
+        displayName = CSTRING(cigpack);
+        descriptionShort = CSTRING(cigpack_desc);
+        model = "vn\characters_f_vietnam\BLUFOR\headgear\items\vn_b_item_cigs_01.p3d";
+        picture = "\vn\weapons_f_vietnam\ui\icon_vn_b_item_cigs_01_ca.paa";
+
+        ammo = "";
+        count = 16;
+        initSpeed = 0;
+        tracersEvery = 0;
+        lastRoundsTracer = 0;
+        mass = 2;
+
+        ACE_asItem = 1;
+
+        PVAR(isPack) = 1;
+        PVAR(unpackSound) = QPVAR(unwrap);
+        PVAR(item_glasses) = QGVAR(cig0);
+        PVAR(item_hmd) = QGVAR(cig0_nv);
     };
 };

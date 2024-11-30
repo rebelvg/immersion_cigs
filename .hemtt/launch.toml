@@ -31,3 +31,7 @@ mission = "test.Stratis"
 [VN]
 extends = "Test"
 dlc = ["vn"]
+
+[SPE]
+extends = "Test"
+dlc = ["vn", "spe"]
