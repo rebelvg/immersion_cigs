@@ -54,3 +54,11 @@ Mod supports both vanilla and ACE interaction systems.
 
 ### Functions
 - ```[_unit] spawn murshun_cigs_fnc_start_cig;``` - makes unit smoke.
+
+
+### notes to self
+VN Lighter: vn_b_item_lighter_01
+vn_b_item_cigs_01
+
+![alt text](image.png)
+"weapons_f_vietnam_c"
