@@ -18,11 +18,7 @@
 
 params ["_unit", "_cigConfig"];
 
-ZRN_LOG_1(_cigConfig);
-
 private _multiplier = getNumber (_cigConfig >> QPVAR(smokeMultiplier));
-
-ZRN_LOG_1(_multiplier);
 
 //private _source = "logic" createVehicleLocal (getPosATL _unit);
 private _source = "#particleSource" createVehicleLocal getPosATL _unit;

@@ -32,6 +32,8 @@ switch (_itemType) do {
         _itemConfig = configFile >> "CfgWeapons" >> _currentItem;
     };
 };
+
+
 ////////////////////////////////////////
 // Sound Effects
 ////////////////////////////////////////
@@ -42,7 +44,6 @@ private _sound = [(_itemConfig >> PVAR(sounds))] call FUNC(getCfgDataRandom);
 ////////////////////////////////////////
 // Get NextCigState
 ////////////////////////////////////////
-
 private _newItem = "";
 private _nextItemState = getText (_itemConfig >> QPVAR(nextState));
 
@@ -80,14 +81,12 @@ if (_newItem != "") then {
     _currentItem = _newItem;
 };
 
+
 ////////////////////////////////////////
 // Define Delay and Timers
 ////////////////////////////////////////
-
-
 private _delay = (20 + random 10);
 _currentTime = _currentTime + _delay;
-
 
 
 _code = {

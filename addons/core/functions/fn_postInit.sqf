@@ -29,36 +29,6 @@
 
 if (!hasInterface) exitWith {};
 private _code = {
-
-    if !(isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
-
-        // Add Vanilla Actions when ace not loaded
-        [] call FUNC(addVanillaActions);
-        player addEventHandler ["Respawn", FUNC(addVanillaActions)];
-
-    } else {
-
-
-        // Add Ace Interactions when ace loaded
-        // TODO: Could be moved into config?
-
-        private _action = [
-            QGVAR(start_someones_cig),
-            LLSTRING(start_someones_cig),
-            PATH_TO_ADDON_3(data,ui,light_cig.paa),
-            {
-                params ["_target", "_player"];
-                [_target, _player] call FUNC(start_cig_their);
-            },
-            {
-                params ["_target", "_player"];
-                (((goggles _target) in GVAR(array_cigs)) || ((hmd _target) in GVAR(array_cigs))) && !(_target getVariable [QPVAR(isSmoking), false]) && (alive _target)
-            }
-        ] call ace_interact_menu_fnc_createAction;
-
-        ["CAManBase", 0, ["ACE_Head"], _action, true] call ace_interact_menu_fnc_addActionToClass;
-    };
-
     // reset isSmoking/isSucking variable on respawn
     player addEventHandler ["Respawn", {
         player setVariable [QPVAR(isSmoking), false];
@@ -88,4 +58,3 @@ private _code = {
 };
 
 if (missionNamespace getVariable ["cba_settings_ready",false]) then _code else { ["CBA_settingsInitialized",_code,[]] call CBA_fnc_addEventHandler; };
-

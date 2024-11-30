@@ -10,8 +10,7 @@ class CfgFunctions
             class preinit  { preInit = 1; };
             class postinit { postInit = 1; };
 
-            class addVanillaActions {};
-            class getCfgDataRandom {};
+            class cba_contextMenu { preInit = 1; };
         };
 
         class smoking
@@ -80,6 +79,11 @@ class CfgFunctions
         {
             file = PATH_TO_FUNC_SUB(singleplayer);
             class addItemsInSP { postInit = 1; };
+        };
+        class config
+        {
+            file = PATH_TO_FUNC_SUB(config);
+            class getCfgDataRandom {};
         };
     };
 };

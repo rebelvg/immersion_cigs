@@ -17,10 +17,11 @@
 
 params ["_player"];
 
-private _return = switch (true) do {
+_return = switch (true) do {
     case (magazines _player findIf { getNumber (configFile >> "CfgMagazines" >> _x >> QPVAR(isLighter) ) == 1}  >= 0): { true };     //   finite lighter
     case (    items _player findIf { getNumber (configFile >> "CfgWeapons"   >> _x >> QPVAR(isLighter) ) == 1}  >= 0): { true };     // infinite lighter
     default { false };
 };
+
 ZRN_LOG_1(_return);
 _return

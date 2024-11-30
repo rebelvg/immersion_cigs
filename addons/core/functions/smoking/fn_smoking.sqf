@@ -82,7 +82,7 @@ if (_gogglesNew != "") then {
 ////////////////////////////////////////
 // Define Delay and Timers
 ////////////////////////////////////////
-private _delay = (5.5 + random 2);
+private _delay = (5 + random 15);
 _currentTime = _currentTime + _delay;
 
 ////////////////////////////////////////

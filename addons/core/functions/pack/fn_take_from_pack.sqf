@@ -25,11 +25,12 @@ params [
 private _sound = getText (configFile >> "CfgMagazines" >> _class_cigpack >> QPVAR(unpackSound));
 if (_sound != "") then { [QGVAR(EH_sound), [ _sound, _player ]] call CBA_fnc_globalEvent; }; //params ["sound" , source] 
 
-private _item_glasses = getText (configFile >> "CfgMagazines" >> _class_cigpack >> QPVAR(item_glasses));
-private _item_hmd =     getText (configFile >> "CfgMagazines" >> _class_cigpack >> QPVAR(item_hmd));
+private _item_glasses = [(configFile >> "CfgMagazines" >> _class_cigpack >> QPVAR(item_glasses))] call FUNC(getCfgDataRandom);
+private _item_hmd =     [(configFile >> "CfgMagazines" >> _class_cigpack >> QPVAR(item_hmd)    )] call FUNC(getCfgDataRandom);
 
 switch (true) do {
     case (goggles _player == ""): { _player addGoggles _item_glasses };
     case (    hmd _player == ""): { _player addItem _item_hmd; _player assignItem _item_hmd; };
     default { _player addItem _item_glasses; };
 };
+

@@ -21,12 +21,8 @@ if (!alive _unit) exitWith {};
 
 if (_unit getVariable ["ACE_isUnconscious", false]) exitWith {};
 
-// private _animation = animationState _unit;
-
 private _time = time;
-
 _unit forceWalk true;
-
 
 // Adds pfEH
 private _code = {
@@ -44,14 +40,7 @@ private _condition = {
 private _code = {
     params ["_unit", "_handle","_time","_playTimeSeconds"];
     [_handle] call CBA_fnc_removePerFrameHandler;
-
     _unit forceWalk false;
-
-    /* The function inside the if statement was commented out, might as well comment out the if statement itself
-    if (alive _unit && !(_unit getVariable ["ACE_isUnconscious", false])) then {
-        // [_unit, _animation] remoteExec ["switchMove"];
-    };
-    */
 };
 
 [_condition, _code, [_unit, _handle,_time, _playTimeSeconds]] call CBA_fnc_waitUntilAndExecute;

@@ -26,5 +26,7 @@ private _oldMag = _matchesMags select 0;
 if ((_oldMag select 1) > 1) then {
     _player addMagazine [_mag, (_oldMag select 1) - 1];
 } else {
-    [QGVAR(EH_notify), [format ["%1 is now empty.", getText (configFile >> "CfgMagazines" >> _mag >> "displayName")], 2.5], _player] call CBA_fnc_targetEvent;
+    if (getNumber (configFile >> "CfgMagazines" >> _mag >> "count") > 1) then {
+        [QGVAR(EH_notify), [format [LLSTRING(is_Empty), getText (configFile >> "CfgMagazines" >> _mag >> "displayName")], 1], _player] call CBA_fnc_targetEvent;
+    };
 };
