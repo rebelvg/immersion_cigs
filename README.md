@@ -1,4 +1,4 @@
-# IMMERSION CIGS MOD by KLPQ.men
+# IMMERSION CIGS MOD by KLPQ.io
 
 ## Overview
 - https://www.youtube.com/watch?v=MPvKR3VtrEI
