@@ -15,19 +15,27 @@
 * Public: No
 */
 
-params ["_player"];
+ZRN_LOG_1(_this);
+
+params ["_unit"];
 
 private "_index";
 
-// Check for Finite Lighters
-private _magazines = magazines _player;
+// Check for Finite Lighters - might need to add a bit of code to always use the lighter with the least ammo in it?
+private _magazines = magazines _unit;
 _index = _magazines findIf { getNumber (configFile >> "CfgMagazines" >> _x >> QPVAR(isLighter) ) == 1};
 if (_index > -1) exitWith { [_magazines select _index, "typeMagazine"] };
 
+// return when no lighter found
+[false, false]
+
+/*
 // Check for Infinite Lighters
-private _items = items _player;
+private _items = items _unit;
 _index = _items findIf { getNumber (configFile >> "CfgWeapons" >> _x >> QPVAR(isLighter) ) == 1};
 if (_index > -1) exitWith { [_items select _index, "typeItem"] };
 
-// return when no lighter found
-[false, false]
+
+// The whole "Infinite Lighter" Thing was in preperations for compat items, like the sog:pf cigs.
+// Only afterwards i realised that those are also defined as CfgMagazines :harold: - I leave it in for now, just in case
+*/

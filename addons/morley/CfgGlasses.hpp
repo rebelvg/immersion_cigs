@@ -5,21 +5,27 @@ class CfgGlasses {
     class None;
 
     class GVAR(cig0): None {
+        // Vanilla Data
         scope = 2;
         author = CSTRING(author);
         mass = 0.02;
+
         displayName = CSTRING(cigarette0);
+
         model = PATH_TO_ADDON_3(data,cigs,cig0.p3d);
         picture = PATH_TO_ADDON_3(data,ui,gear_cig0_x_ca);
         identityTypes[] = {};
 
+        // Commmon Data
         PVAR(maxTime) = 330;
         PVAR(initStateTime) = 0;
         PVAR(nextState) = QGVAR(cig1);
 
-        PVAR(isSmokeable) = 1;
+        // Specific Data
+        PVAR(isSmokable) = 1;
         PVAR(smokeMultiplier) = 1;
 
+        // Compat Data
         KJW_Imposters_SuspicionAmount = 0;
     };
 
@@ -32,7 +38,7 @@ class CfgGlasses {
 
         PVAR(initStateTime) = 6;
         PVAR(nextState) = QGVAR(cig2);
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
     };
 
     class GVAR(cig2): GVAR(cig0) {
@@ -44,7 +50,7 @@ class CfgGlasses {
 
         PVAR(initStateTime) = 66;
         PVAR(nextState) = QGVAR(cig3);
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
     };
 
     class GVAR(cig3): GVAR(cig0) {
@@ -56,7 +62,7 @@ class CfgGlasses {
 
         PVAR(initStateTime) = 126;
         PVAR(nextState) = QGVAR(cig4);
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
     };
 
     class GVAR(cig4): GVAR(cig0) {
@@ -68,6 +74,6 @@ class CfgGlasses {
 
         PVAR(initStateTime) = 306;
         PVAR(nextState) = "";
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
     };
 };

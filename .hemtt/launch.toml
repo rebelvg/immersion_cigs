@@ -3,6 +3,7 @@ workshop = [
     "450814997",  # CBA_A3's Workshop ID
     "463939057",  # ACE3
     "2369477168", # Advanced Developer Tools
+    "1779063631", # ZEN
 ]
 
 dlc = [
@@ -23,18 +24,14 @@ parameters = [
 # rapify = true # Default: true
 
 [Test]
+extends = "default"
 mission = "test.Stratis"
-workshop = [
-    "450814997", # CBA_A3's Workshop ID
-    "463939057", # ACE3
-    "2369477168", # Advanced Developer Tools
-]
-parameters = [
-    "-window",
-    "-noPause",
-    "-noPauseAudio",
-]
-dlc = [
-]
-optionals = [
-]
+
+
+[VN]
+extends = "Test"
+dlc = ["vn"]
+
+[SPE]
+extends = "Test"
+dlc = ["vn", "spe"]

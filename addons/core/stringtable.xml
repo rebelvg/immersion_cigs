@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="cigs_core">
-    <Package name="Interactions">
-        <Key ID="STR_cigs_core_start_cig">
-            <English>Light Up a Cig</English>
+    <Package name="Interactions_cigs">
+        <Key ID="STR_cigs_core_start_cig_own">
+            <English>Light Up your Cig</English>
             <French>Allumer Cigarette</French>
             <German>Zigarette anzünden</German>
             <Japanese>タバコに火を点ける</Japanese>
             <Chinese>點菸</Chinese>
         </Key>
-        <Key ID="STR_cigs_core_start_someones_cig">
+        <Key ID="STR_cigs_core_start_cig_their">
             <English>Light Up their Cig</English>
             <French>Allumer Cigarette</French>
             <German>Feuer geben</German>
@@ -22,12 +22,28 @@
             <Japanese>タバコを置く</Japanese>
             <Chinese>滅菸</Chinese>
         </Key>
-        <Key ID="STR_cigs_core_take_cig_from_pack">
-            <English>Take Cig from Pack</English>
-            <French>Prendre une cigarette du paquet</French>
-            <German>Zigarette aus der Sachtel nehmen</German>
+    </Package>
+    <Package name="Interactions_pack">
+        <Key ID="STR_cigs_core_take_from_pack">
+            <English>Take from Pack</English>
+            <French>Prendre du paquet</French>
+            <German>Aus der Sachtel nehmen</German>
             <Japanese>箱からタバコを取る</Japanese>
             <Chinese>抽一根菸出來</Chinese>
+        </Key>
+    </Package>
+    <Package name="Interactions_suck">
+        <Key ID="STR_cigs_core_start_sucking">
+            <English>Start Sucking</English>
+            <German>Lutsch den Lutscher</German>
+            <Japanese>吸い始める</Japanese>
+            <Chinese>放進嘴巴含</Chinese>
+        </Key>
+        <Key ID="STR_cigs_core_stop_sucking">
+            <English>Stop Sucking</English>
+            <German>Stop das Lutschen</German>
+            <Japanese>吸うのを止める</Japanese>
+            <Chinese>從嘴巴拿出來</Chinese>
         </Key>
     </Package>
     <Package name="Items">
@@ -69,12 +85,24 @@
         </Key>
     </Package>
     <Package name="Notification">
+        <Key ID="STR_cigs_core_gave_fire">
+            <English>%1 gave you a light.</English>
+            <German>%1 hat dir Feuer gegeben.</German>
+        </Key>
+        <Key ID="STR_cigs_core_is_Empty">
+            <English>%1 is now empty.</English>
+            <German>%1 ist nun leer.</German>
+        </Key>
         <Key ID="STR_cigs_core_no_matches_or_lighter">
             <English>You don't have matches or a lighter.</English>
             <French>Vous n'avez pas d'allumettes ou de briquet.</French>
             <German>Du hast kein Feuerzeug oder Streichhölzer.</German>
             <Japanese>あなたはライターかマッチを持っていません。</Japanese>
             <Chinese>你沒有火柴或者打火機。</Chinese>
+        </Key>
+        <Key ID="STR_cigs_core_taste_flavour">
+            <English>Hmm, its %1 flavour!</English>
+            <German>Hmm, es schmeckt nach %1!</German>
         </Key>
     </Package>
 </Project>
