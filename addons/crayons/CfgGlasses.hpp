@@ -29,7 +29,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_blue): GVAR(crayon_black) {
@@ -60,7 +60,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_brown): GVAR(crayon_black) {
@@ -91,7 +91,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_gray): GVAR(crayon_black) {
@@ -122,7 +122,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_green): GVAR(crayon_black) {
@@ -153,7 +153,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_orange): GVAR(crayon_black) {
@@ -184,7 +184,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_pink): GVAR(crayon_black) {
@@ -215,7 +215,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_purple): GVAR(crayon_black) {
@@ -246,7 +246,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_red): GVAR(crayon_black) {
@@ -277,7 +277,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_white): GVAR(crayon_black) {
@@ -308,7 +308,7 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 
     class GVAR(crayon_yellow): GVAR(crayon_black) {
@@ -339,6 +339,6 @@ class CfgGlasses {
         PVAR(sounds)[] = {QPVAR(eat_01), QPVAR(eat_02), QPVAR(eat_03), QPVAR(eat_04), QPVAR(eat_05), QPVAR(eat_06), QPVAR(eat_07)};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
     };
 };

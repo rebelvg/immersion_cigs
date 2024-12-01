@@ -27,7 +27,7 @@ class CfgWeapons {
 		opticsPPEffects[] = {};
 
         // Compat Data
-        KJW_Imposters_SuspicionAmount = 0;
+        KJW_Imposters_SuspicionAmount = 0.1;
 
         // Common Data
         PVAR(maxTime) = 330;
