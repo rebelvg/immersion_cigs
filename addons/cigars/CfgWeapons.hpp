@@ -19,7 +19,7 @@ class CfgWeapons {
         model = PATH_TO_ADDON_3(data,cigars,cigar0.p3d);
         picture = PATH_TO_ADDON_3(data,ui,gear_cigar0_x_ca);
 
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
         PVAR(smokeMultiplier) = 2;
 
         PVAR(maxTime) = 660;

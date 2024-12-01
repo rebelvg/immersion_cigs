@@ -22,7 +22,7 @@ class CfgGlasses {
         PVAR(nextState) = QGVAR(cig1);
 
         // Specific Data
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
         PVAR(smokeMultiplier) = 1;
 
         // Compat Data
@@ -38,7 +38,7 @@ class CfgGlasses {
 
         PVAR(initStateTime) = 6;
         PVAR(nextState) = QGVAR(cig2);
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
     };
 
     class GVAR(cig2): GVAR(cig0) {
@@ -50,7 +50,7 @@ class CfgGlasses {
 
         PVAR(initStateTime) = 66;
         PVAR(nextState) = QGVAR(cig3);
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
     };
 
     class GVAR(cig3): GVAR(cig0) {
@@ -62,7 +62,7 @@ class CfgGlasses {
 
         PVAR(initStateTime) = 126;
         PVAR(nextState) = QGVAR(cig4);
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
     };
 
     class GVAR(cig4): GVAR(cig0) {
@@ -74,6 +74,6 @@ class CfgGlasses {
 
         PVAR(initStateTime) = 306;
         PVAR(nextState) = "";
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
     };
 };

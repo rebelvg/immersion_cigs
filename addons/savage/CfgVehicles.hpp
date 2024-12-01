@@ -10,8 +10,8 @@ class CfgVehicles
         vehicleClass = "Magazines";
 
         class TransportMagazines {
-            class vn_b_item_cigs_01 {
-                magazine = "vn_b_item_cigs_01";
+            class GVAR(cigpack) {
+                magazine = QGVAR(cigpack);
                 count = 1;
             };
         };

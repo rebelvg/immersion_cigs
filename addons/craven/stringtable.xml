@@ -2,25 +2,25 @@
 <Project name="cigs_craven">
     <Package name="Items">
         <Key ID="STR_cigs_craven_cigarette0">
-            <English>Craven A Cigarette</English>
-            <French>Craven A Cigarette</French>
-            <German>Craven A Zigarette</German>
-            <Japanese>Craven A 葉巻</Japanese>
-            <Chinese>Craven A 香菸</Chinese>
+            <English>Craven "A" Cigarette</English>
+            <French>Craven "A" Cigarette</French>
+            <German>Craven "A" Zigarette</German>
+            <Japanese>Craven "A" 葉巻</Japanese>
+            <Chinese>Craven "A" 香菸</Chinese>
         </Key>
         <Key ID="STR_cigs_craven_cigarette0_nv">
-            <English>Craven A Cigarette (NVG Slot)</English>
-            <French>Craven A Cigarette (NVG Slot)</French>
-            <German>Craven A Zigarette (NVG Slot)</German>
-            <Japanese>Craven A 葉巻 (NVG Slot)</Japanese>
-            <Chinese>Craven A 香菸 (NVG Slot)</Chinese>
+            <English>Craven "A" Cigarette (NVG Slot)</English>
+            <French>Craven "A" Cigarette (NVG Slot)</French>
+            <German>Craven "A" Zigarette (NVG Slot)</German>
+            <Japanese>Craven "A" 葉巻 (NVG Slot)</Japanese>
+            <Chinese>Craven "A" 香菸 (NVG Slot)</Chinese>
         </Key>
         <Key ID="STR_cigs_craven_cigpack">
-            <English>Craven A Cigarette Pack</English>
-            <French>Craven A Paquet de cigarettes</French>
-            <German>Craven A Zigarettenschachtel</German>
-            <Japanese>Craven A タバコ</Japanese>
-            <Chinese>Craven A 一包菸</Chinese>
+            <English>Craven "A" Cigarette Pack</English>
+            <French>Craven "A" Paquet de cigarettes</French>
+            <German>Craven "A" Zigarettenschachtel</German>
+            <Japanese>Craven "A" タバコ</Japanese>
+            <Chinese>Craven "A" 一包菸</Chinese>
         </Key>
         <Key ID="STR_cigs_craven_cigpack_desc">
             <English>For Your Throat's Sake!&lt;br/&gt;Contains 20 cigarettes.&lt;br/&gt;Warning: Smoking is hazardous to your health.</English>

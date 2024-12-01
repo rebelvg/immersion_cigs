@@ -31,8 +31,8 @@ params ["_unit", "_itemType", "_currentItem", "_currentTime", "_maxTime"];
         {
             // If the current smokable isnt smokable
             switch (_itemType) do {
-                case "GOGGLES": { getNumber (configFile >> "CfgGlasses" >> _currentItem >> QPVAR(isSmokeable)) == 1 };
-                case "HMD": { getNumber (configFile >> "CfgWeapons" >> _currentItem >> QPVAR(isSmokeable)) == 1 };
+                case "GOGGLES": { getNumber (configFile >> "CfgGlasses" >> _currentItem >> QPVAR(isSmokable)) == 1 };
+                case "HMD": { getNumber (configFile >> "CfgWeapons" >> _currentItem >> QPVAR(isSmokable)) == 1 };
                 default { false };
             }
             &&

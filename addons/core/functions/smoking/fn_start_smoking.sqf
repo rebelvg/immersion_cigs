@@ -34,8 +34,8 @@ _unit setVariable [QPVAR(isSmoking), true, true];
 // Identify current used Cig and Type
 ////////////////////////////////////////
 private _itemType = switch (true) do {
-    case (getNumber (configFile >> "CfgGlasses" >> goggles _unit >> QPVAR(isSmokeable)) == 1): { "GOGGLES" };
-    case (getNumber (configFile >> "CfgWeapons" >>     hmd _unit >> QPVAR(isSmokeable)) == 1): { "HMD" };
+    case (getNumber (configFile >> "CfgGlasses" >> goggles _unit >> QPVAR(isSmokable)) == 1): { "GOGGLES" };
+    case (getNumber (configFile >> "CfgWeapons" >>     hmd _unit >> QPVAR(isSmokable)) == 1): { "HMD" };
     default { "" };
 };
 if (_itemType == "") exitWith {};

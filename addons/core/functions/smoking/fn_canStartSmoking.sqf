@@ -25,10 +25,10 @@ params ["_unit"];
     !(_unit getVariable [QPVAR(isSucking), false])
     &&
     {
-        getNumber (configFile >> "CfgGlasses" >> goggles _unit >> QPVAR(isSmokeable)) == 1
+        getNumber (configFile >> "CfgGlasses" >> goggles _unit >> QPVAR(isSmokable)) == 1
         ||
         {
-            getNumber (configFile >> "CfgWeapons" >> hmd _unit >> QPVAR(isSmokeable)) == 1
+            getNumber (configFile >> "CfgWeapons" >> hmd _unit >> QPVAR(isSmokable)) == 1
         }
     }
 }

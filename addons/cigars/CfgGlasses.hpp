@@ -21,7 +21,7 @@ class CfgGlasses {
         PVAR(initStateTime) = 0;
         PVAR(nextState) = QPVAR(cigar1);
 
-        PVAR(isSmokeable) = 1;
+        PVAR(isSmokable) = 1;
         PVAR(smokeMultiplier) = 2;
 
         KJW_Imposters_SuspicionAmount = 0;
