@@ -238,7 +238,7 @@ class CfgGesturesMale
 		class immersion_cigs_cig_in: Default
 		{
 	        speed=-4.5;
-			looped=false;
+			looped=0;
 			mask="handsWeapon_context";
 			file="\immersion_cigs_animations\cig_in.rtm";
 			leftHandIKBeg=0;
@@ -251,7 +251,7 @@ class CfgGesturesMale
 		class immersion_cigs_cig_out: Default
 		{
 	        speed=-1.9;
-			looped=false;
+			looped=0;
 			mask="handsWeapon_context";
 			file="\immersion_cigs_animations\cig_out.rtm";
 			leftHandIKBeg=0;
@@ -264,7 +264,7 @@ class CfgGesturesMale
 		class immersion_cigs_cig_loop: Default
 		{
 	        speed=-6.5;
-			looped=true;
+			looped=1;
 			mask="am_leftHalfBody";
 			file="\immersion_cigs_animations\cig_loop.rtm";
 			leftHandIKBeg=0;

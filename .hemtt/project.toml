@@ -1,0 +1,21 @@
+name = "Immersion Cigs"
+prefix = "klpq"
+
+[properties]
+author = "Rebel / Facel / Panimala"
+url = "https://github.com/rebelvg/immersion_cigs"
+
+[files]
+include = [
+    "mod.cpp",
+    "mod.paa",
+]
+exclude = [
+  "README.md"
+]
+
+[version]
+major = 1
+minor = 5
+patch = 1
+build = 0

@@ -157,7 +157,7 @@ class CfgGlasses {
         immersion_cigs_maxTime = 330;
         immersion_cigs_initStateTime = 0;
         immersion_cigs_nextState = "murshun_cigs_cig1";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 
     class murshun_cigs_cig1: murshun_cigs_cig0 {
@@ -169,7 +169,7 @@ class CfgGlasses {
 
         immersion_cigs_initStateTime = 6;
         immersion_cigs_nextState = "murshun_cigs_cig2";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 
     class murshun_cigs_cig2: murshun_cigs_cig0 {
@@ -181,7 +181,7 @@ class CfgGlasses {
 
         immersion_cigs_initStateTime = 66;
         immersion_cigs_nextState = "murshun_cigs_cig3";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 
     class murshun_cigs_cig3: murshun_cigs_cig0 {
@@ -193,7 +193,7 @@ class CfgGlasses {
 
         immersion_cigs_initStateTime = 126;
         immersion_cigs_nextState = "murshun_cigs_cig4";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 
     class murshun_cigs_cig4: murshun_cigs_cig0 {
@@ -205,7 +205,7 @@ class CfgGlasses {
 
         immersion_cigs_initStateTime = 306;
         immersion_cigs_nextState = "";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 
     class immersion_cigs_cigar0: None {
@@ -221,7 +221,7 @@ class CfgGlasses {
         immersion_cigs_maxTime = 660;
         immersion_cigs_initStateTime = 0;
         immersion_cigs_nextState = "immersion_cigs_cigar1";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 
     class immersion_cigs_cigar1: immersion_cigs_cigar0 {
@@ -233,7 +233,7 @@ class CfgGlasses {
 
         immersion_cigs_initStateTime = 12;
         immersion_cigs_nextState = "immersion_cigs_cigar2";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 
     class immersion_cigs_cigar2: immersion_cigs_cigar0 {
@@ -245,7 +245,7 @@ class CfgGlasses {
 
         immersion_cigs_initStateTime = 132;
         immersion_cigs_nextState = "immersion_cigs_cigar3";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 
     class immersion_cigs_cigar3: immersion_cigs_cigar0 {
@@ -257,7 +257,7 @@ class CfgGlasses {
 
         immersion_cigs_initStateTime = 252;
         immersion_cigs_nextState = "immersion_cigs_cigar4";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 
     class immersion_cigs_cigar4: immersion_cigs_cigar0 {
@@ -269,7 +269,7 @@ class CfgGlasses {
 
         immersion_cigs_initStateTime = 612;
         immersion_cigs_nextState = "";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
     };
 };
 
@@ -335,7 +335,7 @@ class CfgWeapons {
         immersion_cigs_maxTime = 330;
         immersion_cigs_initStateTime = 0;
         immersion_cigs_nextState = "murshun_cigs_cig1_nv";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {
@@ -358,7 +358,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 6;
         immersion_cigs_nextState = "murshun_cigs_cig2_nv";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {
@@ -378,7 +378,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 66;
         immersion_cigs_nextState = "murshun_cigs_cig3_nv";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {
@@ -398,7 +398,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 126;
         immersion_cigs_nextState = "murshun_cigs_cig4_nv";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {
@@ -418,7 +418,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 306;
         immersion_cigs_nextState = "";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {
@@ -445,7 +445,7 @@ class CfgWeapons {
         immersion_cigs_maxTime = 660;
         immersion_cigs_initStateTime = 0;
         immersion_cigs_nextState = "immersion_cigs_cigar1_nv";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {
@@ -465,7 +465,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 12;
         immersion_cigs_nextState = "immersion_cigs_cigar2_nv";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {
@@ -485,7 +485,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 132;
         immersion_cigs_nextState = "immersion_cigs_cigar3_nv";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {
@@ -505,7 +505,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 252;
         immersion_cigs_nextState = "immersion_cigs_cigar4_nv";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {
@@ -525,7 +525,7 @@ class CfgWeapons {
 
         immersion_cigs_initStateTime = 612;
         immersion_cigs_nextState = "";
-        immersion_cigs_isCig = true;
+        immersion_cigs_isCig = 1;
 
         class ItemInfo
         {

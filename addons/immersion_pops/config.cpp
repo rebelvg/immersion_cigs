@@ -91,7 +91,7 @@ class CfgGlasses {
         picture = "\immersion_pops\UI\gear_cig0_x_ca";
         identityTypes[] = {};
 
-        immersion_pops_isPop = true;
+        immersion_pops_isPop = 1;
     };
 };
 
