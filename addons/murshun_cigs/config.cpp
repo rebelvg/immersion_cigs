@@ -89,6 +89,7 @@ class CfgVehicles
 		};
 	};
 };
+
 class CfgMagazines
 {
 	class CA_Magazine;
@@ -138,6 +139,7 @@ class CfgMagazines
 		mass = 2;
 	};
 };
+
 class CfgGlasses
 {
 	class None;
@@ -260,6 +262,7 @@ class CfgGlasses
 		immersion_cigs_isCig = 1;
 	};
 };
+
 class CfgSounds
 {
 	sounds[] = {};
@@ -279,6 +282,7 @@ class CfgSounds
 		titles[] = {};
 	};
 };
+
 class CfgFunctions
 {
 	class murshun_cigs
