@@ -16,7 +16,7 @@ private _addVanillaActions = {
         player addAction [localize "STR_murshun_cigs_start_someones_cig", {
             params ["_target", "_caller"];
             [cursorObject, _caller] spawn murshun_cigs_fnc_start_cig_their
-        }, nil, 0, false, true, "", "if !(cursorObject isKindOf 'Man') exitWith {false}; ((goggles cursorObject) in murshun_cigs_cigsArray) && !(cursorObject getVariable ['murshun_cigs_cigLitUp', false]) && (alive cursorObject)", 5, false];
+        }, nil, 0, false, true, "", "if !(cursorObject isKindOf 'Man') exitWith {false}; (((goggles cursorObject) in murshun_cigs_cigsArray) || ((hmd cursorObject) in murshun_cigs_cigsArray)) && !(cursorObject getVariable ['murshun_cigs_cigLitUp', false]) && (alive cursorObject)", 5, false];
     };
 
 if !(isClass (configFile >> "CfgPatches" >> "ace_interact_menu")) then {
