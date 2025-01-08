@@ -3,7 +3,7 @@ class CfgPatches
 	class murshun_cigs
 	{
 		units[] = {"murshun_cigs_matchesItem", "murshun_cigs_lighterItem", "murshun_cigs_cigpackItem"};
-		weapons[] = {"murshun_cigs_cig0_nv", "murshun_cigs_cig1_nv", "murshun_cigs_cig2_nv", "murshun_cigs_cig3_nv", "murshun_cigs_cig4_nv", "immersion_cigs_cigar0_nv", "immersion_cigs_cigar1_nv", "immersion_cigs_cigar2_nv", "immersion_cigs_cigar3_nv", "immersion_cigs_cigar4_nv"};
+		weapons[] = {"murshun_cigs_cig0_nv", "immersion_cigs_cigar0_nv"};
 		magazines[] = {"murshun_cigs_matches", "murshun_cigs_lighter", "murshun_cigs_cigpack"};
 		requiredVersion = 0.1;
 		requiredAddons[] = {

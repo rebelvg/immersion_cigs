@@ -303,6 +303,7 @@ class CfgFunctions
 		};
 	};
 };
+
 class CfgWeapons
 {
 	class NVGoggles;
