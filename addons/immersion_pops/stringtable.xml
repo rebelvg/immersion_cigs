@@ -1,44 +1,44 @@
 <!-- Japanese Translations by classicarma -->
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="immersion_pops">
-    <Package name="Interactions">
-        <Key ID="STR_immersion_pops_start_cig">
-            <English>Start Sucking</English>
-            <Japanese>吸い始める</Japanese>
-            <Chinese>放進嘴巴含</Chinese>
-        </Key>
-        <Key ID="STR_immersion_pops_stop_cig">
-            <English>Stop Sucking</English>
-            <Japanese>吸うのを止める</Japanese>
-            <Chinese>從嘴巴拿出來</Chinese>
-        </Key>
+	<Package name="Main">
+		<Key ID="STR_immersion_pops_author">
+			<English>Rebel / Facel</English>
+			<Japanese>Rebel / Facel</Japanese>
+		</Key>
+	</Package>
+	<Package name="Interactions">
+		<Key ID="STR_immersion_pops_start_cig">
+			<English>Start Sucking</English>
+			<Japanese>吸い始める</Japanese>
+			<Chinese>放進嘴巴含</Chinese>
+		</Key>
+		<Key ID="STR_immersion_pops_stop_cig">
+			<English>Stop Sucking</English>
+			<Japanese>吸うのを止める</Japanese>
+			<Chinese>從嘴巴拿出來</Chinese>
+		</Key>
         <Key ID="STR_immersion_pops_take_cig_from_pack">
-            <English>Unpack Lollipop</English>
-            <Japanese>ロリポップを開ける</Japanese>
-            <Chinese>拆開棒棒糖</Chinese>
-        </Key>
-    </Package>
-    <Package name="Items">
-        <Key ID="STR_immersion_pops_cigarette0">
-            <English>Lollipop</English>
-            <Japanese>ロリポップ</Japanese>
-            <Chinese>棒棒糖</Chinese>
-        </Key>
+			<English>Unpack Lollipop</English>
+			<Japanese>ロリポップを開ける</Japanese>
+			<Chinese>拆開棒棒糖</Chinese>
+		</Key>
+	</Package>
+	<Package name="Items">
         <Key ID="STR_immersion_pops_poppack">
-            <English>Lollipop (Packed)</English>
-            <Japanese>ロリポップ (未開封)</Japanese>
-            <Chinese>棒棒糖（未開封）</Chinese>
-        </Key>
+			<English>Lollipop (Packed)</English>
+			<Japanese>ロリポップ (未開封)</Japanese>
+			<Chinese>棒棒糖（未開封）</Chinese>
+		</Key>
         <Key ID="STR_immersion_pops_poppack_descr">
-            <English>One packed lollipop. Not hazardous to your health and sweet.</English>
-            <Japanese>1つの未開封のロリポップ。健康に害を与えず甘い。</Japanese>
-            <Chinese>一根未開封的棒棒糖。不會導致你性功能障礙而且還很甜。</Chinese>
-        </Key>
-    </Package>
-    <Package name="Main">
-        <Key ID="STR_immersion_pops_author">
-            <English>Rebel / Facel</English>
-            <Japanese>Rebel / Facel</Japanese>
-        </Key>
-    </Package>
+			<English>One packed lollipop. Not hazardous to your health and sweet.</English>
+			<Japanese>1つの未開封のロリポップ。健康に害を与えず甘い。</Japanese>
+			<Chinese>一根未開封的棒棒糖。不會導致你性功能障礙而且還很甜。</Chinese>
+		</Key>
+        <Key ID="STR_immersion_pops_cigarette0">
+			<English>Lollipop</English>
+			<Japanese>ロリポップ</Japanese>
+			<Chinese>棒棒糖</Chinese>
+		</Key>
+	</Package>
 </Project>
