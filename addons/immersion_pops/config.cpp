@@ -3,11 +3,12 @@
 class CfgVehicles
 {
     class Man;
-    class CAManBase: Man
+    class CAManBase : Man
     {
         class ACE_SelfActions
         {
-            class ACE_Equipment {
+            class ACE_Equipment
+            {
                 class immersion_pops_start_cig
                 {
                     displayName = "$STR_immersion_pops_start_cig";
@@ -43,15 +44,18 @@ class CfgVehicles
 
     class WeaponHolder_Single_limited_item_F;
 
-    class immersion_pops_poppackItem: WeaponHolder_Single_limited_item_F {
+    class immersion_pops_poppackItem : WeaponHolder_Single_limited_item_F
+    {
         scope = 2;
         scopeCurator = 2;
         displayName = "$STR_immersion_pops_poppack";
         author = "$STR_immersion_pops_author";
         vehicleClass = "Magazines";
 
-        class TransportMagazines {
-            class immersion_pops_poppack {
+        class TransportMagazines
+        {
+            class immersion_pops_poppack
+            {
                 magazine = "immersion_pops_poppack";
                 count = 1;
             };
@@ -59,10 +63,12 @@ class CfgVehicles
     };
 };
 
-class CfgMagazines {
+class CfgMagazines
+{
     class CA_Magazine;
 
-    class immersion_pops_poppack: CA_Magazine {
+    class immersion_pops_poppack : CA_Magazine
+    {
         author = "$STR_immersion_pops_author";
         scope = 2;
 
@@ -80,10 +86,12 @@ class CfgMagazines {
     };
 };
 
-class CfgGlasses {
+class CfgGlasses
+{
     class None;
 
-    class immersion_pops_pop0: None {
+    class immersion_pops_pop0 : None
+    {
         author = "$STR_immersion_pops_author";
         mass = 0.2;
         displayName = "$STR_immersion_pops_cigarette0";

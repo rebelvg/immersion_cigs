@@ -3,7 +3,7 @@
 class CfgVehicles
 {
 	class Man;
-	class CAManBase: Man
+	class CAManBase : Man
 	{
 		class ACE_SelfActions
 		{
@@ -15,7 +15,7 @@ class CfgVehicles
 					condition = "[_player] call immersion_cigs_canStartSmoking";
 					statement = "[_player] spawn murshun_cigs_fnc_start_cig_your";
 					showDisabled = 0;
-					exceptions[] = {"isNotInside","isNotSitting"};
+					exceptions[] = {"isNotInside", "isNotSitting"};
 					icon = "murshun_cigs\UI\light_cig.paa";
 				};
 				class murshun_cigs_stop_cig
@@ -24,7 +24,7 @@ class CfgVehicles
 					condition = "[_player] call immersion_cigs_canStopSmoking";
 					statement = "[_player] spawn murshun_cigs_fnc_stop_cig";
 					showDisabled = 0;
-					exceptions[] = {"isNotInside","isNotSitting"};
+					exceptions[] = {"isNotInside", "isNotSitting"};
 					icon = "murshun_cigs\UI\light_cig.paa";
 				};
 				class murshun_cigs_take_cig_from_pack
@@ -33,14 +33,14 @@ class CfgVehicles
 					condition = "[_player] call immersion_cigs_canTakeCigFromPack";
 					statement = "[_player] spawn murshun_cigs_fnc_take_cig_from_pack";
 					showDisabled = 0;
-					exceptions[] = {"isNotInside","isNotSitting"};
+					exceptions[] = {"isNotInside", "isNotSitting"};
 					icon = "murshun_cigs\UI\take_cig.paa";
 				};
 			};
 		};
 	};
 	class WeaponHolder_Single_limited_item_F;
-	class murshun_cigs_matchesItem: WeaponHolder_Single_limited_item_F
+	class murshun_cigs_matchesItem : WeaponHolder_Single_limited_item_F
 	{
 		scope = 2;
 		scopeCurator = 2;
@@ -56,7 +56,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class murshun_cigs_lighterItem: WeaponHolder_Single_limited_item_F
+	class murshun_cigs_lighterItem : WeaponHolder_Single_limited_item_F
 	{
 		scope = 2;
 		scopeCurator = 2;
@@ -72,7 +72,7 @@ class CfgVehicles
 			};
 		};
 	};
-	class murshun_cigs_cigpackItem: WeaponHolder_Single_limited_item_F
+	class murshun_cigs_cigpackItem : WeaponHolder_Single_limited_item_F
 	{
 		scope = 2;
 		scopeCurator = 2;
@@ -93,7 +93,7 @@ class CfgVehicles
 class CfgMagazines
 {
 	class CA_Magazine;
-	class murshun_cigs_matches: CA_Magazine
+	class murshun_cigs_matches : CA_Magazine
 	{
 		author = "$STR_murshun_cigs_author";
 		scope = 2;
@@ -108,7 +108,7 @@ class CfgMagazines
 		lastRoundsTracer = 0;
 		mass = 1;
 	};
-	class murshun_cigs_lighter: CA_Magazine
+	class murshun_cigs_lighter : CA_Magazine
 	{
 		author = "$STR_murshun_cigs_author";
 		scope = 2;
@@ -123,7 +123,7 @@ class CfgMagazines
 		lastRoundsTracer = 0;
 		mass = 2;
 	};
-	class murshun_cigs_cigpack: CA_Magazine
+	class murshun_cigs_cigpack : CA_Magazine
 	{
 		author = "$STR_murshun_cigs_author";
 		scope = 2;
@@ -143,7 +143,7 @@ class CfgMagazines
 class CfgGlasses
 {
 	class None;
-	class murshun_cigs_cig0: None
+	class murshun_cigs_cig0 : None
 	{
 		scope = 2;
 		author = "$STR_murshun_cigs_author";
@@ -158,7 +158,7 @@ class CfgGlasses
 		immersion_cigs_nextState = "murshun_cigs_cig1";
 		immersion_cigs_isCig = 1;
 	};
-	class murshun_cigs_cig1: murshun_cigs_cig0
+	class murshun_cigs_cig1 : murshun_cigs_cig0
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -169,7 +169,7 @@ class CfgGlasses
 		immersion_cigs_nextState = "murshun_cigs_cig2";
 		immersion_cigs_isCig = 1;
 	};
-	class murshun_cigs_cig2: murshun_cigs_cig0
+	class murshun_cigs_cig2 : murshun_cigs_cig0
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -180,7 +180,7 @@ class CfgGlasses
 		immersion_cigs_nextState = "murshun_cigs_cig3";
 		immersion_cigs_isCig = 1;
 	};
-	class murshun_cigs_cig3: murshun_cigs_cig0
+	class murshun_cigs_cig3 : murshun_cigs_cig0
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -191,7 +191,7 @@ class CfgGlasses
 		immersion_cigs_nextState = "murshun_cigs_cig4";
 		immersion_cigs_isCig = 1;
 	};
-	class murshun_cigs_cig4: murshun_cigs_cig0
+	class murshun_cigs_cig4 : murshun_cigs_cig0
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -202,7 +202,7 @@ class CfgGlasses
 		immersion_cigs_nextState = "";
 		immersion_cigs_isCig = 1;
 	};
-	class immersion_cigs_cigar0: None
+	class immersion_cigs_cigar0 : None
 	{
 		scope = 2;
 		author = "$STR_murshun_cigs_author";
@@ -217,7 +217,7 @@ class CfgGlasses
 		immersion_cigs_nextState = "immersion_cigs_cigar1";
 		immersion_cigs_isCig = 1;
 	};
-	class immersion_cigs_cigar1: immersion_cigs_cigar0
+	class immersion_cigs_cigar1 : immersion_cigs_cigar0
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -228,7 +228,7 @@ class CfgGlasses
 		immersion_cigs_nextState = "immersion_cigs_cigar2";
 		immersion_cigs_isCig = 1;
 	};
-	class immersion_cigs_cigar2: immersion_cigs_cigar0
+	class immersion_cigs_cigar2 : immersion_cigs_cigar0
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -239,7 +239,7 @@ class CfgGlasses
 		immersion_cigs_nextState = "immersion_cigs_cigar3";
 		immersion_cigs_isCig = 1;
 	};
-	class immersion_cigs_cigar3: immersion_cigs_cigar0
+	class immersion_cigs_cigar3 : immersion_cigs_cigar0
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -250,7 +250,7 @@ class CfgGlasses
 		immersion_cigs_nextState = "immersion_cigs_cigar4";
 		immersion_cigs_isCig = 1;
 	};
-	class immersion_cigs_cigar4: immersion_cigs_cigar0
+	class immersion_cigs_cigar4 : immersion_cigs_cigar0
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -268,17 +268,17 @@ class CfgSounds
 	sounds[] = {};
 	class murshun_cigs_unwrap
 	{
-		sound[] = {"\murshun_cigs\murshun_cigs_unwrap.ogg",2,1,15};
+		sound[] = {"\murshun_cigs\murshun_cigs_unwrap.ogg", 2, 1, 15};
 		titles[] = {};
 	};
 	class murshun_cigs_matches_01
 	{
-		sound[] = {"\murshun_cigs\murshun_cigs_matches_01.ogg",2,1,15};
+		sound[] = {"\murshun_cigs\murshun_cigs_matches_01.ogg", 2, 1, 15};
 		titles[] = {};
 	};
 	class murshun_cigs_lighter_01
 	{
-		sound[] = {"\murshun_cigs\murshun_cigs_lighter_01.ogg",2,1,15};
+		sound[] = {"\murshun_cigs\murshun_cigs_lighter_01.ogg", 2, 1, 15};
 		titles[] = {};
 	};
 };
@@ -306,7 +306,7 @@ class CfgFunctions
 class CfgWeapons
 {
 	class NVGoggles;
-	class murshun_cigs_cig0_nv: NVGoggles
+	class murshun_cigs_cig0_nv : NVGoggles
 	{
 		scope = 2;
 		author = "$STR_murshun_cigs_author";
@@ -333,7 +333,7 @@ class CfgWeapons
 			mass = 0.02;
 		};
 	};
-	class murshun_cigs_cig1_nv: murshun_cigs_cig0_nv
+	class murshun_cigs_cig1_nv : murshun_cigs_cig0_nv
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -351,7 +351,7 @@ class CfgWeapons
 			modelOff = "\murshun_cigs\cig1.p3d";
 		};
 	};
-	class murshun_cigs_cig2_nv: murshun_cigs_cig0_nv
+	class murshun_cigs_cig2_nv : murshun_cigs_cig0_nv
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -369,7 +369,7 @@ class CfgWeapons
 			modelOff = "\murshun_cigs\cig2.p3d";
 		};
 	};
-	class murshun_cigs_cig3_nv: murshun_cigs_cig0_nv
+	class murshun_cigs_cig3_nv : murshun_cigs_cig0_nv
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -387,7 +387,7 @@ class CfgWeapons
 			modelOff = "\murshun_cigs\cig3.p3d";
 		};
 	};
-	class murshun_cigs_cig4_nv: murshun_cigs_cig0_nv
+	class murshun_cigs_cig4_nv : murshun_cigs_cig0_nv
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -405,7 +405,7 @@ class CfgWeapons
 			modelOff = "\murshun_cigs\cig4.p3d";
 		};
 	};
-	class immersion_cigs_cigar0_nv: NVGoggles
+	class immersion_cigs_cigar0_nv : NVGoggles
 	{
 		scope = 2;
 		author = "$STR_murshun_cigs_author";
@@ -430,7 +430,7 @@ class CfgWeapons
 			modelOff = "\murshun_cigs\cigars\cigar0.p3d";
 		};
 	};
-	class immersion_cigs_cigar1_nv: immersion_cigs_cigar0_nv
+	class immersion_cigs_cigar1_nv : immersion_cigs_cigar0_nv
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -448,7 +448,7 @@ class CfgWeapons
 			modelOff = "\murshun_cigs\cigars\cigar1.p3d";
 		};
 	};
-	class immersion_cigs_cigar2_nv: immersion_cigs_cigar0_nv
+	class immersion_cigs_cigar2_nv : immersion_cigs_cigar0_nv
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -466,7 +466,7 @@ class CfgWeapons
 			modelOff = "\murshun_cigs\cigars\cigar2.p3d";
 		};
 	};
-	class immersion_cigs_cigar3_nv: immersion_cigs_cigar0_nv
+	class immersion_cigs_cigar3_nv : immersion_cigs_cigar0_nv
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
@@ -484,7 +484,7 @@ class CfgWeapons
 			modelOff = "\murshun_cigs\cigars\cigar3.p3d";
 		};
 	};
-	class immersion_cigs_cigar4_nv: immersion_cigs_cigar0_nv
+	class immersion_cigs_cigar4_nv : immersion_cigs_cigar0_nv
 	{
 		scope = 1;
 		author = "$STR_murshun_cigs_author";
