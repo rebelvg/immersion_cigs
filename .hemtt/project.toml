@@ -8,7 +8,7 @@ url = "https://github.com/rebelvg/immersion_cigs"
 [files]
 include = [
     "mod.cpp",
-    "mod.paa",
+    "cigs.paa"
 ]
 exclude = [
   "README.md"
